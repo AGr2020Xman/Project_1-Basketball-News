@@ -23,7 +23,7 @@ body {
   text-align: center;
   margin: 10px;
 }
-.player-ul, .news-ul, .profile-ul {
+.player-ul, .news-ul, .profile-ul-1, .profile-ul-2, .profile-ul-3 {
   list-style-type: none;
 }
 .news-container p {
