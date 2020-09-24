@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BasketballApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -12,69 +13,223 @@
     />
     <link
       rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Start Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">Basketball</a>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
+    <header>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+          <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Basketball & News Api</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
               >Scores<span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+                  id="player-search"
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search Player"
+                  aria-label="Search"
+                />
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                Search
+              </button>
+            </form>
+          </nav>
+        </div>
+        <!-- End Nav -->
+      </header>
+      
+          <!-- Main Section -->
+              <section class="flex-shrink-0">
+                <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
+                  <div class="container">
+                    <div class="clearfix">
+                      <img src="img/basketball.jpg" alt="Example testing img" class="float-right" id="ball-img">
+                        <p class="mainP"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                      </p>
+              </section>
+            <!-- Search form body -->
+                <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan  active-cyan-2 mt-2">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                      <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
+                      aria-label="Search"/>
+                      <button
+                      class="btn btn-danger btn-sm btn-block"
+                      type="button"
+                      id="clear-button"
+                      >
+                      Clear
+                      </button>
+                        <br />
+                        <ul class="nav flex-column" id="search-history">
+                            <!-- Dynamically insereted  -->
+                        </ul>
+                    </div>
+                  </div>
+                </form>
+                    <!-- Player Selection -->
+                    <div class="container">
+                      <div class="player-container">
+                          <ul class="player-ul">
+                              <li>
+                              <div>
+                                <h2>Player Selected</h2>
+                                <!-- <img src="#" alt="#"> -->
+                                <!-- <div class="PlayerInsert"></div> -->
+                                <form action="#">
+                                  <label for="stats-selection">Choose a stat:</label>
+                                  <select id="stats-dropdown" name="stats">
+                                    <option value="Points">Points</option>
+                                    <option value="TeamStats">Team Stats</option>
+                                    <option value="3pts">3 pointers</option>
+                                    <option value="freeThrows">Free Throws</option>
+                                  </select>
+                                  <input id="page-sumbit" type="submit">
+                                </form>
+                              </div>
+                            </li>
+                          </ul>
+                          
+                      </div>
+                    </div>
+                    <!-- Profile Section -->
+                    <div class="container">
+                      <div class="profile-container">
+                      <div class="col-md-12">
+                      <div class="row">
+                        <ul class="col-md-4 profile-ul">
+                            <li>
+                                <p class="profile-p">
+                                  There are many variations of passages of Lorem Ipsum available, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                                  If you are going to use a passage of Lorem Ipsum.
+                                </p>
+                                <!-- <img src="#" alt="#"> -->
+                                <!-- <div class="ProfileInsert"></div> -->
+                            </li>
+                        </ul>
+                            <ul class="col-md-4 profile-ul">
+                              <li>
+                                  <p class="profile-p">
+                                    There are many variations of passages of Lorem Ipsum available, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                                    If you are going to use a passage of Lorem Ipsum.
+                                  </p>
+                                  <!-- <img src="#" alt="#"> -->
+                                  <!-- <div class="ProfileInsert"></div> -->
+                              </li>
+                          </ul>
+                          <ul class="col-md-4 profile-ul">
+                            <li>
+                                <p class="profile-p">
+                                  There are many variations of passages of Lorem Ipsum available, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                                  If you are going to use a passage of Lorem Ipsum.
+                                </p>
+                                <!-- <img src="#" alt="#"> -->
+                                <!-- <div class="ProfileInsert"></div> -->
+                            </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+          <!-- News Section Start -->
+        <div class="news-container">
+          <h2 class="news-h1">
+            News section
+          </h2>
+          <ul class="news-ul">
+            <li>
+                <p class="news-p">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dignissimos asperiores nesciunt, consequatur quod doloremque maiores necessitatibus ea. Est, commodi qui? Iusto voluptatem repellendus facilis voluptatum consectetur eius, possimus similique?
+                  Officia veritatis a rem nesciunt nisi exercitationem iure, quas officiis et ratione dolor quidem modi veniam perspiciatis. Iste, doloribus dolore vero pariatur ipsam veniam dolores possimus adipisci, alias expedita illum.
+                  C rem aspernatur tempora, dolor soluta mollitia veritatis animi corrupti at modi quisquam nobis dolore perspiciatis, nihil officiis possimus culpa neque tenetur! Officiis explicabo eveniet omnis labore amet optio suscipit.
+                  Quis, mollitia est? Molestiae magni nisi dignissimos expedita! Minus nostrum ut totam maxime quia reprehenderit fugiat vitae aspernatur voluptas cu ullam alias dolor ratione placeat, necessitatibus quis iure eos illum.
+                  Ut eveniet recusandae, atque aspernatur nam et nulla voluptatibus, unde fuga dicta nemo doloribus tenetur veniam. Animi nostrum officiis est eum nesciunt, veritatis repellat laudantium corrupti, voluptatum nihil, magnam unde?
+                  Odio iusto hic, mollitia magni ducimus in. Odit architecto alias in velit nulla, tempore magni officiis eligendi, reiciendis quas impedit modi mollitia itaque, maxime commodi incidunt maiores suscipit illo deserunt.
+                  Error sequi praesentium reprehenderit sint adipisci ex officiis tempora nobis dolor eum nesciunt nemo ullam labore commodi, fugit nihil beatae qui deleniti eveniet nam nisi. Fuga nostrum quaerat qui dignissimos.
+                  Aut libero, magnam ullam vitae dicta quisquam eum enim quos vel omnis sequi architecto repellat id aliquam distinctio soluta nulla illum expedita porro fuga nemo corrupti nostrum fugit. Dolorem, non?
+                  Quo distinctio unde nostrum deleniti voluptates suscipit, laborum sequi non eveniet architecto et ad nisi cumque reiciendis pariatur alias quia dolor laboriosam quidem minus. Consequatur assumenda repudiandae nulla dolores optio!
+                  Quidem, ipsum error. Rerum inventore velit qui officia vitae deserunt, tempora alias nobis veniam omnis a explicabo eveniet nulla rem soluta cuque eaque asperiores blanditiis voluptate, atque, repudiandae laborum suscipit. Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                  </p>
+                <!-- <img src="#" alt="#"> -->
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
-    </nav>
-    <!-- End Nav -->
-    <!--Start main -->
-
+        </div>
+      <!-- Footer Start -->
+      <!-- Link to Github/Profile -->
+      <footer id="sticky-footer" class="py-4 bg-secondary text-white">
+        <div class="container-footer text-center">
+            <small>Copyright &copy; Alpha's Website</small>
+          <!-- <div class="col-md">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#"
+                        ><i class="fab fa-github"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fab fa-github"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fab fa-github"></i
+                      ></a>
+                    </li>
+                  </ul>
+              </div> -->
+          </div>
+      </footer>
+      <!-- Jquery.min -->
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"
+      ></script>
+      <!-- Popper cdn -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
       crossorigin="anonymous"
     ></script>
+    <!-- Bootstrap cdn -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <!-- Font awesome -->
     <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+      data-auto-replace-svg="nest"
     ></script>
     <script type="text/javascript" src="script.js"></script>
   </body>
