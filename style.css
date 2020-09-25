@@ -7,6 +7,7 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
+  background: url("");
 }
 .mainP {
   padding: 3rem;
@@ -23,7 +24,11 @@ body {
   text-align: center;
   margin: 10px;
 }
-.player-ul, .news-ul, .profile-ul-1, .profile-ul-2, .profile-ul-3 {
+.player-ul,
+.news-ul,
+.profile-ul-1,
+.profile-ul-2,
+.profile-ul-3 {
   list-style-type: none;
 }
 .news-container p {
@@ -42,6 +47,7 @@ img {
 img:hover {
   opacity: 0.5;
 }
+
 #clear-button {
   width: 3rem;
 }
@@ -49,4 +55,6 @@ img:hover {
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
+  position: relative;
+  margin: 10px;
 }
