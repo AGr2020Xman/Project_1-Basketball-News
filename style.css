@@ -52,6 +52,11 @@ img:hover {
   width: 3rem;
 }
 
+nav {
+  background-color: #1A237E;
+
+
+}
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
