@@ -1,33 +1,29 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BasketballApp</title>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+        <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>BasketballApp</title>
+            <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+            <link
+              rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+              crossorigin="anonymous"
+            />
+            <link
+              rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+              integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+              crossorigin="anonymous"
+            />
+            <link rel="stylesheet" href="style.css" />
+      </head>
+    <body>
     <!-- Start Nav -->
     <header>
+      
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light">
           <button
           class="navbar-toggler"
           type="button"
@@ -63,13 +59,16 @@
                 Search
               </button>
             </form>
-          </nav>
-        </div>
-        <!-- End Nav -->
+          </div>
+        </nav>
       </header>
+        <!-- End Nav -->
       
           <!-- Main Section -->
+          
               <section class="flex-shrink-0">
+
+                
                 <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
                   <div class="container">
                     <div class="clearfix">
@@ -77,6 +76,7 @@
                         <p class="mainP"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
                       </p>
               </section>
+
             <!-- Search form body -->
                 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan  active-cyan-2 mt-2">
                     <i class="fas fa-search" aria-hidden="true"></i>
@@ -116,71 +116,141 @@
                                   <input id="page-sumbit" type="submit">
                                 </form>
                               </div>
-                            </li>
-                          </ul>
-                          
-                      </div>
-                    </div>
-                    <!-- Profile Section -->
-                    <div class="container">
-                      <div class="profile-container">
-                      <div class="col-md-12">
+                            </div>
+                          </form>
+                          <!-- Player Selection -->
+                                <div class="container">
+                                  <div class="player-container">
+                                      <ul class="player-ul">
+                                          <li>
+                                          <div>
+                                            <h2>Player Selected</h2>
+                                            <!-- <img src="#" alt="#"> -->
+                                            <!-- <div class="PlayerInsert"></div> -->
+                                            <form action="#">
+                                              <label for="stats-selection">Choose a stat:</label>
+                                              <select id="stats-dropdown" name="stats">
+                                                <option value="Points">Points</option>
+                                                <option value="TeamStats">Team Stats</option>
+                                                <option value="3pts">Three Pointers</option>
+                                                <option value="freeThrows">Free Throws</option>
+                                              </select>
+                                              <input id="page-submit" type="submit">
+                                            </form>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                  </div>
+                                </div>
+                          <!-- Profile Section -->
+                          <div class="container">
+                            <div class="profile-container">
+                            <div class="col-md-12">
+                            <div class="row">
+                              <ul class="col-md-3 profile-ul-1">
+                                  <li>
+                                      <p class="profile-p">
+                                        There are many variations of passages of Lorem Ipsum available, 
+                                      </p>
+                                      <!-- <img src="#" alt="#"> -->
+                                      <!-- <div class="ProfileInsert"></div> -->
+                                  </li>
+                              </ul>
+                                  <ul class="col-md-3 profile-ul-2">
+                                    <li>
+                                        <p class="profile-p">
+                                          There are many variations of passages of Lorem Ipsum available, 
+                                        </p>
+                                        <!-- <img src="#" alt="#"> -->
+                                        <!-- <div class="ProfileInsert"></div> -->
+                                    </li>
+                                </ul>
+                                <ul class="col-md-3 profile-ul-3">
+                                  <li>
+                                      <p class="profile-p">
+                                        There are many variations of passages of Lorem Ipsum available, 
+                                      </p>
+                                      <!-- <img src="#" alt="#"> -->
+                                      <!-- <div class="ProfileInsert"></div> -->
+                                  </li>
+                              </ul>
+                              <ul class="col-md-3 profile-ul-3">
+                                <li>
+                                    <p class="profile-p">
+                                      There are many variations of passages of Lorem Ipsum available, 
+                                    <!-- <img src="#" alt="#"> -->
+                                    <!-- <div class="ProfileInsert"></div> -->
+                                </li>
+                            </ul>
+                            </div>
+                          </div>
+                        </div>
+                    <!-- News Section Start -->
+                    <div class="news-container">
+                      <h2 class="news-h1">
+                        News section
+                      </h2>
+                      <!-- Row for Searching New York Times -->
                       <div class="row">
-                        <ul class="col-md-4 profile-ul">
-                            <li>
-                                <p class="profile-p">
-                                  There are many variations of passages of Lorem Ipsum available, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                                  If you are going to use a passage of Lorem Ipsum.
-                                </p>
-                                <!-- <img src="#" alt="#"> -->
-                                <!-- <div class="ProfileInsert"></div> -->
-                            </li>
-                        </ul>
-                            <ul class="col-md-4 profile-ul">
-                              <li>
-                                  <p class="profile-p">
-                                    There are many variations of passages of Lorem Ipsum available, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                                    If you are going to use a passage of Lorem Ipsum.
-                                  </p>
-                                  <!-- <img src="#" alt="#"> -->
-                                  <!-- <div class="ProfileInsert"></div> -->
-                              </li>
-                          </ul>
-                          <ul class="col-md-4 profile-ul">
-                            <li>
-                                <p class="profile-p">
-                                  There are many variations of passages of Lorem Ipsum available, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                                  If you are going to use a passage of Lorem Ipsum.
-                                </p>
-                                <!-- <img src="#" alt="#"> -->
-                                <!-- <div class="ProfileInsert"></div> -->
-                            </li>
-                        </ul>
+                        <div class="col-sm-12">
+                          <br>
+                          <!-- First card is for handling the search parameters -->
+                          <div class="card">
+                            <div class="card-header">
+                              <strong>
+                                <i class="fa fa-search"></i> Search Articles</strong>
+                            </div>
+                            <div class="card-body">
+
+                              <!-- HTML Form for handling the inputs-->
+                              <form role="form">
+                                <!-- Here we capture the number of records that the user wants to retrieve  -->
+                                <div class="form-group">
+                                  <label for="pwd">Number of Articles to Retrieve:</label>
+                                  <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                                    <option selected value="1">1</option>
+                                    <!-- Setting the option for 5 as default -->
+                                    <option value="3" selected>3</option>
+                                    <option value="5">5</option>
+                                  </select>
+                                </div>
+
+                                <!-- Start Year Parameter-->
+                                <div class="form-group-ex1">
+                                  <label for="start-year"> Year (Optional):</label>
+                                  <select class="custom-select" aria-labelledby="dropdownMenuButton" id="year"></select>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                       </div>
                       </div>
                     </div>
-                  </div>
-          <!-- News Section Start -->
-        <div class="news-container">
-          <h2 class="news-h1">
-            News section
-          </h2>
-          <ul class="news-ul">
-            <li>
-                <p class="news-p">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dignissimos asperiores nesciunt, consequatur quod doloremque maiores necessitatibus ea. Est, commodi qui? Iusto voluptatem repellendus facilis voluptatum consectetur eius, possimus similique?
-                  Officia veritatis a rem nesciunt nisi exercitationem iure, quas officiis et ratione dolor quidem modi veniam perspiciatis. Iste, doloribus dolore vero pariatur ipsam veniam dolores possimus adipisci, alias expedita illum.
-                  C rem aspernatur tempora, dolor soluta mollitia veritatis animi corrupti at modi quisquam nobis dolore perspiciatis, nihil officiis possimus culpa neque tenetur! Officiis explicabo eveniet omnis labore amet optio suscipit.
-                  Quis, mollitia est? Molestiae magni nisi dignissimos expedita! Minus nostrum ut totam maxime quia reprehenderit fugiat vitae aspernatur voluptas cu ullam alias dolor ratione placeat, necessitatibus quis iure eos illum.
-                  Ut eveniet recusandae, atque aspernatur nam et nulla voluptatibus, unde fuga dicta nemo doloribus tenetur veniam. Animi nostrum officiis est eum nesciunt, veritatis repellat laudantium corrupti, voluptatum nihil, magnam unde?
-                  Odio iusto hic, mollitia magni ducimus in. Odit architecto alias in velit nulla, tempore magni officiis eligendi, reiciendis quas impedit modi mollitia itaque, maxime commodi incidunt maiores suscipit illo deserunt.
-                  Error sequi praesentium reprehenderit sint adipisci ex officiis tempora nobis dolor eum nesciunt nemo ullam labore commodi, fugit nihil beatae qui deleniti eveniet nam nisi. Fuga nostrum quaerat qui dignissimos.
-                  Aut libero, magnam ullam vitae dicta quisquam eum enim quos vel omnis sequi architecto repellat id aliquam distinctio soluta nulla illum expedita porro fuga nemo corrupti nostrum fugit. Dolorem, non?
-                  Quo distinctio unde nostrum deleniti voluptates suscipit, laborum sequi non eveniet architecto et ad nisi cumque reiciendis pariatur alias quia dolor laboriosam quidem minus. Consequatur assumenda repudiandae nulla dolores optio!
-                  Quidem, ipsum error. Rerum inventore velit qui officia vitae deserunt, tempora alias nobis veniam omnis a explicabo eveniet nulla rem soluta cuque eaque asperiores blanditiis voluptate, atque, repudiandae laborum suscipit. Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                  </p>
+                      <!-- This row will handle all of the retrieved articles -->
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <br>
+
+                          <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
+                          <div class="card">
+
+                            <!-- card Heading for the retrieved articles box -->
+                            <div class="card-header">
+                              <strong>
+                                <i class="fa fa-table"></i> Top Articles</strong>
+                            </div>
+
+                            <!-- This main card will hold each of the resulting articles -->
+                            <div class="card-body" id="article-section">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                 <!-- <img src="#" alt="#"> -->
             </li>
-        </ul>
+          </ul>
         </div>
       <!-- Footer Start -->
       <!-- Link to Github/Profile -->
