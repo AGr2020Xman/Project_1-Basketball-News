@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
         <meta charset="UTF-8" />
@@ -23,7 +24,7 @@
     <header>
       
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
           <button
           class="navbar-toggler"
           type="button"
@@ -67,7 +68,6 @@
           <!-- Main Section -->
           
               <section class="flex-shrink-0">
-
                 
                 <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
                   <div class="container">
@@ -76,45 +76,22 @@
                         <p class="mainP"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
                       </p>
               </section>
-
-            <!-- Search form body -->
-                <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan  active-cyan-2 mt-2">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                      <input id="player-search2" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
-                      aria-label="Search"/>
-                      <button
-                      class="btn btn-danger btn-sm btn-block"
-                      type="button"
-                      id="clear-button"
-                      >
-                      Clear
-                      </button>
-                        <br />
-                        <ul class="nav flex-column" id="search-history">
-                            <!-- Dynamically insereted  -->
-                        </ul>
-                    </div>
-                  </div>
-                </form>
-                    <!-- Player Selection -->
-                    <div class="container">
-                      <div class="player-container">
-                          <ul class="player-ul">
-                              <li>
-                              <div>
-                                <h2>Player Selected</h2>
-                                <!-- <img src="#" alt="#"> -->
-                                <!-- <div class="PlayerInsert"></div> -->
-                                <form action="#">
-                                  <label for="stats-selection">Choose a stat:</label>
-                                  <select id="stats-dropdown" name="stats">
-                                    <option value="Points">Points</option>
-                                    <option value="TeamStats">Team Stats</option>
-                                    <option value="3pts">3 pointers</option>
-                                    <option value="freeThrows">Free Throws</option>
-                                  </select>
-                                  <input id="page-sumbit" type="submit">
-                                </form>
+                      <!-- Search form body -->
+                          <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan  active-cyan-2 mt-2">
+                              <i class="fas fa-search" aria-hidden="true"></i>
+                                <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
+                                aria-label="Search"/>
+                                <button
+                                class="btn btn-danger btn-sm btn-block"
+                                type="button"
+                                id="clear-button"
+                                >
+                                Clear
+                                </button>
+                                  <br />
+                                  <ul class="nav flex-column" id="search-history">
+                                      <!-- Dynamically inserted  -->
+                                  </ul>
                               </div>
                             </div>
                           </form>
@@ -130,10 +107,10 @@
                                             <form action="#">
                                               <label for="stats-selection">Choose a stat:</label>
                                               <select id="stats-dropdown" name="stats">
-                                                <option value="Points">Points</option>
-                                                <option value="TeamStats">Team Stats</option>
-                                                <option value="3pts">Three Pointers</option>
-                                                <option value="freeThrows">Free Throws</option>
+                                                <option id="Points" value="Points">Points</option>
+                                                <option id="TeamStats" value="TeamStats">Team Stats</option>
+                                                <option id="3pts" value="3pts">Three Pointers</option>
+                                                <option id="freeThrows" value="freeThrows">Free Throws</option>
                                               </select>
                                               <input id="page-submit" type="submit">
                                             </form>
@@ -209,7 +186,7 @@
                                   <label for="pwd">Number of Articles to Retrieve:</label>
                                   <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
                                     <option selected value="1">1</option>
-                                    <!-- Setting the option for 5 as default -->
+                                    <!-- Setting the option for 3 as default -->
                                     <option value="3" selected>3</option>
                                     <option value="5">5</option>
                                   </select>
@@ -218,13 +195,13 @@
                                 <!-- Start Year Parameter-->
                                 <div class="form-group-ex1">
                                   <label for="start-year"> Year (Optional):</label>
-                                  <select class="custom-select" aria-labelledby="dropdownMenuButton" id="year"></select>
+                                  <select id="year" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
                                   </div>
                                 </div>
                               </form>
                             </div>
                           </div>
-                       </div>
+                        </div>
                       </div>
                     </div>
                       <!-- This row will handle all of the retrieved articles -->
@@ -247,7 +224,6 @@
                           </div>
                         </div>
                       </div>
-
                 <!-- <img src="#" alt="#"> -->
             </li>
           </ul>
