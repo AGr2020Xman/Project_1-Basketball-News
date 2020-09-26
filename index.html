@@ -107,10 +107,10 @@
                                             <form action="#">
                                               <label for="stats-selection">Choose a stat:</label>
                                               <select id="stats-dropdown" name="stats">
-                                                <option value="Points">Points</option>
-                                                <option value="TeamStats">Team Stats</option>
-                                                <option value="3pts">Three Pointers</option>
-                                                <option value="freeThrows">Free Throws</option>
+                                                <option id="Points" value="Points">Points</option>
+                                                <option id="TeamStats" value="TeamStats">Team Stats</option>
+                                                <option id="3pts" value="3pts">Three Pointers</option>
+                                                <option id="freeThrows" value="freeThrows">Free Throws</option>
                                               </select>
                                               <input id="page-submit" type="submit">
                                             </form>
@@ -124,13 +124,57 @@
                             <div class="profile-container">
                             <div class="col-md-12">
                             <div class="row">
-                              <ul class="col-md-3 profile-ul-1">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <caption>List of selected player</caption>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col-Name">Name</th>
+                                      <th scope="col-Points">Points</th>
+                                      <th scope="col-Team Stats">Team Stats</th>
+                                      <th scope="col-Three Pointers">Three Pointers</th>
+                                      <th scope="col-Free Throws">Free Throws</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td>James Harden</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row points">2</th>
+                                      <td>-</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">3</th>
+                                      <td>-</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                      <td>#</td>
+                                    </tr>
+                                    
+                                  </tbody>
+                                </table>
+                              </div>
+
+                            
+                              <!-- <ul class="col-md-3 profile-ul-1">
                                   <li>
                                       <p class="profile-p">
                                         There are many variations of passages of Lorem Ipsum available, 
                                       </p>
-                                      <!-- <img src="#" alt="#"> -->
-                                      <!-- <div class="ProfileInsert"></div> -->
+                                      <img src="#" alt="#">
+                                      <div class="ProfileInsert"></div>
                                   </li>
                               </ul>
                                   <ul class="col-md-3 profile-ul-2">
@@ -138,8 +182,8 @@
                                         <p class="profile-p">
                                           There are many variations of passages of Lorem Ipsum available, 
                                         </p>
-                                        <!-- <img src="#" alt="#"> -->
-                                        <!-- <div class="ProfileInsert"></div> -->
+                                        <img src="#" alt="#">
+                                        <div class="ProfileInsert"></div>
                                     </li>
                                 </ul>
                                 <ul class="col-md-3 profile-ul-3">
@@ -147,18 +191,18 @@
                                       <p class="profile-p">
                                         There are many variations of passages of Lorem Ipsum available, 
                                       </p>
-                                      <!-- <img src="#" alt="#"> -->
-                                      <!-- <div class="ProfileInsert"></div> -->
+                                      <img src="#" alt="#">
+                                      <div class="ProfileInsert"></div>
                                   </li>
                               </ul>
                               <ul class="col-md-3 profile-ul-3">
                                 <li>
                                     <p class="profile-p">
                                       There are many variations of passages of Lorem Ipsum available, 
-                                    <!-- <img src="#" alt="#"> -->
-                                    <!-- <div class="ProfileInsert"></div> -->
+                                    <img src="#" alt="#">
+                                    <div class="ProfileInsert"></div>
                                 </li>
-                            </ul>
+                            </ul> -->
                             </div>
                           </div>
                         </div>
@@ -186,7 +230,7 @@
                                   <label for="pwd">Number of Articles to Retrieve:</label>
                                   <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
                                     <option selected value="1">1</option>
-                                    <!-- Setting the option for 5 as default -->
+                                    <!-- Setting the option for 3 as default -->
                                     <option value="3" selected>3</option>
                                     <option value="5">5</option>
                                   </select>
@@ -195,7 +239,7 @@
                                 <!-- Start Year Parameter-->
                                 <div class="form-group-ex1">
                                   <label for="start-year"> Year (Optional):</label>
-                                  <select class="custom-select" aria-labelledby="dropdownMenuButton" id="year"></select>
+                                  <select id="year" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
                                   </div>
                                 </div>
                               </form>
@@ -224,7 +268,6 @@
                           </div>
                         </div>
                       </div>
-
                 <!-- <img src="#" alt="#"> -->
             </li>
           </ul>
