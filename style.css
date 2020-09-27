@@ -9,21 +9,26 @@ body {
   font-family: "Work Sans", sans-serif;
   background: url("");
 }
+
 .mainP {
   padding: 3rem;
 }
+
 #player-search {
   margin: 5px;
 }
+
 .profile-container {
   background-color: rgba(117, 117, 117, 0.308);
   text-align: center;
 }
+
 .player-container {
   background-color: rgba(117, 117, 117, 0.308);
   text-align: center;
   margin: 10px;
 }
+
 .player-ul,
 .news-ul,
 .profile-ul-1,
@@ -31,6 +36,7 @@ body {
 .profile-ul-3 {
   list-style-type: none;
 }
+
 .news-container p {
   text-align: left;
 }
@@ -38,9 +44,11 @@ body {
   text-align: center;
   font-size: 50px;
 }
+
 .mainDisplay {
   font-size: 60px;
 }
+
 img {
   opacity: 1;
 }
@@ -54,9 +62,8 @@ img:hover {
 
 nav {
   background-color: #1A237E;
-
-
 }
+
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
