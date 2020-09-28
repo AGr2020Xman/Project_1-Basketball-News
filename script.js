@@ -6,19 +6,6 @@ for (let y = year; y <= till; y++) {
 }
 document.getElementById("year").innerHTML = options;
 
-const ballDontLieApiCall = (playerName) =>
-  new Promise((resolve, reject) => {
-    if (userInput.length >= 3) {
-      $.ajax({
-        url: queryplayerURL,
-        method: "GET",
-      }).then(function (response) {
-        // i want to get player data here
-        resolve({ playerData });
-      });
-    }
-  });
-
 const buildNytQueryURL = (playerName) => {
   // url - filters - params
   // search term (playerString), startYear & endYear (Optional or separate form?)
@@ -94,6 +81,27 @@ const buildBallQueryURL = () => {
   // }
   // if ($("#player-search").val().trim().length >= 3)
 };
+
+const errorFeedback = () => {
+  let errorDetected = $("#searchErrorNotice");
+
+  if (error) {
+    errorDetected.show().fadeOut(2500);
+  }
+};
+
+const ballDontLieApiCall = (playerName) =>
+  new Promise((resolve, reject) => {
+    if (userInput.length >= 3) {
+      $.ajax({
+        url: queryplayerURL,
+        method: "GET",
+      }).then(function (response) {
+        // i want to get player data here
+        resolve({ playerData });
+      });
+    }
+  });
 
 const nytApiCall = () =>
   new Promise((resolve, reject) => {
