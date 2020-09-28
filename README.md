@@ -47,7 +47,7 @@ Displayed the PLayer conditions:
 
 <hr>
 
-<img src="./img/w6homework.png">
+<img src="./img/.png">
 
 #### Final Interface
 

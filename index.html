@@ -16,6 +16,7 @@
               integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
               crossorigin="anonymous"
             />
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
             <link rel="stylesheet" href="Css/darkstyle.css" />
             <link rel="stylesheet" href="Css/lightstyle.css" />
             <link rel="stylesheet" href="style.css" />
@@ -68,11 +69,11 @@
                                 <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
                                 aria-label="Search"/>
                                 <button
-                                class="btn btn-danger btn-sm btn-block"
+                                class="btn btn-primary btn-sm btn-block"
                                 type="button"
-                                id="clear-button"
+                                id="submit-button"
                                 >
-                                Clear
+                                Submit
                                 </button>
                                   <br />
                                   <ul class="nav flex-column" id="search-history">
@@ -88,9 +89,14 @@
                                           <li>
                                           <div>
                                             <h2>Player Selected</h2>
+                                            <div class="card-body bg-info" id="results-div">
+                                              <div class="row">
+                                                
+                                              </div>
+                                            </div>
                                             <!-- <img src="#" alt="#"> -->
                                             <!-- <div class="PlayerInsert"></div> -->
-                                            <form action="#">
+                                            <!-- <form action="#">
                                               <label for="stats-selection">Choose a stat:</label>
                                               <select id="stats-dropdown" name="stats">
                                                 <option id="Points" value="Points">Points</option>
@@ -99,7 +105,7 @@
                                                 <option id="freeThrows" value="freeThrows">Free Throws</option>
                                               </select>
                                               <input id="page-submit" type="submit">
-                                            </form>
+                                            </form> -->
                                           </div>
                                         </li>
                                       </ul>
@@ -167,7 +173,7 @@
                           <div class="card">
                             <div class="card-header">
                               <strong>
-                                <i class="fa fa-search"></i> Search Articles</strong>
+                                <i class="fa fa-search"></i>Search Articles</strong>
                             </div>
                             <div class="card-body">
 
@@ -216,7 +222,7 @@
                           </div>
                         </div>
                       </div>
-                <!-- <img src="#" alt="#"> -->
+                    <!-- <img src="#" alt="#"> -->
                 </li>
               </ul>
             </div>
