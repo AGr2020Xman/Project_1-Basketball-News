@@ -89,17 +89,7 @@ const buildBallQueryURL = (playerName) => {
   // how do i do this.explanation
 
   queryParams.per_page = perPageVal;
-
-  let playerName;
-  if (
-    $("#player-search").val().trim() &&
-    $("#player-search").val().trim() !== null
-  ) {
-    playerName = $("#player-search").val().trim();
-  }
-  if ($("#player-search2").val().trim()) {
-    playerName = $("#player-search2").val().trim();
-  }
+  queryParamPlayer.search = playerName;
 
   // if (playerName.length >= 3) {
   //   queryParamPlayer.search = playerName;
@@ -126,11 +116,11 @@ const errorFeedback = () => {
 // @param {object} playerData + topArticles containing API data
 
 // THIS FUNCTION IS PART OF THE TYPEAHEAD (AUTOCOMPLETER) + DEBOUNCING of API
-const updatePlayerProfile = (playerData) => {
-  let searchOrder;
+// const updatePlayerProfile = (playerData) => {
+//   let searchOrder;
 
-  searchOrder =
-};
+//   searchOrder =
+// };
 
 const updatePlayerNews = (topArticles) => {
   let numberOfArticles;
@@ -268,6 +258,7 @@ const ballDontLieApiCall = (playerName) =>
         currentPlayer.teamName = playerTeam;
         currentPlayer.playerTeamAbbr = playerTeamAbbr;
         playerData.push(currentPlayer);
+        console.info(currentPlayer);
       });
     });
     // i want to get player data here
@@ -403,10 +394,9 @@ const saveLastSearchToLocalStorage = (playerName) => {
     return;
   }
   const previousPlayers = getSavedPlayersFromLocalStorage();
-  const updatedPlayers = { ...previousPlayers, [playerName]: 1};
+  const updatedPlayers = { ...previousPlayers, [playerName]: 1 };
   localStorage.setItem("previousPlayers", JSON.stringify(updatedPlayers));
   createLastPlayerSearchEl(updatedPlayers);
-
 };
 
 const createLastPlayerSearchEl = (previousPlayers) => {
@@ -417,8 +407,10 @@ const createLastPlayerSearchEl = (previousPlayers) => {
   // refactor to forEach
   for (i = 0; i < playerKeys.length; i++) {
     let playerEntries = $("<button>");
-    playerEntries.addClass("list-group list-group-item list-group-item-action savedButtons");
-    
+    playerEntries.addClass(
+      "list-group list-group-item list-group-item-action savedButtons"
+    );
+
     let stringSplit = playerKeys[i].toLowerCase().split(" ");
     for (j = 0; j < stringSplit.length; j++) {
       stringSplit[j] =
@@ -427,18 +419,15 @@ const createLastPlayerSearchEl = (previousPlayers) => {
     let playerUppercase = stringSplit.join(" ");
     playerEntries.text(playerUppercase);
 
-    playerEntries.on("click",function () {
+    playerEntries.on("click", function () {
       let clickedPlayer = $(this).text();
-      searchPlayerOfInterest(clickedPlayer)
+      searchPlayerOfInterest(clickedPlayer);
     });
     $("#playerSaved").prepend(cityEntries);
   }
 };
 
-const getLastPlayersFromLocalStorage = () => {
-  
-};
-
+const getLastPlayersFromLocalStorage = () => {};
 
 const renderLast3SearchEl = () => {};
 
