@@ -17,6 +17,14 @@ body {
 #player-search {
   margin: 5px;
 }
+#results-div {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
 
 .profile-container {
   background-color: rgba(117, 117, 117, 0.308);

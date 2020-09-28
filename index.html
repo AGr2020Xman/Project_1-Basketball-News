@@ -198,7 +198,7 @@
                     </div>
                       <!-- This row will handle all of the retrieved articles -->
                       <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12" style="bottom: 20px;">
                           <br>
 
                           <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
@@ -217,9 +217,74 @@
                         </div>
                       </div>
                 <!-- <img src="#" alt="#"> -->
-            </li>
-          </ul>
-        </div>
+                </li>
+              </ul>
+            </div>
+            <div class="giphy-container">
+              <div class="row">
+                <!--Placeholder section/div to hold the buttons-->
+                  <div class="col-md-7 col-sm-12 col-xs-12 mb-2" id="giphy-buttons">
+                    <div class="card">
+                      <div class="card-header bg-primary text-white">
+                        <h5> Select/Search Your Favourite Basketball Player</h5>
+                      </div>
+                      <!--New buttons created by the user will get dumped here-->
+                      <div class="card-body bg-secondary" id="athlete-btn-div">
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="col-md-5 col-sm-12 col-xs-12 mb-2">
+                    <!--Search box - submit/add button-->
+                    <div class="card">
+                      <div class="card-header bg-primary text-white">
+                        <h5>Add your Favourite athlete</h5>
+                      </div>
+                      <div class="card-body bg-secondary">
+                            <p>For the best results, enter both first <i>and</i> last name </br> of your Favourite athlete. ie:, Kobe Bryant.</p>
+                          <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Kobe Bryant" aria-label="Search" id="athlete-input">
+                              <button class="btn btn-dark my-2 my-sm-0" type="submit" id="submit-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="row results">
+                  <div class="col-md-12">
+                    <!--Section for displaying the gif search results dynamically -->
+                    <div class="card">
+                      <div class="card-header bg-primary text-white">
+                          <h5> Giphy search results</h5>
+                      </div>
+                      <div class="card-body bg-secondary" id="results-div">
+                        <div class="row">
+                          <!--When the user clicks an athlete button, tell the user to click a gif to play that gif. The user will need to click it again to pause. When the user clicks an athlete button, that text will go here in the click-to-play-text div.-->
+                          <div class="col-md-12" id="click-to-play-text">
+                          </div>
+                        </div>
+          
+                      <div class="row">
+                        <!--The first three gifs retrieved from the GIPHY API call will go here in results-div-col1-->
+                        <div class="col-xs-12 col-sm-12 col-md-4" id="results-div-col1">
+                          
+                        </div>
+                        <!--The next four gifs retrieved from the GIPHY API call will go here in results-div-col2-->
+                        <div class="col-xs-12 col-sm-12 col-md-4" id="results-div-col2">
+                          
+                        </div>
+                        <!--The last three gifs retrieved from the GIPHY API call will go here in results-div-col3-->
+                        <div class="col-xs-12 col-sm-12 col-md-4" id="results-div-col3">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Footer Start -->
       <!-- Link to Github/Profile -->
       <footer id="sticky-footer" class="py-4 bg-secondary text-white">
@@ -270,6 +335,7 @@
       data-auto-replace-svg="nest"
     ></script>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="Js/scriptgif.js"></script>
     
   </body>
 </html>
