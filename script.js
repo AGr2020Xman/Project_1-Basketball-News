@@ -1,19 +1,15 @@
+const createScrollBarYears = () => {
+  let year = 1979;
+  let till = 2021;
+  let options = "";
 
-var queryplayerURL =
-  "https://balldontlie.io/api/v1/players?search=" + playerName;
+  for(let y=year; y<=till; y++){
+    options += "<option>"+ y +"</option>";
+  }
 
-const ballDontLieApiCall = (playerString) =>
-  new Promise((resolve, reject) => {
-    if (userInput.length >= 3) {
-      $.ajax({
-        url: queryplayerURL,
-        method: "GET",
-      }).then(function (response) {
-        // i want to get player data here
-        resolve({ playerData });
-      });
-    }
-  });
+document.getElementById("year").innerHTML = options;
+};
+
 
 const buildNytQueryURL = () => {
   // url - filters - params
@@ -36,24 +32,37 @@ const buildNytQueryURL = () => {
     .val()
     .trim();
     
-    let startYear;
+    let startYear = $("#start-year").val().trim();
+    if (parseInt(startYear)) {
+      queryParams.begin_date = startYear + "0101"
+    }
     //  TODO: startYear =  the option that a user selects from the drop down list
     
     let endYear;
     // TODO: as above - from dropdown list -OR default to current year 
-    // new Date()
+  
 
     const filterQuery = "=Sports"
     queryParams.fq = 
     // data hard coded
 
-    return 
+
+    // if (startYear) {
+    //   queryNameUrl + startYear
+    // }
     // return the constructed URL - when input into API call - will have our URL 
-};
+    return queryNameUrl + startYear + endYear
+
+  };
+
+
 
 const buildBallQueryURL = () => {
   let queryplayerURL;
   let queryParamPlayer;
+  // let queryplayerURL =
+  // "https://balldontlie.io/api/v1/players?search=" + playerName;
+  
   // No api key needed - fill object with key:val of player params 
   // this is the spicy bit - 
   // the player name will get passed into here - whether the FULL name, or PART OF. Min 3 chars. 
@@ -69,6 +78,23 @@ const nytApiCall = () =>
       resolve({ topArticles });
     });
   });
+
+  const ballDontLieApiCall = (playerString) =>
+  new Promise((resolve, reject) => {
+    if (userInput.length >= 3) {
+      $.ajax({
+        url: queryplayerURL,
+        method: "GET",
+      }).then(function (response) {
+        // i want to get player data here
+        resolve({ playerData });
+      });
+    }
+  });
+
+
+
+// node query string (google)
 
 const searchPlayerOfInterest = async (playerString) => {
   playerString = playerString.toLowerCase().trim();
@@ -98,7 +124,18 @@ $(document).ready(function () {
   }
 });
 
-const getLastPlayerFromLocalStorage = () => {};
+const getLastPlayersFromLocalStorage = () => {
+  let playersSearchedStringified = localStorage.getItem("playersSearched");
+  let playersSearched = JSON.parse(playersSearchedStringified);
+  if (playersSearched == null) {
+    return {};
+  }
+  let playerKeys = Object.keys(playersSearched);
+  if (playersSearched.length > 3) {
+    delete playersSearched[playerKeys[0]]
+  }
+  return playersSearched
+};
 
 const saveLastSearchToLocalStorage = () => {};
 
@@ -106,11 +143,17 @@ const createLast3SearchEl = () => {};
 
 const renderLast3SearchEl = () => {};
 
-const saveSelectedProfileNewsState = () => {};
+const saveSelectedProfileNewsState = () => {
+  
+};
 
-const getSelectedProfileNewsState = () => {};
+const getSelectedProfileNewsState = () => {
 
-const createNewsFromNytApi = () => {};
+};
+
+const createNewsFromNytApi = () => {
+
+};
 
 const renderNews = () => {};
 
@@ -124,11 +167,5 @@ const clearPreviousSearchHistory = () => {};
 
 $("#searchButton1", "#searchButton2").click();
 
-var year = 1979;
-var till = 2020;
-var options = "";
-for(var y=year; y<=till; y++){
-  options += "<option>"+ y +"</option>";
-}
-document.getElementById("year").innerHTML = options;
+
 
