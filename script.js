@@ -90,6 +90,70 @@ const errorFeedback = () => {
   }
 };
 
+// takes JSON obj to turn into page elements
+// @param {object} BallData + NewsData containing API data
+const updatePlayerProfile = (BallData) => {
+  let searchOrder;
+
+  searchOrder = 
+};
+
+const updatePlayerNews = (NewsData) => {
+  let numberOfArticles;
+
+  numberOfArticles = $("#article-count");
+
+  for (i = 0; i < numberOfArticles; i++) {
+    let article = NewsData.response.docs[i];
+    let articleCount = i + 1;
+    let $articleSection = $("<ul>");
+    $articleSection.addClass("list-group");
+
+    $("#article-section").append($articleSection);
+
+    let headline = article.headline;
+    let $articleSectionItems = $("<li>");
+    $articleSectionItems.addClass("list-group-item articleHeadline");
+
+    if (headline && headline.main) {
+      $articleSectionItems.append(
+        "<span class='label label-primary'>" +
+          articleCount +
+          "</span>" +
+          "<strong> " +
+          headline.main +
+          "</strong>"
+      );
+    }
+
+    let byline = article.byline;
+
+    if (byline && byline.original) {
+      $articleSectionItems.append("<h5>" + byline.original + "</h5>");
+    }
+
+    let section = article.section_name;
+    if (section) {
+      $articleSectionItems.append("<h5>Section: " + section + "</h5>");
+    }
+
+    let publicationDate = article.pub_date;
+    if (publicationDate) {
+      $articleSectionItems.append("<h5>" + article.pub_date + "</h5>");
+    }
+
+    $articleSectionItems.append(
+      "<a href='" + article.web_url + "'>" + article.web_url + "</a>"
+    );
+
+    $articleSection.append($articleSectionItems);
+  }
+};
+
+const clearArticles = () => {
+  $("#article-section").empty();
+};
+
 const ballDontLieApiCall = (playerName) =>
   new Promise((resolve, reject) => {
     if (userInput.length >= 3) {
