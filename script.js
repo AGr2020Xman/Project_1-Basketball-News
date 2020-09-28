@@ -126,11 +126,11 @@ const errorFeedback = () => {
 // @param {object} playerData + topArticles containing API data
 
 // THIS FUNCTION IS PART OF THE TYPEAHEAD (AUTOCOMPLETER) + DEBOUNCING of API
-// const updatePlayerProfile = (playerData) => {
-//   let searchOrder;
+const updatePlayerProfile = (playerData) => {
+  let searchOrder;
 
-//   searchOrder =
-// };
+  searchOrder =
+};
 
 const updatePlayerNews = (topArticles) => {
   let numberOfArticles;
@@ -253,6 +253,7 @@ const ballDontLieApiCall = (playerName) =>
 
       // conveniently cuts if there are less than 10 protecting the for loop
       const players = response.data.slice(0, 10);
+      // eachplayer replaces response.data[i] in the for loop
       players.forEach(function (eachPlayer) {
         const currentPlayer = {};
 
@@ -342,15 +343,16 @@ const nytPlayerApiCall = () =>
     }).then(updatePlayerNews);
   });
 
-const nytTeamApiCall = () =>
-  new Promise((resolve, reject) => {
-    $.ajax({
-      url: buildNytQueryURL2(),
-      method: "GET",
-    }).then(updateTeamNews);
-  });
+// FUTURE ADDITION
+// const nytTeamApiCall = () =>
+//   new Promise((resolve, reject) => {
+//     $.ajax({
+//       url: buildNytQueryURL2(),
+//       method: "GET",
+//     }).then(updateTeamNews);
+//   });
 
-// is meant to trigger of "SEARCH"
+// is meant to trigger on "SEARCH"
 const searchPlayerOfInterest = async (playerName) => {
   playerName = playerName.toLowerCase().trim();
   $("#player-search").val("");
@@ -396,17 +398,47 @@ const getSavedPlayersFromLocalStorage = () => {
   return previousPlayers;
 };
 
-// const saveLastSearchToLocalStorage = (playerName) => {
-//   if (!playerName) {
-//     return;
-//   }
-//   const previousPlayers = getSavedPlayersFromLocalStorage();
-//   const updatedPlayers = { ...previousPlayers, [playerName]: }
-// };
+const saveLastSearchToLocalStorage = (playerName) => {
+  if (!playerName) {
+    return;
+  }
+  const previousPlayers = getSavedPlayersFromLocalStorage();
+  const updatedPlayers = { ...previousPlayers, [playerName]: 1};
+  localStorage.setItem("previousPlayers", JSON.stringify(updatedPlayers));
+  createLastPlayerSearchEl(updatedPlayers);
 
-const getLastPlayerFromLocalStorage = () => {};
+};
 
-const createLast3SearchEl = () => {};
+const createLastPlayerSearchEl = (previousPlayers) => {
+  $("#playerSaved").empty();
+
+  let playerKeys = Object.keys(previousPlayers);
+
+  // refactor to forEach
+  for (i = 0; i < playerKeys.length; i++) {
+    let playerEntries = $("<button>");
+    playerEntries.addClass("list-group list-group-item list-group-item-action savedButtons");
+    
+    let stringSplit = playerKeys[i].toLowerCase().split(" ");
+    for (j = 0; j < stringSplit.length; j++) {
+      stringSplit[j] =
+        stringSplit[j].charAt(0).toUpperCase() + stringSplit[j].substring(1);
+    }
+    let playerUppercase = stringSplit.join(" ");
+    playerEntries.text(playerUppercase);
+
+    playerEntries.on("click",function () {
+      let clickedPlayer = $(this).text();
+      searchPlayerOfInterest(clickedPlayer)
+    });
+    $("#playerSaved").prepend(cityEntries);
+  }
+};
+
+const getLastPlayersFromLocalStorage = () => {
+  
+};
+
 
 const renderLast3SearchEl = () => {};
 
