@@ -51,7 +51,7 @@
           <form autocomplete="off" action ="" class="form-inline my-2 my-lg-0">
             <div>
             <input
-                  id="player-search"
+                  id="player-search2"
                   class="form-control mr-sm-2"
                   type="search"
                   placeholder="Search Player"
@@ -85,13 +85,13 @@
                                 <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
                                 aria-label="Search"/>
                                 <button
-                                class="btn btn-danger btn-sm btn-block"
+                                class="btn btn-primary btn-sm"
                                 type="button"
-                                id="clear-button"
+                                id="submit-button"
                                 >
-                                Clear
+                                Submit
                                 </button>
-                                <div id="searchErrorNotice" class="alert alert-warning"></div>
+                              <!--ALERT-->  <!-- <div id="searchErrorNotice" class="alert alert-warning"></div> -->
                                   <br />
                                   <ul class="nav flex-column" id="search-history">
                                       <!-- Dynamically inserted  -->
@@ -105,9 +105,9 @@
                                       <ul class="player-ul">
                                           <li>
                                           <div>
-                                            <h2>Player Selected</h2>
+                                            <h2>Player Searched</h2>
                                             <!-- <img src="#" alt="#"> -->
-                                            <!-- <div class="PlayerInsert"></div> -->
+                                            <div id="playerSaved"></div>
                                             <form action="#">
                                               <label for="stats-selection">Choose a stat:</label>
                                               <select id="stats-dropdown" name="stats">
@@ -246,7 +246,7 @@
                                   <select id="year" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
                                   </div>
                                   <div class="form-group-ex1 mt-3">
-                                    <label for="start-year"> End Year (Optional):</label>
+                                    <label for="end-year"> End Year (Optional):</label>
                                     <select id="year" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
                                   </div>
                                 </div>

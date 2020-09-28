@@ -16,7 +16,8 @@ const buildNytQueryURL = (playerName) => {
   // api-key - included from beginning
   // need to figure out >>>> Pagination <<<<
 
-  let queryNameUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+  let queryNameUrl =
+    "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
 
   // will need a check box system, drop down system - i think a year Scroll
   //
@@ -77,7 +78,7 @@ const buildNytQueryURL = (playerName) => {
 // node query string (google)
 
 const buildBallQueryURL = (playerName) => {
-  let queryplayerURL = "https://balldontlie.io/api/v1/players";
+  let queryplayerURL = "https://balldontlie.io/api/v1/players?";
   let queryParamPlayer = {};
   const perPageVal = "10";
 
@@ -87,14 +88,18 @@ const buildBallQueryURL = (playerName) => {
   // this is the spicy bit -
   // the player name will get passed into here - whether the FULL name, or PART OF. Min 3 chars.
   // how do i do this.explanation
+  console.log("playerName", playerName);
 
-  queryParams.per_page = perPageVal;
   queryParamPlayer.search = playerName;
+  queryParamPlayer.per_page = perPageVal;
 
   // if (playerName.length >= 3) {
   //   queryParamPlayer.search = playerName;
   // }
-
+  console.log(queryParamPlayer);
+  console.log("log me1", "\nURL: " + queryplayerURL + "\n");
+  console.log("log me2", queryplayerURL + $.param(queryParamPlayer));
+  console.log("log me3", $.param(queryParamPlayer));
   return queryplayerURL + $.param(queryParamPlayer);
   // const suggestionDisplay = () => {
   //   setTimeout(() => {
@@ -326,7 +331,7 @@ const ballDontLieSeasonAverageCall = (playerData) =>
     });
   });
 
-const nytPlayerApiCall = () =>
+const nytPlayerApiCall = (fullName) =>
   new Promise((resolve, reject) => {
     $.ajax({
       url: buildNytQueryURL(),
@@ -345,13 +350,17 @@ const nytPlayerApiCall = () =>
 
 // is meant to trigger on "SEARCH"
 const searchPlayerOfInterest = async (playerName) => {
-  playerName = playerName.toLowerCase().trim();
+  console.log("b4 clear in search", playerName);
   $("#player-search").val("");
-  $("#player-search2").val("");
+  console.log("after clear in search", playerName);
   try {
     const playerData = await ballDontLieApiCall(playerName);
-    const topArticles = await nytPlayerApiCall(playerName);
+    saveLastSearchToLocalStorage(searchName);
+    const topArticles = await nytPlayerApiCall(
+      playerData[1].currentPlayer.fullName
+    );
   } catch (error) {
+    console.log(error);
     // not modal - alert flash on 404
   }
 };
@@ -359,17 +368,20 @@ const searchPlayerOfInterest = async (playerName) => {
 // called when search button is clicked
 const searchPlayer = (event) => {
   event.preventDefault();
+  console.log(event);
+
   // check if |OR| works in jQuery select
-  let playerName = $("#player-search" || "#player-search2");
+  let playerName = $("#player-search").val().trim();
+  console.log("on Clickadoo", playerName);
   searchPlayerOfInterest(playerName);
 };
 
 $(document).ready(function () {
   let errorDetected = $("#searchErrorNotice");
   errorDetected.hide();
-  let allSearched = get();
-  renderPlayerProfile(allSearched);
-  renderNews(allSearched);
+  let previousPlayers = getSavedPlayersFromLocalStorage();
+  renderPlayerProfile(previousPlayers);
+  renderNews(previousPlayers);
   let lastSearchedPlayer = Object.keys(previousPlayers).pop();
   if (typeof lastSearchedPlayer !== "undefined") {
     ballDontLieApiCall(lastSearchedPlayer);
@@ -379,7 +391,7 @@ $(document).ready(function () {
 const getSavedPlayersFromLocalStorage = () => {
   let previousPlayersStringified = localStorage.getItem("previousPlayers");
   let previousPlayers = JSON.parse(previousPlayersStringified);
-  if (previousPlayers === null) {
+  if (previousPlayers == null) {
     return {};
   }
   let playerKeys = Object.keys(previousPlayers);
@@ -447,4 +459,4 @@ const clearCurrentPlayerProfileAndNews = () => {};
 
 const clearPreviousSearchHistory = () => {};
 
-$("#searchButton1", "#searchButton2").click();
+$("#submit-button").click(searchPlayer);
