@@ -22,7 +22,6 @@
     <body>
     <!-- Start Nav -->
     <header>
-      
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
           <button
@@ -48,7 +47,7 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul>
-          <form autocomplete="off" action ="" class="form-inline my-2 my-lg-0">
+          <form autocomplete="off" action ="onClick" class="form-inline my-2 my-lg-0">
             <div>
             <input
                   id="player-search2"
@@ -58,20 +57,18 @@
                   aria-label="Search"
                 />
                 <!-- <></> -->
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
                 Search
               </button>
-            </form>
+              </form>
+            </div>
           </div>
         </nav>
       </header>
         <!-- End Nav -->
       
           <!-- Main Section -->
-          
               <section class="flex-shrink-0">
-
-                
                 <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
                   <div class="container">
                     <div class="clearfix">
@@ -114,6 +111,49 @@
                                       </ul>
                                   </div>
                                 </div>
+                                <!-- Row for Searching New York Times -->
+                            <div class="row">
+                              <div class="col-sm-12" style="margin-bottom: 20px;">
+                                <br>
+                                <!-- First card is for handling the search parameters -->
+                                <div class="card">
+                                  <div class="card-header">
+                                    <strong>
+                                      <i class="fa fa-search"></i> Refine news search</strong>
+                                  </div>
+                                  <div class="card-body">
+
+                                    <!-- HTML Form for handling the inputs-->
+                                    <form role="form">
+                                      <!-- Here we capture the number of records that the user wants to retrieve  -->
+                                      <div class="form-group">
+                                        <label for="pwd">Number of Articles to Retrieve:</label>
+                                        <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                                          <option selected value="1">1</option>
+                                          <!-- Setting the option for 3 as default -->
+                                          <option value="3" selected>3</option>
+                                          <option value="5">5</option>
+                                        </select>
+                                      </div>
+
+                                      <!-- Start Year Parameter-->
+                                      <div class="form-group-ex1">
+                                        <label for="start-year"> Start Year (Optional):</label>
+                                        <select id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                        </div>
+                                        <div class="form-group-ex1 mt-3">
+                                          <label for="end-year"> End Year (Optional):</label>
+                                          <select id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                        </div>
+                                      </div>
+                                        
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                            </div>
+                            </div>
+                          </div>
                           <!-- Profile Section -->
                           <div class="container">
                             <div class="profile-container">
@@ -186,49 +226,7 @@
                       <h2 class="news-h1">
                         News section
                       </h2>
-                      <!-- Row for Searching New York Times -->
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <br>
-                          <!-- First card is for handling the search parameters -->
-                          <div class="card">
-                            <div class="card-header">
-                              <strong>
-                                <i class="fa fa-search"></i> Refine news search</strong>
-                            </div>
-                            <div class="card-body">
-
-                              <!-- HTML Form for handling the inputs-->
-                              <form role="form">
-                                <!-- Here we capture the number of records that the user wants to retrieve  -->
-                                <div class="form-group">
-                                  <label for="pwd">Number of Articles to Retrieve:</label>
-                                  <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                                    <option selected value="1">1</option>
-                                    <!-- Setting the option for 3 as default -->
-                                    <option value="3" selected>3</option>
-                                    <option value="5">5</option>
-                                  </select>
-                                </div>
-
-                                <!-- Start Year Parameter-->
-                                <div class="form-group-ex1">
-                                  <label for="start-year"> Start Year (Optional):</label>
-                                  <select id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
-                                  </div>
-                                  <div class="form-group-ex1 mt-3">
-                                    <label for="end-year"> End Year (Optional):</label>
-                                    <select id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
-                                  </div>
-                                </div>
-                                  
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                       </div>
-                      </div>
-                    </div>
+                    
                       <!-- This row will handle all of the retrieved articles -->
                       <div class="row">
                         <div class="col-sm-12">

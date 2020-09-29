@@ -7,7 +7,7 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-  background: url("");
+  
 }
 .mainP {
   padding: 3rem;
@@ -53,7 +53,7 @@ img:hover {
 }
 
 nav {
-  background-color: #1A237E;
+  background-color: #C9082A;
 
 
 }
@@ -63,3 +63,4 @@ nav {
   position: relative;
   margin: 10px;
 }
+
