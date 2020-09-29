@@ -23,7 +23,7 @@ Displayed the PLayer conditions:
 
 <p>
     As a type of user, Basketball API and Intergrating news API on the search click, data stored with local storage.
-    Includes a history with a goal that user can get to their past searched terms by tapping on the player name, it will play out another request that displays current and future conditions for city searched.
+    Includes a history with a goal that user can get to their past searched terms by tapping on the player name, it will play out another request that displays current and future conditions for player searched.
 
     - jQuery - Utilized for members of parent and child components just as to store and review those in nearby capacity to be shown progressively in HTML on the pages.
     - Bootstrap - Used to pull existing html and CSS for creating responsive organizational structure and styling for the site.

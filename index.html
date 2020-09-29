@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
         <meta charset="UTF-8" />
@@ -23,27 +24,28 @@
       </head>
     <body>
     <!-- Start Nav -->
-        <header>
-          <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarTogglerDemo03"
-              aria-controls="navbarTogglerDemo03"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+    <header>
+      
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Basketball & News Api</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+              >Scores<span class="sr-only">(current)</span></a
               >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-                  <a class="navbar-brand" href="#">Basketball & News Api</a>
-                  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="#"
-                        >Scores<span class="sr-only">(current)</span></a
-                        >
                       </li>
                       <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
@@ -54,6 +56,7 @@
               </nav>
             </header>
         <!-- End Nav -->   
+
           <!-- Main Section -->
               <section class="flex-shrink-0">
                 <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
@@ -69,12 +72,15 @@
                                 <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
                                 aria-label="Search"/>
                                 <button
-                                class="btn btn-primary btn-sm btn-block"
+
+                                class="btn btn-primary btn-sm"
+
                                 type="button"
                                 id="submit-button"
                                 >
                                 Submit
                                 </button>
+                              <!--ALERT-->  <!-- <div id="searchErrorNotice" class="alert alert-warning"></div> -->
                                   <br />
                                   <ul class="nav flex-column" id="search-history">
                                       <!-- Dynamically inserted  -->
@@ -88,24 +94,11 @@
                                       <ul class="player-ul">
                                           <li>
                                           <div>
-                                            <h2>Player Selected</h2>
-                                            <div class="card-body bg-info" id="results-div">
-                                              <div class="row">
-                                                
-                                              </div>
-                                            </div>
+
+                                            <h2>Player Searched</h2>
                                             <!-- <img src="#" alt="#"> -->
-                                            <!-- <div class="PlayerInsert"></div> -->
-                                            <!-- <form action="#">
-                                              <label for="stats-selection">Choose a stat:</label>
-                                              <select id="stats-dropdown" name="stats">
-                                                <option id="Points" value="Points">Points</option>
-                                                <option id="TeamStats" value="TeamStats">Team Stats</option>
-                                                <option id="3pts" value="3pts">Three Pointers</option>
-                                                <option id="freeThrows" value="freeThrows">Free Throws</option>
-                                              </select>
-                                              <input id="page-submit" type="submit">
-                                            </form> -->
+                                            <div id="playerSaved"></div>
+                                            
                                           </div>
                                         </li>
                                       </ul>
@@ -118,45 +111,65 @@
                             <div class="row">
                               <div class="table-responsive">
                                 <table class="table">
-                                  <caption>List of selected player</caption>
+
+                                  <caption></caption>
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>
-                                      <th scope="col" id="Name">Name</th>
-                                      <th scope="col" id="Points">Points</th>
-                                      <th scope="col" id="Team Stats">Team Stats</th>
-                                      <th scope="col" id="Three Pointers">Three Pointers</th>
-                                      <th scope="col" id="Free Throws">Free Throws</th>
+                                      <th scope="col" id="name">Player</th>
+                                      <th scope="col" id="points">Points</th>
+                                      <th scope="col" id="twoPointers">2PT Goals</th>
+                                      <th scope="col" id="threePointers">3PT Goals</th>
+                                      <th scope="col" id="freeThrows">Free Throws</th>
+                                      <th scope="col" id="twoPointPCT">2PT %</th>
+                                      <th scope="col" id="threePointPCT">3PT %</th>
+                                      <th scope="col" id="freeThrowPCT">FT %</th>
                                     </tr>
                                   </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>James Harden</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row points">2</th>
-                                      <td>-</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>-</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                    </tr>
+                                  <tbody id="renderPlayers">
+                                                        
                                   </tbody>
+                                  
                                 </table>
                               </div>
+
+                            
+                              <!-- <ul class="col-md-3 profile-ul-1">
+                                  <li>
+                                      <p class="profile-p">
+                                        There are many variations of passages of Lorem Ipsum available, 
+                                      </p>
+                                      <img src="#" alt="#">
+                                      <div class="ProfileInsert"></div>
+                                  </li>
+                              </ul>
+                                  <ul class="col-md-3 profile-ul-2">
+                                    <li>
+                                        <p class="profile-p">
+                                          There are many variations of passages of Lorem Ipsum available, 
+                                        </p>
+                                        <img src="#" alt="#">
+                                        <div class="ProfileInsert"></div>
+                                    </li>
+                                </ul>
+                                <ul class="col-md-3 profile-ul-3">
+                                  <li>
+                                      <p class="profile-p">
+                                        There are many variations of passages of Lorem Ipsum available, 
+                                      </p>
+                                      <img src="#" alt="#">
+                                      <div class="ProfileInsert"></div>
+                                  </li>
+                              </ul>
+                              <ul class="col-md-3 profile-ul-3">
+                                <li>
+                                    <p class="profile-p">
+                                      There are many variations of passages of Lorem Ipsum available, 
+                                    <img src="#" alt="#">
+                                    <div class="ProfileInsert"></div>
+                                </li>
+                            </ul> -->
+
                             </div>
                           </div>
                         </div>
@@ -178,25 +191,29 @@
                             <div class="card-body">
 
                               <!-- HTML Form for handling the inputs-->
-                              <form role="form">
+                            
                                 <!-- Here we capture the number of records that the user wants to retrieve  -->
                                 <div class="form-group">
                                   <label for="pwd">Number of Articles to Retrieve:</label>
                                   <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                                    <option selected value="1">1</option>
+                                    <option id="dropdownMenuButton" selected value="1">1</option>
                                     <!-- Setting the option for 3 as default -->
                                     <option value="3" selected>3</option>
                                     <option value="5">5</option>
                                   </select>
                                 </div>
-
                                 <!-- Start Year Parameter-->
                                 <div class="form-group-ex1">
-                                  <label for="start-year"> Year (Optional):</label>
-                                  <select id="year" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                  <label for="start-year"> Start Year (Optional):</label>
+                                  <select id="dropdownMenuButton" id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                  </div>
+                                  <div class="form-group-ex1 mt-3">
+                                    <label for="end-year"> End Year (Optional):</label>
+                                    <select id="dropdownMenuButton" id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
                                   </div>
                                 </div>
-                              </form>
+                                  
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -223,8 +240,6 @@
                         </div>
                       </div>
                     <!-- <img src="#" alt="#"> -->
-                </li>
-              </ul>
             </div>
           <!-- Footer Start -->
           <!-- Link to Github/Profile -->
@@ -275,7 +290,8 @@
       src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
       data-auto-replace-svg="nest"
     ></script>
-    <script type="text/javascript" src="script.js"></script>
+
+    <script type="text/javascript" src="./script.js"></script>
     <script type="text/javascript" src="Js/scriptgif.js"></script>
     
   </body>
