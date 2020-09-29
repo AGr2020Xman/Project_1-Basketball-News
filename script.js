@@ -3,7 +3,7 @@ let year = 2021;
 let till = 1979;
 let options = "<option value=''>any year</option>";
 for (let y = year; y >= till; y--) {
-  options += "<option>" + y + "</option>";
+  options += "<option type='number'>" + y + "</option>";
 }
 document.getElementById("yearStart").innerHTML = options;
 document.getElementById("yearEnd").innerHTML = options;
@@ -66,7 +66,7 @@ const buildNytQueryURL = (fullName) => {
   let startYear = $("#yearStart").val();
   // let startYear = 2019;
 
-  if (typeof parseInt(startYear) === "number") {
+  if (typeof startYear === "number") {
     queryParams.begin_date = startYear + "0101";
   }
   //  TODO: startYear =  the option that a user selects from the drop down list
@@ -74,7 +74,7 @@ const buildNytQueryURL = (fullName) => {
   let endYear = $("#yearEnd").val();
   // let endYear = 2020;
 
-  if (typeof parseInt(endYear) === "number") {
+  if (typeof endYear === "number") {
     queryParams.enddate = endYear + "0101";
   }
   // TODO: as above - from dropdown list -OR default to current year
@@ -339,57 +339,64 @@ const ballDontLieSeasonAverageCall = (id) =>
       url: buildSeasonAverageURL(id),
       method: "GET",
     }).then(function (seasonAverages) {
-      console.log("season average response ---", seasonAverages);
-      let seasonStats = {};
+      if (seasonAverages.data.length === 0) {
+        resolve(false);
+      } else {
+        let seasonStats = {};
 
-      let gamesPlayed = seasonAverages.data[0].games_played;
-      let season = seasonAverages.data[0].season;
-      let avgMinutesPlayed = seasonAverages.data[0].min;
-      let fieldGoalMade = seasonAverages.data[0].fgm;
-      let fieldGoalAttempt = seasonAverages.data[0].fga;
-      let fieldGoal3Made = seasonAverages.data[0].fg3m;
-      let fieldGoal3Attempt = seasonAverages.data[0].fg3a;
-      let freeThrowMade = seasonAverages.data[0].ftm;
-      let freeThrowAttempt = seasonAverages.data[0].fta;
-      let offensiveRebound = seasonAverages.data[0].oreb;
-      let defensiveRebound = seasonAverages.data[0].dreb;
-      // let rebounds = seasonAverages.data[0].reb;
-      let assists = seasonAverages.data[0].ast;
-      let steals = seasonAverages.data[0].stl;
-      let blocks = seasonAverages.data[0].blk;
-      let turnovers = seasonAverages.data[0].turnover;
-      let personalFouls = seasonAverages.data[0].pf;
-      let points = seasonAverages.data[0].pts;
-      let fieldGoalPct = ((fieldGoalMade / fieldGoalAttempt) * 100).toFixed(2);
-      let fieldGoal3Pct = ((fieldGoal3Made / fieldGoal3Attempt) * 100).toFixed(
-        2
-      );
-      let freeThrowPct = ((freeThrowMade / freeThrowAttempt) * 100).toFixed(2);
+        let gamesPlayed = seasonAverages.data[0].games_played;
+        let season = seasonAverages.data[0].season;
+        let avgMinutesPlayed = seasonAverages.data[0].min;
+        let fieldGoalMade = seasonAverages.data[0].fgm;
+        let fieldGoalAttempt = seasonAverages.data[0].fga;
+        let fieldGoal3Made = seasonAverages.data[0].fg3m;
+        let fieldGoal3Attempt = seasonAverages.data[0].fg3a;
+        let freeThrowMade = seasonAverages.data[0].ftm;
+        let freeThrowAttempt = seasonAverages.data[0].fta;
+        let offensiveRebound = seasonAverages.data[0].oreb;
+        let defensiveRebound = seasonAverages.data[0].dreb;
+        // let rebounds = seasonAverages.data[0].reb;
+        let assists = seasonAverages.data[0].ast;
+        let steals = seasonAverages.data[0].stl;
+        let blocks = seasonAverages.data[0].blk;
+        let turnovers = seasonAverages.data[0].turnover;
+        let personalFouls = seasonAverages.data[0].pf;
+        let points = seasonAverages.data[0].pts;
+        let fieldGoalPct = ((fieldGoalMade / fieldGoalAttempt) * 100).toFixed(
+          2
+        );
+        let fieldGoal3Pct = (
+          (fieldGoal3Made / fieldGoal3Attempt) *
+          100
+        ).toFixed(2);
+        let freeThrowPct = ((freeThrowMade / freeThrowAttempt) * 100).toFixed(
+          2
+        );
 
-      seasonStats.gamesPlayed = gamesPlayed;
-      seasonStats.season = season;
-      seasonStats.avgMinutesPlayed = avgMinutesPlayed;
-      seasonStats.fieldGoalMade = fieldGoalMade;
-      seasonStats.fieldGoalAttempt = fieldGoalAttempt;
-      seasonStats.fieldGoal3Made = fieldGoal3Made;
-      seasonStats.fieldGoal3Attempt = fieldGoal3Attempt;
-      seasonStats.freeThrowMade = freeThrowMade;
-      seasonStats.freeThrowAttempt = freeThrowAttempt;
-      seasonStats.offensiveRebound = offensiveRebound;
-      seasonStats.defensiveRebound = defensiveRebound;
-      seasonStats.assists = assists;
-      seasonStats.steals = steals;
-      seasonStats.blocks = blocks;
-      seasonStats.turnovers = turnovers;
-      seasonStats.personalFouls = personalFouls;
-      seasonStats.points = points;
-      seasonStats.fieldGoalPct = fieldGoalPct;
-      seasonStats.fieldGoal3Pct = fieldGoal3Pct;
-      seasonStats.freeThrowPct = freeThrowPct;
+        seasonStats.gamesPlayed = gamesPlayed;
+        seasonStats.season = season;
+        seasonStats.avgMinutesPlayed = avgMinutesPlayed;
+        seasonStats.fieldGoalMade = fieldGoalMade;
+        seasonStats.fieldGoalAttempt = fieldGoalAttempt;
+        seasonStats.fieldGoal3Made = fieldGoal3Made;
+        seasonStats.fieldGoal3Attempt = fieldGoal3Attempt;
+        seasonStats.freeThrowMade = freeThrowMade;
+        seasonStats.freeThrowAttempt = freeThrowAttempt;
+        seasonStats.offensiveRebound = offensiveRebound;
+        seasonStats.defensiveRebound = defensiveRebound;
+        seasonStats.assists = assists;
+        seasonStats.steals = steals;
+        seasonStats.blocks = blocks;
+        seasonStats.turnovers = turnovers;
+        seasonStats.personalFouls = personalFouls;
+        seasonStats.points = points;
+        seasonStats.fieldGoalPct = fieldGoalPct;
+        seasonStats.fieldGoal3Pct = fieldGoal3Pct;
+        seasonStats.freeThrowPct = freeThrowPct;
 
-      console.log("season stats before resolve ----", seasonStats);
-
-      resolve({ seasonStats });
+        console.log("season stats before resolve ----", seasonStats);
+        resolve({ seasonStats });
+      }
     });
   });
 
@@ -419,8 +426,9 @@ const searchPlayerOfInterest = async (playerName) => {
     const playerData = await ballDontLieApiCall(playerName);
     saveLastSearchToLocalStorage(playerName);
     const seasonStats = await ballDontLieSeasonAverageCall(playerData[0].id);
-    console.log("seasonStats pre pass into Update", seasonStats);
-    updatePlayerProfile(seasonStats, playerData[0].fullName);
+    if (seasonStats) {
+      updatePlayerProfile(seasonStats, playerData[0].fullName);
+    }
     const topArticles = await nytPlayerApiCall(playerData[0].fullName);
   } catch (error) {
     console.log(error);
@@ -439,6 +447,7 @@ const searchPlayer = (event) => {
 };
 
 $(document).ready(function () {
+  $("#player-search").val("");
   let errorDetected = $("#searchErrorNotice");
   errorDetected.hide();
   let previousPlayers = getSavedPlayersFromLocalStorage();
