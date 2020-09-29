@@ -238,15 +238,6 @@ const clearArticles = () => {
   $("#article-section").empty();
 };
 
-// search.on("input", () => searchPlayer(search.value));
-
-// const outputSuggestions = matches => {
-//   if (matches.length > 0) {
-//     // map through array, and join to stringify
-//     matches.map(match => ``);
-//   }
-// }
-
 // typeahead + debounce
 // add event listener to the keyup/or down on the search box
 // call the debounce function
@@ -257,38 +248,6 @@ const clearArticles = () => {
 // into the search box
 // when below 3 characters, .clear() dropdown List
 
-// const autocomplete = () => {
-//   const search;
-//   if ($("#player-search") !== "") {
-//     search = $("#player-search").val().trim();
-//     $("#player-search2").val("")
-//   } else if ($("#player-search2") !== "") {
-//     search = $("#player-search2").val().trim();
-//     $("#player-search").val("")
-//   }
-//   const matchList = playerData.data[i].first_name || playerData.data[i].last_name;
-
-//   // searches playerData(json) & filter
-
-//   const searchPlayers = async searchText => {
-//     const response = await ballDontLieApiCall(playerName);
-//     const players = await response.json();
-
-//     // Get matches to current text input
-//     let matches = players.filter(player => {
-//       const reg = new RegExp(`${searchText}`, "gi");
-//       return player.name.match(reg)
-//     });
-
-//     if (searchText === 0) {
-//       matches = [];
-//     }
-
-//     outputSuggestions(matches);
-//   }
-
-// }
-// localstorage.setItem("key",value)
 const ballDontLieApiCall = (playerName) =>
   new Promise((resolve, reject) => {
     let playerData = [];
