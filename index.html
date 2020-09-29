@@ -130,44 +130,24 @@
                             <div class="row">
                               <div class="table-responsive">
                                 <table class="table">
-                                  <caption>List of selected player</caption>
+                                  <caption></caption>
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>
-                                      <th scope="col" id="Name">Name</th>
-                                      <th scope="col" id="Points">Points</th>
-                                      <th scope="col" id="Team Stats">Team Stats</th>
-                                      <th scope="col" id="Three Pointers">Three Pointers</th>
-                                      <th scope="col" id="Free Throws">Free Throws</th>
+                                      <th scope="col" id="name">Player</th>
+                                      <th scope="col" id="points">Points</th>
+                                      <th scope="col" id="twoPointers">2PT Goals</th>
+                                      <th scope="col" id="threePointers">3PT Goals</th>
+                                      <th scope="col" id="freeThrows">Free Throws</th>
+                                      <th scope="col" id="twoPointPCT">2PT %</th>
+                                      <th scope="col" id="threePointPCT">3PT %</th>
+                                      <th scope="col" id="freeThrowPCT">FT %</th>
                                     </tr>
                                   </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>James Harden</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row points">2</th>
-                                      <td>-</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>-</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                      <td>#</td>
-                                    </tr>
-                                    
+                                  <tbody id="renderPlayers">
+                                                        
                                   </tbody>
+                                  
                                 </table>
                               </div>
 
@@ -233,7 +213,7 @@
                                 <div class="form-group">
                                   <label for="pwd">Number of Articles to Retrieve:</label>
                                   <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                                    <option value="1">1</option>
+                                    <option selected value="1">1</option>
                                     <!-- Setting the option for 3 as default -->
                                     <option value="3" selected>3</option>
                                     <option value="5">5</option>
@@ -243,11 +223,11 @@
                                 <!-- Start Year Parameter-->
                                 <div class="form-group-ex1">
                                   <label for="start-year"> Start Year (Optional):</label>
-                                  <select id="year" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                  <select id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
                                   </div>
                                   <div class="form-group-ex1 mt-3">
                                     <label for="end-year"> End Year (Optional):</label>
-                                    <select id="year" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                    <select id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
                                   </div>
                                 </div>
                                   

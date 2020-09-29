@@ -1,12 +1,14 @@
-let year = 1979;
-let till = 2020;
+// need default to be BLANK
+let year = 2021;
+let till = 1979;
 let options = "";
-for (let y = year; y <= till; y++) {
+for (let y = year; y >= till; y--) {
   options += "<option>" + y + "</option>";
 }
-document.getElementById("year").innerHTML = options;
+document.getElementById("yearStart").innerHTML = options;
+document.getElementById("yearEnd").innerHTML = options;
 
-const buildNytQueryURL = (playerName) => {
+const buildNytQueryURL = (fullName) => {
   // url - filters - params
   // search term (playerString), startYear & endYear (Optional or separate form?)
   // sports desk - limit search to sporting data
@@ -23,23 +25,30 @@ const buildNytQueryURL = (playerName) => {
   //
   let queryParams = { "api-key": "PtvZGjOgu0wSTCEKz5XJcfMV0XhmAVP7" };
 
-  queryParams.q = playerName;
+  queryParams.q = fullName;
 
-  let startYear = $("#start-year").val().trim();
-  if (parseInt(startYear)) {
+  let startYear = $("#yearStart").val();
+  // let startYear = 2019;
+
+  if (typeof parseInt(startYear) === "number") {
     queryParams.begin_date = startYear + "0101";
   }
   //  TODO: startYear =  the option that a user selects from the drop down list
 
-  let endYear;
-  if (parseInt(endYear)) {
-    queryParams.begin_date = endYear + "0101";
+  let endYear = $("#yearEnd").val();
+  // let endYear = 2020;
+
+  if (typeof parseInt(endYear) === "number") {
+    queryParams.enddate = endYear + "0101";
   }
   // TODO: as above - from dropdown list -OR default to current year
 
   // field/desk of news to search always
-  const filterQuery = "=Sports";
+  const filterQuery = "Sports";
   queryParams.fq = filterQuery;
+
+  console.log(queryParams);
+  console.log("NYT url", queryNameUrl + $.param(queryParams));
 
   return queryNameUrl + $.param(queryParams);
   // return the constructed URL - when input into API call - will have our URL
@@ -78,7 +87,7 @@ const buildNytQueryURL = (playerName) => {
 // node query string (google)
 
 const buildBallQueryURL = (playerName) => {
-  let queryplayerURL = "https://balldontlie.io/api/v1/players?";
+  let queryplayerURL = "https://www.balldontlie.io/api/v1/players?";
   let queryParamPlayer = {};
   const perPageVal = "10";
 
@@ -121,17 +130,63 @@ const errorFeedback = () => {
 // @param {object} playerData + topArticles containing API data
 
 // THIS FUNCTION IS PART OF THE TYPEAHEAD (AUTOCOMPLETER) + DEBOUNCING of API
-// const updatePlayerProfile = (playerData) => {
-//   let searchOrder;
+const updatePlayerProfile = (seasonStats, fullName) => {
+  console.log("seasonStats in Update fx", seasonStats);
+  console.log("full name in update player profile", fullName);
+  let tbody = $("#renderPlayers");
+  let trow = $("<tr>");
+  let thead = $("<th>");
+  let td1 = $("<td>");
+  let td2 = $("<td>");
+  let td3 = $("<td>");
+  let td4 = $("<td>");
+  let td5 = $("<td>");
+  let td6 = $("<td>");
+  let td7 = $("<td>");
+  let td8 = $("<td>");
 
-//   searchOrder =
-// };
+  thead.attr("scope", "row");
+  thead.text("1");
+  trow.append(thead);
+
+  td1.attr("id", "playerNameRow");
+  td2.attr("id", "pointsRow");
+  td3.attr("id", "2ptsRow");
+  td4.attr("id", "3ptsRow");
+  td5.attr("id", "freeThrowRow");
+  td6.attr("id", "2pts%Row");
+  td7.attr("id", "3pts%Row");
+  td8.attr("id", "freeThrow%Row");
+
+  td1.html(fullName);
+  td2.html(seasonStats.points);
+  td3.html(seasonStats.fieldGoalMade);
+  td4.html(seasonStats.fieldGoal3Made);
+  td5.html(seasonStats.freeThrowMade);
+  td6.html(seasonStats.fieldGoalPct);
+  td7.html(seasonStats.fieldGoal3Pct);
+  td8.html(seasonStats.freeThrowPct);
+
+  trow.append(td1);
+  trow.append(td2);
+  trow.append(td3);
+  trow.append(td4);
+  trow.append(td5);
+  trow.append(td6);
+  trow.append(td7);
+  trow.append(td8);
+
+  tbody.append(trow);
+};
 
 const updatePlayerNews = (topArticles) => {
+  $("#article-section").empty();
   let numberOfArticles;
 
-  numberOfArticles = $("#article-count");
-
+  numberOfArticles = $("#article-count").val();
+  console.log(numberOfArticles);
+  debugger;
+  let i;
   for (i = 0; i < numberOfArticles; i++) {
     let article = topArticles.response.docs[i];
     let articleCount = i + 1;
@@ -236,86 +291,77 @@ const clearArticles = () => {
 // localstorage.setItem("key",value)
 const ballDontLieApiCall = (playerName) =>
   new Promise((resolve, reject) => {
-    // console.log("queryURL", buildBallQueryURL(playerName));
     let playerData = [];
     console.log("before AJAX");
     $.ajax({
       url: buildBallQueryURL(playerName),
       method: "GET",
-      // headers: {
-      //   "Content-Type": "application/javascript",
-      //   "Allow-Control-Allow-Origin": "*",
-      // },
-      // dataType: "jsonp",
-      // contentType: "application/javascript",
-    }).then((response) => console.log(response));
-    //     console.log(response);
-    //     // console.log("promise accessed");
-    //     // console.log("response", response);
-    //     const players = response.data.slice(0, 10);
-    //     // collection of objects
+    }).then(function (response) {
+      const players = response.data.slice(0, 10);
+      // collection of objects
 
-    //     // rescalability
-    //     // gua
-    //     // console.log("pre pd", response);
-
-    //     // conveniently cuts if there are less than 10 protecting the for loop
-    //     // eachplayer replaces response.data[i] in the for loop
-    //     players.forEach(function (eachPlayer) {
-    //       const currentPlayer = {};
-    //       console.log("currentPlayer", currentPlayer);
-    //       let playerFirstName = eachPlayer.first_name;
-    //       let playerLastName = eachPlayer.last_name;
-    //       let playerId = eachPlayer.id;
-    //       let playerTeam = eachPlayer.team.full_name;
-    //       let playerTeamAbbr = eachPlayer.team.abbreviation;
-    //       console.log("players", players);
-    //       currentPlayer.fullName = playerFirstName + " " + playerLastName;
-    //       currentPlayer.id = playerId;
-    //       currentPlayer.teamName = playerTeam;
-    //       currentPlayer.playerTeamAbbr = playerTeamAbbr;
-    //       console.log("playerData pre push", playerData);
-    //       playerData.push(currentPlayer);
-    //       console.log(currentPlayer);
-    //     });
-    resolve(playerData);
-    //     console.log("playerData just before resolve", playerData);
-    //   });
-    //   // i want to get player data here
+      // conveniently cuts if there are less than 10 protecting the for loop
+      // eachplayer replaces response.data[i] in the for loop
+      players.forEach(function (eachPlayer) {
+        const currentPlayer = {};
+        console.log("currentPlayer", currentPlayer);
+        let playerFirstName = eachPlayer.first_name;
+        let playerLastName = eachPlayer.last_name;
+        let playerId = eachPlayer.id;
+        let playerTeam = eachPlayer.team.full_name;
+        let playerTeamAbbr = eachPlayer.team.abbreviation;
+        console.log("players", players);
+        currentPlayer.fullName = playerFirstName + " " + playerLastName;
+        currentPlayer.id = playerId;
+        currentPlayer.teamName = playerTeam;
+        currentPlayer.playerTeamAbbr = playerTeamAbbr;
+        console.log("playerData pre push", playerData);
+        playerData.push(currentPlayer);
+        console.log(currentPlayer);
+      });
+      console.log("playerData just before resolve", playerData);
+      resolve(playerData);
+    });
   });
 
-const buildSeasonAverageURL = () => {
-  let seasonAverageURL = "https://www.balldontlie.io/api/v1/season_averages";
-  let querySeasonParams = { season: "2020" };
+const buildSeasonAverageURL = (id) => {
+  let seasonAverageURL = "https://www.balldontlie.io/api/v1/season_averages?";
+  let querySeasonParams = {};
+  let playerID = id;
+
+  querySeasonParams["player_ids[]"] = playerID;
+
+  console.log(seasonAverageURL + $.param(querySeasonParams));
 
   return seasonAverageURL + $.param(querySeasonParams);
 };
-const ballDontLieSeasonAverageCall = (playerData) =>
+const ballDontLieSeasonAverageCall = (id) =>
   new Promise((resolve, reject) => {
     $.ajax({
-      url: buildSeasonAverageURL(),
+      url: buildSeasonAverageURL(id),
       method: "GET",
     }).then(function (seasonAverages) {
+      console.log("season average response ---", seasonAverages);
       let seasonStats = {};
 
-      let gamesPlayed = seasonAverages.games_played;
-      let season = seasonAverages.season;
-      let avgMinutesPlayed = seasonAverages.min;
-      let fieldGoalMade = seasonAverages.fgm;
-      let fieldGoalAttempt = seasonAverages.fga;
-      let fieldGoal3Made = seasonAverages.fg3m;
-      let fieldGoal3Attempt = seasonAverages.fg3a;
-      let freeThrowMade = seasonAverages.ftm;
-      let freeThrowAttempt = seasonAverages.fta;
-      let offensiveRebound = seasonAverages.oreb;
-      let defensiveRebound = seasonAverages.dreb;
-      // let rebounds = seasonAverages.reb;
-      let assists = seasonAverages.ast;
-      let steals = seasonAverages.stl;
-      let blocks = seasonAverages.blk;
-      let turnovers = seasonAverages.turnover;
-      let personalFouls = seasonAverages.pf;
-      let points = seasonAverages.pts;
+      let gamesPlayed = seasonAverages.data[0].games_played;
+      let season = seasonAverages.data[0].season;
+      let avgMinutesPlayed = seasonAverages.data[0].min;
+      let fieldGoalMade = seasonAverages.data[0].fgm;
+      let fieldGoalAttempt = seasonAverages.data[0].fga;
+      let fieldGoal3Made = seasonAverages.data[0].fg3m;
+      let fieldGoal3Attempt = seasonAverages.data[0].fg3a;
+      let freeThrowMade = seasonAverages.data[0].ftm;
+      let freeThrowAttempt = seasonAverages.data[0].fta;
+      let offensiveRebound = seasonAverages.data[0].oreb;
+      let defensiveRebound = seasonAverages.data[0].dreb;
+      // let rebounds = seasonAverages.data[0].reb;
+      let assists = seasonAverages.data[0].ast;
+      let steals = seasonAverages.data[0].stl;
+      let blocks = seasonAverages.data[0].blk;
+      let turnovers = seasonAverages.data[0].turnover;
+      let personalFouls = seasonAverages.data[0].pf;
+      let points = seasonAverages.data[0].pts;
       let fieldGoalPct = (fieldGoalMade / fieldGoalAttempt) * 100;
       let fieldGoal3Pct = (fieldGoal3Made / fieldGoal3Attempt) * 100;
       let freeThrowPct = (freeThrowMade / freeThrowAttempt) * 100;
@@ -328,7 +374,7 @@ const ballDontLieSeasonAverageCall = (playerData) =>
       seasonStats.fieldGoal3Made = fieldGoal3Made;
       seasonStats.fieldGoal3Attempt = fieldGoal3Attempt;
       seasonStats.freeThrowMade = freeThrowMade;
-      seasonStats.freeThrowAttempt = gamesPlayed;
+      seasonStats.freeThrowAttempt = freeThrowAttempt;
       seasonStats.offensiveRebound = offensiveRebound;
       seasonStats.defensiveRebound = defensiveRebound;
       seasonStats.assists = assists;
@@ -341,6 +387,8 @@ const ballDontLieSeasonAverageCall = (playerData) =>
       seasonStats.fieldGoal3Pct = fieldGoal3Pct;
       seasonStats.freeThrowPct = freeThrowPct;
 
+      console.log("season stats before resolve ----", seasonStats);
+
       resolve({ seasonStats });
     });
   });
@@ -348,9 +396,12 @@ const ballDontLieSeasonAverageCall = (playerData) =>
 const nytPlayerApiCall = (fullName) =>
   new Promise((resolve, reject) => {
     $.ajax({
-      url: buildNytQueryURL(),
+      url: buildNytQueryURL(fullName),
       method: "GET",
-    }).then(updatePlayerNews);
+    }).then(function (response) {
+      console.log(response);
+      resolve(updatePlayerNews);
+    });
   });
 
 // FUTURE ADDITION
@@ -370,9 +421,9 @@ const searchPlayerOfInterest = async (playerName) => {
   try {
     const playerData = await ballDontLieApiCall(playerName);
     saveLastSearchToLocalStorage(playerName);
-    const topArticles = await nytPlayerApiCall(
-      playerData[0].currentPlayer.fullName
-    );
+    const seasonStats = await ballDontLieSeasonAverageCall(playerData[0].id);
+    updatePlayerProfile(seasonStats, playerData[0].fullName);
+    const topArticles = await nytPlayerApiCall(playerData[0].fullName);
   } catch (error) {
     console.log(error);
     // not modal - alert flash on 404
@@ -396,10 +447,10 @@ $(document).ready(function () {
   renderPlayerProfile(previousPlayers);
   renderNews(previousPlayers);
   // these 3 lines may not be needed on load
-  // let lastSearchedPlayer = Object.keys(previousPlayers).pop();
-  // if (typeof lastSearchedPlayer !== "undefined") {
-  //   ballDontLieApiCall(lastSearchedPlayer);
-  // }
+  let lastSearchedPlayer = Object.keys(previousPlayers).pop();
+  if (typeof lastSearchedPlayer !== "undefined") {
+    ballDontLieApiCall(lastSearchedPlayer);
+  }
 });
 
 const getSavedPlayersFromLocalStorage = () => {
@@ -460,14 +511,6 @@ const renderLast3SearchEl = () => {};
 const saveSelectedProfileNewsState = () => {};
 
 const getSelectedProfileNewsState = () => {};
-
-const createNewsFromNytApi = () => {};
-
-const renderNews = () => {};
-
-const createPlayerProfileFromApi = () => {};
-
-const renderPlayerProfile = () => {};
 
 const clearCurrentPlayerProfileAndNews = () => {};
 
