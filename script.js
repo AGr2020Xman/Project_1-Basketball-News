@@ -185,7 +185,7 @@ const updatePlayerNews = (topArticles) => {
 
   numberOfArticles = $("#article-count").val();
   console.log(numberOfArticles);
-  debugger;
+  // debugger;
   let i;
   for (i = 0; i < numberOfArticles; i++) {
     let article = topArticles.response.docs[i];
@@ -357,10 +357,7 @@ const nytPlayerApiCall = (fullName) =>
     $.ajax({
       url: buildNytQueryURL(fullName),
       method: "GET",
-    }).then(function (response) {
-      console.log(response);
-      resolve(updatePlayerNews);
-    });
+    }).then(updatePlayerNews);
   });
 
 // FUTURE ADDITION
@@ -403,8 +400,8 @@ $(document).ready(function () {
   let errorDetected = $("#searchErrorNotice");
   errorDetected.hide();
   let previousPlayers = getSavedPlayersFromLocalStorage();
-  renderPlayerProfile(previousPlayers);
-  renderNews(previousPlayers);
+  updatePlayerProfile(previousPlayers);
+  updatePlayerNews(previousPlayers);
   // these 3 lines may not be needed on load
   let lastSearchedPlayer = Object.keys(previousPlayers).pop();
   if (typeof lastSearchedPlayer !== "undefined") {
