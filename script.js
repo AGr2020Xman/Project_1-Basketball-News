@@ -29,7 +29,7 @@ const debounce = (func, wait, immediate) => {
   };
 };
 
-const foobar = async (e) => {
+const autocompleteSearch = async (e) => {
   const value = e.target.value;
 
   if (value.length >= 3) {
@@ -37,12 +37,22 @@ const foobar = async (e) => {
       const playerOptions = await ballDontLieApiCall(value);
       console.log(playerOptions);
     } catch (error) {
-      console.log(error);
+      $("#player-search")
+        .autocomplete({
+          source: playerOptions,
+          search: function (event, ui) {
+            $("#wrapper").empty();
+          },
+        })
+        .data("autocomplete")._renderItem = function (ul, item) {
+        return $('<div class="element"></div>')
+          .data("item.autocomplete", item)
+          .append('<a href="#">' + item.label + "</a>")
+          .appendTo($("#wrapper"));
+      };
     }
   }
 };
-
-$("#player-search").on("keypress", debounce(foobar, 1000));
 
 const buildNytQueryURL = (fullName) => {
   // url - filters - params
@@ -419,9 +429,8 @@ const nytPlayerApiCall = (fullName) =>
 
 // is meant to trigger on "SEARCH"
 const searchPlayerOfInterest = async (playerName) => {
-  console.log("b4 clear in search", playerName);
+  playerName = playerName.toLowerCase();
   $("#player-search").val("");
-  console.log("after clear in search", playerName);
   try {
     const playerData = await ballDontLieApiCall(playerName);
     saveLastSearchToLocalStorage(playerName);
@@ -439,10 +448,8 @@ const searchPlayerOfInterest = async (playerName) => {
 // called when search button is clicked
 const searchPlayer = (event) => {
   event.preventDefault();
-
   // check if |OR| works in jQuery select
   let playerName = $("#player-search").val().trim();
-  console.log("on Clickadoo", playerName);
   searchPlayerOfInterest(playerName);
 };
 
@@ -456,7 +463,7 @@ $(document).ready(function () {
   // these 3 lines may not be needed on load
   let lastSearchedPlayer = Object.keys(previousPlayers).pop();
   if (typeof lastSearchedPlayer !== "undefined") {
-    ballDontLieApiCall(lastSearchedPlayer);
+    nytPlayerApiCall(lastSearchedPlayer);
   }
 });
 
@@ -466,10 +473,7 @@ const getSavedPlayersFromLocalStorage = () => {
   if (previousPlayers == null) {
     return {};
   }
-  let playerKeys = Object.keys(previousPlayers);
-  if (playerKeys.length > 3) {
-    delete previousPlayers[playerKeys[0]];
-  }
+
   return previousPlayers;
 };
 
@@ -479,6 +483,10 @@ const saveLastSearchToLocalStorage = (playerName) => {
   }
   const previousPlayers = getSavedPlayersFromLocalStorage();
   const updatedPlayers = { ...previousPlayers, [playerName]: 1 };
+  let playerKeys = Object.keys(updatedPlayers);
+  if (playerKeys.length > 3) {
+    delete updatedPlayers[playerKeys[0]];
+  }
   localStorage.setItem("previousPlayers", JSON.stringify(updatedPlayers));
   createLastPlayerSearchEl(updatedPlayers);
 };
@@ -524,3 +532,9 @@ const clearCurrentPlayerProfileAndNews = () => {};
 const clearPreviousSearchHistory = () => {};
 
 $("#submit-button").click(searchPlayer);
+$("#player-search").on("keypress", debounce(autocompleteSearch, 1000));
+$("#player-search").on("keyup", function (event) {
+  if (event.Keycode == "13") {
+    $("#submit-button").click(searchPlayer(event));
+  }
+});
