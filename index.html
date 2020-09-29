@@ -17,9 +17,6 @@
               integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
               crossorigin="anonymous"
             />
-            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-            <link rel="stylesheet" href="Css/darkstyle.css" />
-            <link rel="stylesheet" href="Css/lightstyle.css" />
             <link rel="stylesheet" href="style.css" />
       </head>
     <body>
@@ -46,19 +43,35 @@
               <a class="nav-link" href="#"
               >Scores<span class="sr-only">(current)</span></a
               >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                      </li>
-                    </ul>
-                  </form>
-                </div>
-              </nav>
-            </header>
-        <!-- End Nav -->   
-
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form autocomplete="off" action ="" class="form-inline my-2 my-lg-0">
+            <div>
+            <input
+                  id="player-search2"
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search Player"
+                  aria-label="Search"
+                />
+                <!-- <></> -->
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </nav>
+      </header>
+        <!-- End Nav -->
+      
           <!-- Main Section -->
+          
               <section class="flex-shrink-0">
+
+                
                 <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
                   <div class="container">
                     <div class="clearfix">
@@ -72,9 +85,7 @@
                                 <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
                                 aria-label="Search"/>
                                 <button
-
                                 class="btn btn-primary btn-sm"
-
                                 type="button"
                                 id="submit-button"
                                 >
@@ -94,21 +105,10 @@
                                       <ul class="player-ul">
                                           <li>
                                           <div>
-
                                             <h2>Player Searched</h2>
                                             <!-- <img src="#" alt="#"> -->
                                             <div id="playerSaved"></div>
-                                            <form action="#">
-
-                                              <label for="stats-selection">Choose a stat:</label>
-                                              <select id="stats-dropdown" name="stats">
-                                                <option id="Points" value="Points">Points</option>
-                                                <option id="TeamStats" value="TeamStats">Team Stats</option>
-                                                <option id="3pts" value="3pts">Three Pointers</option>
-                                                <option id="freeThrows" value="freeThrows">Free Throws</option>
-                                              </select>
-                                              <input id="page-submit" type="submit">
-                                            </form> -->
+                                            
                                           </div>
                                         </li>
                                       </ul>
@@ -121,7 +121,6 @@
                             <div class="row">
                               <div class="table-responsive">
                                 <table class="table">
-
                                   <caption></caption>
                                   <thead>
                                     <tr>
@@ -137,7 +136,7 @@
                                     </tr>
                                   </thead>
                                   <tbody id="renderPlayers">
-                                                        
+
                                   </tbody>
                                   
                                 </table>
@@ -179,7 +178,6 @@
                                     <div class="ProfileInsert"></div>
                                 </li>
                             </ul> -->
-
                             </div>
                           </div>
                         </div>
@@ -196,7 +194,7 @@
                           <div class="card">
                             <div class="card-header">
                               <strong>
-                                <i class="fa fa-search"></i>Search Articles</strong>
+                                <i class="fa fa-search"></i> Refine news search</strong>
                             </div>
                             <div class="card-body">
 
@@ -233,7 +231,7 @@
                     </div>
                       <!-- This row will handle all of the retrieved articles -->
                       <div class="row">
-                        <div class="col-sm-12" style="bottom: 20px;">
+                        <div class="col-sm-12">
                           <br>
 
                           <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
@@ -251,36 +249,36 @@
                           </div>
                         </div>
                       </div>
-                    <!-- <img src="#" alt="#"> -->
-                </li>
-              </ul>
-            </div>
-          <!-- Footer Start -->
-          <!-- Link to Github/Profile -->
-          <footer id="sticky-footer" class="py-4 bg-secondary text-white">
-            <div class="container-footer text-center">
-                <small>Copyright &copy; Alpha's Website</small>
-              <!-- <div class="col-md">
-                      <ul class="list-unstyled mb-0">
-                        <li>
-                          <a href="#"
-                            ><i class="fab fa-github"></i
-                          ></a>
-                        </li>
-                        <li>
-                          <a href="#"
-                            ><i class="fab fa-github"></i
-                          ></a>
-                        </li>
-                        <li>
-                          <a href="#"
-                            ><i class="fab fa-github"></i
-                          ></a>
-                        </li>
-                      </ul>
-                  </div> -->
-              </div>
-          </footer>
+                <!-- <img src="#" alt="#"> -->
+            </li>
+          </ul>
+        </div>
+      <!-- Footer Start -->
+      <!-- Link to Github/Profile -->
+      <footer id="sticky-footer" class="py-4 bg-secondary text-white">
+        <div class="container-footer text-center">
+            <small>Copyright &copy; Alpha's Website</small>
+          <!-- <div class="col-md">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#"
+                        ><i class="fab fa-github"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fab fa-github"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fab fa-github"></i
+                      ></a>
+                    </li>
+                  </ul>
+              </div> -->
+          </div>
+      </footer>
       <!-- Jquery.min -->
       <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -304,9 +302,6 @@
       src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
       data-auto-replace-svg="nest"
     ></script>
-
     <script type="text/javascript" src="./script.js"></script>
-    <script type="text/javascript" src="Js/scriptgif.js"></script>
-    
   </body>
 </html>

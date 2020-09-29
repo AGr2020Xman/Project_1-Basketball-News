@@ -1,12 +1,48 @@
 // need default to be BLANK
 let year = 2021;
 let till = 1979;
-let options = "";
+let options = "<option value=''>any year</option>";
 for (let y = year; y >= till; y--) {
   options += "<option>" + y + "</option>";
 }
 document.getElementById("yearStart").innerHTML = options;
 document.getElementById("yearEnd").innerHTML = options;
+
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+
+const debounce = (func, wait, immediate) => {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+const foobar = async (e) => {
+  const value = e.target.value;
+
+  if (value.length >= 3) {
+    try {
+      const playerOptions = await ballDontLieApiCall(value);
+      console.log(playerOptions);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};
+
+$("#player-search").on("keypress", debounce(foobar, 1000));
 
 const buildNytQueryURL = (fullName) => {
   // url - filters - params
@@ -133,6 +169,9 @@ const errorFeedback = () => {
 const updatePlayerProfile = (seasonStats, fullName) => {
   console.log("seasonStats in Update fx", seasonStats);
   console.log("full name in update player profile", fullName);
+
+  let seasonAccess = seasonStats.seasonStats;
+
   let tbody = $("#renderPlayers");
   let trow = $("<tr>");
   let thead = $("<th>");
@@ -159,13 +198,14 @@ const updatePlayerProfile = (seasonStats, fullName) => {
   td8.attr("id", "freeThrow%Row");
 
   td1.html(fullName);
-  td2.html(seasonStats.points);
-  td3.html(seasonStats.fieldGoalMade);
-  td4.html(seasonStats.fieldGoal3Made);
-  td5.html(seasonStats.freeThrowMade);
-  td6.html(seasonStats.fieldGoalPct);
-  td7.html(seasonStats.fieldGoal3Pct);
-  td8.html(seasonStats.freeThrowPct);
+  td2.html(seasonAccess.points);
+  console.log("season pts", seasonAccess.points);
+  td3.html(seasonAccess.fieldGoalMade);
+  td4.html(seasonAccess.fieldGoal3Made);
+  td5.html(seasonAccess.freeThrowMade);
+  td6.html(seasonAccess.fieldGoalPct);
+  td7.html(seasonAccess.fieldGoal3Pct);
+  td8.html(seasonAccess.freeThrowPct);
 
   trow.append(td1);
   trow.append(td2);
@@ -251,7 +291,7 @@ const clearArticles = () => {
 const ballDontLieApiCall = (playerName) =>
   new Promise((resolve, reject) => {
     let playerData = [];
-    console.log("before AJAX");
+
     $.ajax({
       url: buildBallQueryURL(playerName),
       method: "GET",
@@ -263,22 +303,21 @@ const ballDontLieApiCall = (playerName) =>
       // eachplayer replaces response.data[i] in the for loop
       players.forEach(function (eachPlayer) {
         const currentPlayer = {};
-        console.log("currentPlayer", currentPlayer);
+
         let playerFirstName = eachPlayer.first_name;
         let playerLastName = eachPlayer.last_name;
         let playerId = eachPlayer.id;
         let playerTeam = eachPlayer.team.full_name;
         let playerTeamAbbr = eachPlayer.team.abbreviation;
-        console.log("players", players);
+
         currentPlayer.fullName = playerFirstName + " " + playerLastName;
         currentPlayer.id = playerId;
         currentPlayer.teamName = playerTeam;
         currentPlayer.playerTeamAbbr = playerTeamAbbr;
-        console.log("playerData pre push", playerData);
+
         playerData.push(currentPlayer);
-        console.log(currentPlayer);
       });
-      console.log("playerData just before resolve", playerData);
+
       resolve(playerData);
     });
   });
@@ -321,9 +360,11 @@ const ballDontLieSeasonAverageCall = (id) =>
       let turnovers = seasonAverages.data[0].turnover;
       let personalFouls = seasonAverages.data[0].pf;
       let points = seasonAverages.data[0].pts;
-      let fieldGoalPct = (fieldGoalMade / fieldGoalAttempt) * 100;
-      let fieldGoal3Pct = (fieldGoal3Made / fieldGoal3Attempt) * 100;
-      let freeThrowPct = (freeThrowMade / freeThrowAttempt) * 100;
+      let fieldGoalPct = ((fieldGoalMade / fieldGoalAttempt) * 100).toFixed(2);
+      let fieldGoal3Pct = ((fieldGoal3Made / fieldGoal3Attempt) * 100).toFixed(
+        2
+      );
+      let freeThrowPct = ((freeThrowMade / freeThrowAttempt) * 100).toFixed(2);
 
       seasonStats.gamesPlayed = gamesPlayed;
       seasonStats.season = season;
@@ -378,6 +419,7 @@ const searchPlayerOfInterest = async (playerName) => {
     const playerData = await ballDontLieApiCall(playerName);
     saveLastSearchToLocalStorage(playerName);
     const seasonStats = await ballDontLieSeasonAverageCall(playerData[0].id);
+    console.log("seasonStats pre pass into Update", seasonStats);
     updatePlayerProfile(seasonStats, playerData[0].fullName);
     const topArticles = await nytPlayerApiCall(playerData[0].fullName);
   } catch (error) {
@@ -400,8 +442,8 @@ $(document).ready(function () {
   let errorDetected = $("#searchErrorNotice");
   errorDetected.hide();
   let previousPlayers = getSavedPlayersFromLocalStorage();
-  updatePlayerProfile(previousPlayers);
-  updatePlayerNews(previousPlayers);
+  // updatePlayerProfile(previousPlayers);
+  // updatePlayerNews(previousPlayers);
   // these 3 lines may not be needed on load
   let lastSearchedPlayer = Object.keys(previousPlayers).pop();
   if (typeof lastSearchedPlayer !== "undefined") {
