@@ -133,6 +133,9 @@ const errorFeedback = () => {
 const updatePlayerProfile = (seasonStats, fullName) => {
   console.log("seasonStats in Update fx", seasonStats);
   console.log("full name in update player profile", fullName);
+
+  let seasonAccess = seasonStats.seasonStats;
+
   let tbody = $("#renderPlayers");
   let trow = $("<tr>");
   let thead = $("<th>");
@@ -159,13 +162,14 @@ const updatePlayerProfile = (seasonStats, fullName) => {
   td8.attr("id", "freeThrow%Row");
 
   td1.html(fullName);
-  td2.html(seasonStats.points);
-  td3.html(seasonStats.fieldGoalMade);
-  td4.html(seasonStats.fieldGoal3Made);
-  td5.html(seasonStats.freeThrowMade);
-  td6.html(seasonStats.fieldGoalPct);
-  td7.html(seasonStats.fieldGoal3Pct);
-  td8.html(seasonStats.freeThrowPct);
+  td2.html(seasonAccess.points);
+  console.log("season pts", seasonAccess.points);
+  td3.html(seasonAccess.fieldGoalMade);
+  td4.html(seasonAccess.fieldGoal3Made);
+  td5.html(seasonAccess.freeThrowMade);
+  td6.html(seasonAccess.fieldGoalPct);
+  td7.html(seasonAccess.fieldGoal3Pct);
+  td8.html(seasonAccess.freeThrowPct);
 
   trow.append(td1);
   trow.append(td2);
@@ -321,9 +325,11 @@ const ballDontLieSeasonAverageCall = (id) =>
       let turnovers = seasonAverages.data[0].turnover;
       let personalFouls = seasonAverages.data[0].pf;
       let points = seasonAverages.data[0].pts;
-      let fieldGoalPct = (fieldGoalMade / fieldGoalAttempt) * 100;
-      let fieldGoal3Pct = (fieldGoal3Made / fieldGoal3Attempt) * 100;
-      let freeThrowPct = (freeThrowMade / freeThrowAttempt) * 100;
+      let fieldGoalPct = ((fieldGoalMade / fieldGoalAttempt) * 100).toFixed(2);
+      let fieldGoal3Pct = ((fieldGoal3Made / fieldGoal3Attempt) * 100).toFixed(
+        2
+      );
+      let freeThrowPct = ((freeThrowMade / freeThrowAttempt) * 100).toFixed(2);
 
       seasonStats.gamesPlayed = gamesPlayed;
       seasonStats.season = season;
@@ -378,6 +384,7 @@ const searchPlayerOfInterest = async (playerName) => {
     const playerData = await ballDontLieApiCall(playerName);
     saveLastSearchToLocalStorage(playerName);
     const seasonStats = await ballDontLieSeasonAverageCall(playerData[0].id);
+    console.log("seasonStats pre pass into Update", seasonStats);
     updatePlayerProfile(seasonStats, playerData[0].fullName);
     const topArticles = await nytPlayerApiCall(playerData[0].fullName);
   } catch (error) {
@@ -400,8 +407,8 @@ $(document).ready(function () {
   let errorDetected = $("#searchErrorNotice");
   errorDetected.hide();
   let previousPlayers = getSavedPlayersFromLocalStorage();
-  updatePlayerProfile(previousPlayers);
-  updatePlayerNews(previousPlayers);
+  // updatePlayerProfile(previousPlayers);
+  // updatePlayerNews(previousPlayers);
   // these 3 lines may not be needed on load
   let lastSearchedPlayer = Object.keys(previousPlayers).pop();
   if (typeof lastSearchedPlayer !== "undefined") {
