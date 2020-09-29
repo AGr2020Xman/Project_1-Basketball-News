@@ -8,6 +8,42 @@ for (let y = year; y >= till; y--) {
 document.getElementById("yearStart").innerHTML = options;
 document.getElementById("yearEnd").innerHTML = options;
 
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+
+const debounce = (func, wait, immediate) => {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+const foobar = async (e) => {
+  const value = e.target.value;
+
+  if (value.length >= 3) {
+    try {
+      const playerOptions = await ballDontLieApiCall(value);
+      console.log(playerOptions);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};
+
+$("#player-search").on("keypress", debounce(foobar, 1000));
+
 const buildNytQueryURL = (fullName) => {
   // url - filters - params
   // search term (playerString), startYear & endYear (Optional or separate form?)
@@ -255,7 +291,7 @@ const clearArticles = () => {
 const ballDontLieApiCall = (playerName) =>
   new Promise((resolve, reject) => {
     let playerData = [];
-    console.log("before AJAX");
+
     $.ajax({
       url: buildBallQueryURL(playerName),
       method: "GET",
@@ -267,22 +303,21 @@ const ballDontLieApiCall = (playerName) =>
       // eachplayer replaces response.data[i] in the for loop
       players.forEach(function (eachPlayer) {
         const currentPlayer = {};
-        console.log("currentPlayer", currentPlayer);
+
         let playerFirstName = eachPlayer.first_name;
         let playerLastName = eachPlayer.last_name;
         let playerId = eachPlayer.id;
         let playerTeam = eachPlayer.team.full_name;
         let playerTeamAbbr = eachPlayer.team.abbreviation;
-        console.log("players", players);
+
         currentPlayer.fullName = playerFirstName + " " + playerLastName;
         currentPlayer.id = playerId;
         currentPlayer.teamName = playerTeam;
         currentPlayer.playerTeamAbbr = playerTeamAbbr;
-        console.log("playerData pre push", playerData);
+
         playerData.push(currentPlayer);
-        console.log(currentPlayer);
       });
-      console.log("playerData just before resolve", playerData);
+
       resolve(playerData);
     });
   });
