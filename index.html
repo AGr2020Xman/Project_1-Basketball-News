@@ -27,7 +27,7 @@
     <header>
       
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
           <button
           class="navbar-toggler"
           type="button"
@@ -94,7 +94,6 @@
                                       <ul class="player-ul">
                                           <li>
                                           <div>
-
                                             <h2>Player Searched</h2>
                                             <!-- <img src="#" alt="#"> -->
                                             <div id="playerSaved"></div>
@@ -104,6 +103,47 @@
                                       </ul>
                                   </div>
                                 </div>
+                                <!-- Row for Searching New York Times -->
+                                <div class="row">
+                                  <div class="col-sm-12" id="searchArticles">
+                                    <br>
+                                    <!-- First card is for handling the search parameters -->
+                                    <div class="card">
+                                      <div class="card-header">
+                                        <strong>
+                                          <i class="fa fa-search"></i>Search Articles</strong>
+                                      </div>
+                                      <div class="card-body">
+
+                                        <!-- HTML Form for handling the inputs-->
+                                      
+                                          <!-- Here we capture the number of records that the user wants to retrieve  -->
+                                          <div class="form-group">
+                                            <label for="pwd">Number of Articles to Retrieve:</label>
+                                            <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                                              <option id="dropdownMenuButton" selected value="1">1</option>
+                                              <!-- Setting the option for 3 as default -->
+                                              <option value="3" selected>3</option>
+                                              <option value="5">5</option>
+                                            </select>
+                                          </div>
+                                          <!-- Start Year Parameter-->
+                                          <div class="form-group-ex1">
+                                            <label for="start-year"> Start Year (Optional):</label>
+                                            <select id="dropdownMenuButton" id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                            </div>
+                                            <div class="form-group-ex1 mt-3">
+                                              <label for="end-year"> End Year (Optional):</label>
+                                              <select id="dropdownMenuButton" id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                            </div>
+                                          </div>
+                                            
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                           <!-- Profile Section -->
                           <div class="container">
                             <div class="profile-container">
@@ -178,47 +218,6 @@
                       <h2 class="news-h1">
                         News section
                       </h2>
-                      <!-- Row for Searching New York Times -->
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <br>
-                          <!-- First card is for handling the search parameters -->
-                          <div class="card">
-                            <div class="card-header">
-                              <strong>
-                                <i class="fa fa-search"></i>Search Articles</strong>
-                            </div>
-                            <div class="card-body">
-
-                              <!-- HTML Form for handling the inputs-->
-                            
-                                <!-- Here we capture the number of records that the user wants to retrieve  -->
-                                <div class="form-group">
-                                  <label for="pwd">Number of Articles to Retrieve:</label>
-                                  <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                                    <option id="dropdownMenuButton" selected value="1">1</option>
-                                    <!-- Setting the option for 3 as default -->
-                                    <option value="3" selected>3</option>
-                                    <option value="5">5</option>
-                                  </select>
-                                </div>
-                                <!-- Start Year Parameter-->
-                                <div class="form-group-ex1">
-                                  <label for="start-year"> Start Year (Optional):</label>
-                                  <select id="dropdownMenuButton" id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
-                                  </div>
-                                  <div class="form-group-ex1 mt-3">
-                                    <label for="end-year"> End Year (Optional):</label>
-                                    <select id="dropdownMenuButton" id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
-                                  </div>
-                                </div>
-                                  
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                       <!-- This row will handle all of the retrieved articles -->
                       <div class="row">
                         <div class="col-sm-12" style="bottom: 20px;">
