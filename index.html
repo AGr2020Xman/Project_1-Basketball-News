@@ -112,48 +112,45 @@
                                   </div>
                                 </div>
                                 <!-- Row for Searching New York Times -->
-                            <div class="row">
-                              <div class="col-sm-12" style="margin-bottom: 20px;">
-                                <br>
-                                <!-- First card is for handling the search parameters -->
-                                <div class="card">
-                                  <div class="card-header">
-                                    <strong>
-                                      <i class="fa fa-search"></i> Refine news search</strong>
-                                  </div>
-                                  <div class="card-body">
+                                <div class="row">
+                                  <div class="col-sm-12" id="searchArticles">
+                                    <br>
+                                    <!-- First card is for handling the search parameters -->
+                                    <div class="card">
+                                      <div class="card-header">
+                                        <strong>
+                                          <i class="fa fa-search"></i>Search Articles</strong>
+                                      </div>
+                                      <div class="card-body">
 
-                                    <!-- HTML Form for handling the inputs-->
-                                    <form role="form">
-                                      <!-- Here we capture the number of records that the user wants to retrieve  -->
-                                      <div class="form-group">
-                                        <label for="pwd">Number of Articles to Retrieve:</label>
-                                        <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                                          <option selected value="1">1</option>
-                                          <!-- Setting the option for 3 as default -->
-                                          <option value="3" selected>3</option>
-                                          <option value="5">5</option>
-                                        </select>
+                                        <!-- HTML Form for handling the inputs-->
+                                      
+                                          <!-- Here we capture the number of records that the user wants to retrieve  -->
+                                          <div class="form-group">
+                                            <label for="pwd">Number of Articles to Retrieve:</label>
+                                            <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                                              <option id="dropdownMenuButton" selected value="1">1</option>
+                                              <!-- Setting the option for 3 as default -->
+                                              <option value="3" selected>3</option>
+                                              <option value="5">5</option>
+                                            </select>
+                                          </div>
+                                          <!-- Start Year Parameter-->
+                                          <div class="form-group-ex1">
+                                            <label for="start-year"> Start Year (Optional):</label>
+                                            <select id="dropdownMenuButton" id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                            </div>
+                                            <div class="form-group-ex1 mt-3">
+                                              <label for="end-year"> End Year (Optional):</label>
+                                              <select id="dropdownMenuButton" id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
+                                            </div>
+                                          </div>   
+                                         </div>
                                       </div>
-
-                                      <!-- Start Year Parameter-->
-                                      <div class="form-group-ex1">
-                                        <label for="start-year"> Start Year (Optional):</label>
-                                        <select id="yearStart" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
-                                        </div>
-                                        <div class="form-group-ex1 mt-3">
-                                          <label for="end-year"> End Year (Optional):</label>
-                                          <select id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
-                                        </div>
-                                      </div>
-                                        
-                                      </div>
-                                    </form>
+                                    </div>
                                   </div>
                                 </div>
-                            </div>
-                            </div>
-                          </div>
+                              </div>
                           <!-- Profile Section -->
                           <div class="container">
                             <div class="profile-container">
@@ -176,9 +173,7 @@
                                     </tr>
                                   </thead>
                                   <tbody id="renderPlayers">
-
-                                  </tbody>
-                                  
+                                  </tbody>                
                                 </table>
                               </div>
 
@@ -226,7 +221,6 @@
                       <h2 class="news-h1">
                         News section
                       </h2>
-                    
                       <!-- This row will handle all of the retrieved articles -->
                       <div class="row">
                         <div class="col-sm-12">
@@ -247,6 +241,33 @@
                           </div>
                         </div>
                       </div>
+            </div>
+          <!-- Footer Start -->
+          <!-- Link to Github/Profile -->
+          <footer id="sticky-footer" class="py-4 bg-secondary text-white">
+            <div class="container-footer text-center">
+                <small>Copyright &copy; Alpha's Website</small>
+              <!-- <div class="col-md">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a href="#"
+                            ><i class="fab fa-github"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fab fa-github"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fab fa-github"></i
+                          ></a>
+                        </li>
+                      </ul>
+                  </div> -->
+              </div>
+          </footer>
                 <!-- <img src="#" alt="#"> -->
             </li>
           </ul>
@@ -300,6 +321,8 @@
       src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
       data-auto-replace-svg="nest"
     ></script>
+
     <script type="text/javascript" src="./script.js"></script>
+
   </body>
 </html>
