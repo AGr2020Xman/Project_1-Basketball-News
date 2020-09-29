@@ -98,8 +98,8 @@ const buildBallQueryURL = (playerName) => {
   // }
   console.log(queryParamPlayer);
   console.log("log me1", "\nURL: " + queryplayerURL + "\n");
-  console.log("log me2", queryplayerURL + $.param(queryParamPlayer));
   console.log("log me3", $.param(queryParamPlayer));
+  console.log("log me2", queryplayerURL + $.param(queryParamPlayer));
   return queryplayerURL + $.param(queryParamPlayer);
   // const suggestionDisplay = () => {
   //   setTimeout(() => {
@@ -233,44 +233,55 @@ const clearArticles = () => {
 //   }
 
 // }
-
+// localstorage.setItem("key",value)
 const ballDontLieApiCall = (playerName) =>
   new Promise((resolve, reject) => {
+    // console.log("queryURL", buildBallQueryURL(playerName));
     let playerData = [];
+    console.log("before AJAX");
     $.ajax({
       url: buildBallQueryURL(playerName),
       method: "GET",
-    }).then(function (response) {
-      // collection of objects
+      // headers: {
+      //   "Content-Type": "application/javascript",
+      //   "Allow-Control-Allow-Origin": "*",
+      // },
+      // dataType: "jsonp",
+      // contentType: "application/javascript",
+    }).then((response) => console.log(response));
+    //     console.log(response);
+    //     // console.log("promise accessed");
+    //     // console.log("response", response);
+    //     const players = response.data.slice(0, 10);
+    //     // collection of objects
 
-      // rescalability
-      // gua
-      // console.log("pre pd", response);
+    //     // rescalability
+    //     // gua
+    //     // console.log("pre pd", response);
 
-      // conveniently cuts if there are less than 10 protecting the for loop
-      const players = response.data.slice(0, 10);
-      // eachplayer replaces response.data[i] in the for loop
-      players.forEach(function (eachPlayer) {
-        const currentPlayer = {};
-        console.log("currentPlayer", currentPlayer);
-        let playerFirstName = eachPlayer.first_name;
-        let playerLastName = eachPlayer.last_name;
-        let playerId = eachPlayer.id;
-        let playerTeam = eachPlayer.team.full_name;
-        let playerTeamAbbr = eachPlayer.team.abbreviation;
-        console.log("players", players);
-        currentPlayer.fullName = playerFirstName + " " + playerLastName;
-        currentPlayer.id = playerId;
-        currentPlayer.teamName = playerTeam;
-        currentPlayer.playerTeamAbbr = playerTeamAbbr;
-        console.log("playerData pre push", playerData);
-        playerData.push(currentPlayer);
-        console.log(currentPlayer);
-      });
-    });
-    // i want to get player data here
-    console.log("playerData post", playerData);
-    resolve({ playerData });
+    //     // conveniently cuts if there are less than 10 protecting the for loop
+    //     // eachplayer replaces response.data[i] in the for loop
+    //     players.forEach(function (eachPlayer) {
+    //       const currentPlayer = {};
+    //       console.log("currentPlayer", currentPlayer);
+    //       let playerFirstName = eachPlayer.first_name;
+    //       let playerLastName = eachPlayer.last_name;
+    //       let playerId = eachPlayer.id;
+    //       let playerTeam = eachPlayer.team.full_name;
+    //       let playerTeamAbbr = eachPlayer.team.abbreviation;
+    //       console.log("players", players);
+    //       currentPlayer.fullName = playerFirstName + " " + playerLastName;
+    //       currentPlayer.id = playerId;
+    //       currentPlayer.teamName = playerTeam;
+    //       currentPlayer.playerTeamAbbr = playerTeamAbbr;
+    //       console.log("playerData pre push", playerData);
+    //       playerData.push(currentPlayer);
+    //       console.log(currentPlayer);
+    //     });
+    resolve(playerData);
+    //     console.log("playerData just before resolve", playerData);
+    //   });
+    //   // i want to get player data here
   });
 
 const buildSeasonAverageURL = () => {
@@ -360,7 +371,7 @@ const searchPlayerOfInterest = async (playerName) => {
     const playerData = await ballDontLieApiCall(playerName);
     saveLastSearchToLocalStorage(playerName);
     const topArticles = await nytPlayerApiCall(
-      playerData[1].currentPlayer.fullName
+      playerData[0].currentPlayer.fullName
     );
   } catch (error) {
     console.log(error);
@@ -371,7 +382,6 @@ const searchPlayerOfInterest = async (playerName) => {
 // called when search button is clicked
 const searchPlayer = (event) => {
   event.preventDefault();
-  console.log(event);
 
   // check if |OR| works in jQuery select
   let playerName = $("#player-search").val().trim();
@@ -386,10 +396,10 @@ $(document).ready(function () {
   renderPlayerProfile(previousPlayers);
   renderNews(previousPlayers);
   // these 3 lines may not be needed on load
-  let lastSearchedPlayer = Object.keys(previousPlayers).pop();
-  if (typeof lastSearchedPlayer !== "undefined") {
-    ballDontLieApiCall(lastSearchedPlayer);
-  }
+  // let lastSearchedPlayer = Object.keys(previousPlayers).pop();
+  // if (typeof lastSearchedPlayer !== "undefined") {
+  //   ballDontLieApiCall(lastSearchedPlayer);
+  // }
 });
 
 const getSavedPlayersFromLocalStorage = () => {
