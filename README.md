@@ -55,7 +55,10 @@ Displayed the Player conditions:
 
 #### Final Interface
 
-### Licence
+## APIs to be used
+
+NYT Article Search - News API
+BallDontLie - Statistics API
 
 https://github.com/____/____/blob/master/LICENSE
 
