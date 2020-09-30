@@ -8,9 +8,7 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-  background-color: rgb(252, 157, 15);
   color: rgb(114, 70, 3);
-  font-weight: bolder;
   overflow-x: hidden;
 }
 h1 {
@@ -26,6 +24,10 @@ h2 {
 
 #top-left-title {
   font-weight: bold;
+}
+
+.jumbotron {
+  margin-top: 20px;
 }
 
 .mainP {
@@ -56,7 +58,6 @@ h2 {
 .player-container {
   /* background-color: rgba(117, 117, 117, 0.308); */
   text-align: center;
-  margin: 10px;
 }
 
 .player-ul,
@@ -107,7 +108,14 @@ nav {
 
 #searchArticles {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
+
+#search-player-card {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 #searchParameters {
   background-color: rgb(243, 212, 176);
 }

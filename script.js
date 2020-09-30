@@ -59,38 +59,6 @@ $(function () {
     return queryNameUrl + $.param(queryParams);
   };
 
-  // if
-  // const buildNytQueryURL2 = () => {
-  //   let queryNameUrl =
-  //     "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-
-  //   // will need a check box system, drop down system - i think a year Scroll
-  //   //
-  //   let queryParams = { "api-key": "PtvZGjOgu0wSTCEKz5XJcfMV0XhmAVP7" };
-
-  //   queryParams.q = playerName;
-
-  //   let startYear = $("#start-year").val().trim();
-  //   if (parseInt(startYear)) {
-  //     queryParams.begin_date = startYear + "0101";
-  //   }
-  //   //  TODO: startYear =  the option that a user selects from the drop down list
-
-  //   let endYear;
-  //   if (parseInt(endYear)) {
-  //     queryParams.begin_date = endYear + "0101";
-  //   }
-  //   // TODO: as above - from dropdown list -OR default to current year
-
-  //   // field/desk of news to search always
-  //   const filterQuery = "=Sports";
-  //   queryParams.fq = filterQuery;
-
-  //   return queryNameUrl + $.param(queryParams);
-  // }
-
-  // node query string (google)
-
   const buildBallQueryURL = (playerName) => {
     let queryplayerURL = "https://www.balldontlie.io/api/v1/players?";
     let queryParamPlayer = {};
@@ -214,10 +182,6 @@ $(function () {
 
       $articleSection.append($articleSectionItems);
     }
-  };
-
-  const clearArticles = () => {
-    $("#article-section").empty();
   };
 
   const ballDontLieApiCall = (playerName) =>
@@ -438,6 +402,10 @@ $(function () {
     $("#playerSaved").empty();
     $("#article-section").empty();
   };
+
+  // const clearArticles = () => {
+  //   $("#article-section").empty();
+  // };
 
   $("#clear-data").click(clearCurrentPlayerProfileAndNews);
   $("#clear-all-button").click(clearPreviousSearchHistory);
