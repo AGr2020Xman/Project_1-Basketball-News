@@ -10,6 +10,16 @@ body {
   color: rgb(114, 70, 3);
   overflow-x: hidden;
 }
+.jumbotron {
+  background-color: white;
+}
+.lead {
+  font-size: 27px;
+}
+p {
+  font-weight: bolder;
+  font-size: 27px;
+}
 h1 {
   color: black;
   font-weight: bolder;
@@ -45,8 +55,9 @@ h2 {
   color: white;
 }
 .player-container {
-  /* background-color: rgba(117, 117, 117, 0.308); */
+  background-color:rgb(255, 151, 139);
   text-align: center;
+  
 }
 .player-ul,
 .news-ul,
@@ -62,9 +73,7 @@ h2 {
   text-align: center;
   font-size: 50px;
 }
-.mainDisplay {
-  font-size: 60px;
-}
+
 img {
   opacity: 1;
 }
@@ -95,6 +104,7 @@ img:hover {
 }
 nav {
   background-color: rgb(249, 160, 27);
+  opacity: 90%;
 }
 #sticky-footer {
   text-align: center;
@@ -103,7 +113,7 @@ nav {
   margin: 10px;
 }
 #newCard {
-  background-color: rgb(243, 212, 176);
+  background-color: rgb(255, 151, 139);
 }
 #searchArticles {
   margin-bottom: 20px;
@@ -120,5 +130,5 @@ nav {
   margin: 0.2rem;
 }
 #articlesBody {
-  background-color: rgb(243, 212, 176);
+  background-color: rgba(0, 217, 255, 0.548);
 }
