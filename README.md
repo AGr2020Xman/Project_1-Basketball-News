@@ -62,7 +62,7 @@ https://github.com/____/____/blob/master/LICENSE
 
 ### Link to the App
 
-<a href=".">https://____.github.io/___/</a>
+<a href="https://Michaelmw17.github.io/Project-1-Basketball-News/">Link to the Basketball News application</a>
 
 <hr>
 
