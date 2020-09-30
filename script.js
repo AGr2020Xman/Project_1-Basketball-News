@@ -155,15 +155,22 @@ $(function () {
   // @param {object} playerData + topArticles containing API data
 
   // THIS FUNCTION IS PART OF THE TYPEAHEAD (AUTOCOMPLETER) + DEBOUNCING of API
-  const updatePlayerProfile = (seasonStats, fullName) => {
-    console.log("seasonStats in Update fx", seasonStats);
-    console.log("full name in update player profile", fullName);
+  const updatePlayerProfile = async (seasonStats, fullName, id) => {
+    // if a row already exists for "thisPlayer", exit/end
+    let tbody = $("#renderPlayers");
+    if (tbody.find(`tr[data-player-id=${id}]`).length > 0) {
+      return;
+    }
+
+    if ($("#renderPlayers").find("tr").length >= 5) {
+      $("#renderPlayers").find("tr").last().remove();
+    }
 
     let seasonAccess = seasonStats.seasonStats;
 
-    let tbody = $("#renderPlayers");
     let trow = $("<tr>");
-    let thead = $("<th>");
+    trow.attr("data-player-id", id);
+
     let td1 = $("<td>");
     let td2 = $("<td>");
     let td3 = $("<td>");
@@ -172,10 +179,6 @@ $(function () {
     let td6 = $("<td>");
     let td7 = $("<td>");
     let td8 = $("<td>");
-
-    thead.attr("scope", "row");
-    thead.text("1");
-    trow.append(thead);
 
     td1.attr("id", "playerNameRow");
     td2.attr("id", "pointsRow");
@@ -205,7 +208,7 @@ $(function () {
     trow.append(td7);
     trow.append(td8);
 
-    tbody.append(trow);
+    tbody.prepend(trow);
   };
 
   const updatePlayerNews = (topArticles) => {
@@ -286,6 +289,7 @@ $(function () {
         method: "GET",
       }).then(function (response) {
         const players = response.data.slice(0, 10);
+
         // collection of objects
 
         // conveniently cuts if there are less than 10 protecting the for loop
@@ -397,15 +401,6 @@ $(function () {
       }).then(updatePlayerNews);
     });
 
-  // FUTURE ADDITION
-  // const nytTeamApiCall = () =>
-  //   new Promise((resolve, reject) => {
-  //     $.ajax({
-  //       url: buildNytQueryURL2(),
-  //       method: "GET",
-  //     }).then(updateTeamNews);
-  //   });
-
   // is meant to trigger on "SEARCH"
   const searchPlayerOfInterest = async (playerName) => {
     playerName = playerName.toLowerCase();
@@ -415,12 +410,17 @@ $(function () {
       saveLastSearchToLocalStorage(playerName);
       const seasonStats = await ballDontLieSeasonAverageCall(playerData[0].id);
       if (seasonStats) {
-        updatePlayerProfile(seasonStats, playerData[0].fullName);
+        updatePlayerProfile(
+          seasonStats,
+          playerData[0].fullName,
+          playerData[0].id
+        );
+      } else if (!seasonStats) {
+        $("#noCurrentSeasonStats").show().fadeOut(3000);
       }
       const topArticles = await nytPlayerApiCall(playerData[0].fullName);
     } catch (error) {
-      console.log(error);
-      // not modal - alert flash on 404
+      $("#searchErrorNotice").show().fadeOut(2500);
     }
   };
 
@@ -434,12 +434,14 @@ $(function () {
 
   $(document).ready(function () {
     $("#player-search").val("");
+    $("#noCurrentSeasonStats").hide();
     let errorDetected = $("#searchErrorNotice");
     errorDetected.hide();
     let previousPlayers = getSavedPlayersFromLocalStorage();
+    createLastPlayerSearchEl(previousPlayers);
     // updatePlayerProfile(previousPlayers);
-    // updatePlayerNews(previousPlayers);
-    // these 3 lines may not be needed on load
+
+    // news persistence of last searched
     let lastSearchedPlayer = Object.keys(previousPlayers).pop();
     if (typeof lastSearchedPlayer !== "undefined") {
       nytPlayerApiCall(lastSearchedPlayer);
@@ -463,7 +465,7 @@ $(function () {
     const previousPlayers = getSavedPlayersFromLocalStorage();
     const updatedPlayers = { ...previousPlayers, [playerName]: 1 };
     let playerKeys = Object.keys(updatedPlayers);
-    if (playerKeys.length > 3) {
+    if (playerKeys.length > 5) {
       delete updatedPlayers[playerKeys[0]];
     }
     localStorage.setItem("previousPlayers", JSON.stringify(updatedPlayers));

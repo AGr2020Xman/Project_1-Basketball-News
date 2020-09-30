@@ -57,7 +57,7 @@
       
           <!-- Main Section -->
               <section class="flex-shrink-0">
-                <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
+                <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">News Basket</h1>
                   <div class="container">
                     <div class="clearfix">
                       <img src="img/basketball.jpg" alt="Example testing img" class="float-right" id="ball-img">
@@ -77,7 +77,8 @@
                                 >
                                 Submit
                                 </button>
-                              <!--ALERT-->  <!-- <div id="searchErrorNotice" class="alert alert-warning"></div> -->
+                                <div id="noCurrentSeasonStats" class="alert alert-warning text-center">Sorry, this player isn't actively playing this season. Scroll down and you can still check the news!</div>
+                                <!-- <div id="searchErrorNotice" class="alert alert-warning text-center">Something went wrong! Please try again.</div> -->
                                   <br />
                                   <ul class="nav flex-column" id="search-history">
                                       <!-- Dynamically inserted  -->
@@ -150,7 +151,6 @@
                                   <caption></caption>
                                   <thead>
                                     <tr>
-                                      <th scope="col">#</th>
                                       <th scope="col" id="name">Player</th>
                                       <th scope="col" id="points">Points</th>
                                       <th scope="col" id="twoPointers">2PT Goals</th>
