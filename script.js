@@ -26,7 +26,7 @@ $(function () {
   // need default to be BLANK
   let year = 2021;
   let till = 1979;
-  let options = "<option value=''>any year</option>";
+  let options = "<option value=''> Any year</option>";
   for (let y = year; y >= till; y--) {
     options += "<option type='number'>" + y + "</option>";
   }
@@ -481,7 +481,7 @@ $(function () {
     for (i = 0; i < playerKeys.length; i++) {
       let playerEntries = $("<button>");
       playerEntries.addClass(
-        "list-group list-group-item list-group-item-action savedButtons"
+        "list-group list-group-item list-group-item-action savedButtons, style='margin: 20px;'"
       );
 
       let stringSplit = playerKeys[i].toLowerCase().split(" ");

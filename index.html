@@ -7,7 +7,7 @@
             <link rel="icon" 
       type="image/ico" 
       href="./img/basketballNews.ico">
-            <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;1,800&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
             <link
               rel="stylesheet"
@@ -45,16 +45,19 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a class="navbar-brand" href="#">Basketball & News Api</a>
+        
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-              >Scores<span class="sr-only">(current)</span></a
-              >
+            <li class="nav-item">
+              <a class="nav-link active" href="#player-search">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link active" href="#article-section">News</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#playerContainer"
+              >Scores<span class="sr-only">(current)</span></a
+              >
             </li>
           </ul>
 
@@ -71,9 +74,9 @@
 
                   <div class="container">
                     <div class="clearfix">
-                      <img src="img/basketball.jpg" alt="Example testing img" class="float-right" id="ball-img">
-                        <p class="mainP"> Welcome to the News Basket app! Are you a fan of the NBA and want to keep up to date on this seasons player statistics? Or do you just want to easily pull up some news archives about your favourite player? News basket brings all this useful information into one place. Don't believe us? Just try it out and you'll never need to search anywhere else for your NBA stats or news!
-                      </p>
+                      <img src="img/basketball-removebg-preview.png" alt="Example testing img" class="float-right" id="ball-img">                      
+                      <i><p class="mainP"> Welcome to the News Basket app! Are you a fan of the NBA and want to keep up to date on this seasons player statistics? Or do you just want to easily pull up some news archives about your favourite player? News basket brings all this useful information into one place. Don't believe us? Just try it out and you'll never need to search anywhere else for your NBA stats or news!
+                      </p></i>
               </section>
                       <!-- Search form body -->
                           <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan  active-cyan-2 mt-2">
@@ -88,6 +91,14 @@
                                 >
                                 Submit
                                 </button>
+                                <button
+                                class="btn btn-danger btn-sm"
+                                type="button"
+                                id="clear-data"
+                                >
+                                Clear
+                                </button>
+                                
                                 <div id="noCurrentSeasonStats" class="alert alert-warning text-center">Sorry, this player isn't actively playing this season. Scroll down and you can still check the news!</div>
                                 <!-- <div id="searchErrorNotice" class="alert alert-warning text-center">Something went wrong! Please try again.</div> -->
                                   <br />
@@ -99,12 +110,12 @@
                           </form>
                           <!-- Player Selection -->
                                 <div class="container">
-                                  <div class="player-container">
+                                  <div id="playerContainer" class="player-container">
                                       <ul class="player-ul">
                                           <li>
                                           <div>
-                                            <h2>Players Searched</h2>
-                                            <!-- <img src="#" alt="#"> -->
+                                            <h2> Search a Basketball athlete</h2>
+                                          
                                             <div id="playerSaved"></div>
                                             
                                           </div>
@@ -116,11 +127,12 @@
                                 <div class="row">
                                   <div class="col-sm-12" id="searchArticles">
                                     <br>
+                                    
                                     <!-- First card is for handling the search parameters -->
-                                    <div class="card">
+                                    <div class="card" id="articlesBody">
                                       <div class="card-header">
                                         <strong>
-                                          <i class="fa fa-search"></i>Search Articles</strong>
+                                          <i class="fa fa-search"></i> Search Articles</strong>
                                       </div>
                                       <div class="card-body">
 
@@ -131,9 +143,9 @@
                                             <label for="pwd">Number of Articles to Retrieve:</label>
                                             <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
                                               <option id="dropdownMenuButton" selected value="1">1</option>
-                                              <!-- Setting the option for 3 as default -->
-                                              <option value="3" selected>3</option>
-                                              <option value="5">5</option>
+                                              <!-- Setting the option for 5 as default -->
+                                              <option value="3">3</option>
+                                              <option value="5" selected>5</option>
                                             </select>
                                           </div>
                                           <!-- Start Year Parameter-->
@@ -148,7 +160,7 @@
 
                                             </div>
                                           </div>   
-                                         </div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -156,7 +168,7 @@
                               </div>
                           <!-- Profile Section -->
                           <div class="container">
-                            <div class="profile-container">
+                            <div id="profile" class="profile-container">
                             <div class="col-md-12">
                             <div class="row">
                               <div class="table-responsive">
@@ -229,12 +241,19 @@
                           <br>
 
                           <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
-                          <div class="card">
+                          <div class="card" id="newCard">
 
                             <!-- card Heading for the retrieved articles box -->
                             <div class="card-header">
                               <strong>
                                 <i class="fa fa-table"></i> Top Articles</strong>
+                                <button
+                                class="btn btn-danger btn-sm float-right"
+                                type="button"
+                                id="clear-all-button"
+                                >
+                                Clear all
+                                </button>
                             </div>
 
                             <!-- This main card will hold each of the resulting articles -->
