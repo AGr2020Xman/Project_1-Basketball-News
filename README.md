@@ -55,7 +55,7 @@ Displayed the Player conditions:
 
 #### Final Interface
 
-## APIs to be used
+## APIs
 
 NYT Article Search - News API
 BallDontLie - Statistics API
