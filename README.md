@@ -1,4 +1,4 @@
-# Project-1 Basketball & News API
+# Project-1 Basketball & News
 
 ## Project Description
 
