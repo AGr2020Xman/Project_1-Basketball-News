@@ -8,39 +8,25 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-  background: url(../imgs/slime.png) fixed no-repeat;
   background-color: rgb(252, 157, 15);
   
 }
-
 .mainP {
   padding: 3rem;
 }
-
 #player-search {
   margin: 5px;
 }
-
-#results-div {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
 .profile-container {
-  background-color: rgba(117, 117, 117, 0.308);
+  background-color: #ffdcb5;
   text-align: center;
+  
 }
-
 .player-container {
-  background-color:rgb(249, 160, 27);
+  background-color:#ffdcb5;
   text-align: center;
   margin: 10px;
 }
-
 .player-ul,
 .news-ul,
 .profile-ul-1,
@@ -48,7 +34,6 @@ body {
 .profile-ul-3 {
   list-style-type: none;
 }
-
 .news-container p {
   text-align: left;
   background-color: blue;
@@ -57,22 +42,26 @@ body {
   text-align: center;
   font-size: 40px;
 }
-
 .mainDisplay {
   font-size: 60px;
 }
-
 .img {
+
   opacity: 1;
 }
 .img:hover {
   opacity: 0.5;
 }
-
-nav {
-  background-color:rgb(249, 160, 27);
+#clear-button {
+  width: 3rem;
 }
-navbar-brand #sticky-footer {
+
+navbar-brand {
+  background-color:rgb(249, 160, 27);
+
+}
+#sticky-footer {
+
   text-align: center;
   opacity: 0.6;
   position: relative;
@@ -93,3 +82,4 @@ navbar-brand #sticky-footer {
 #clear-button {
   margin: 0.2rem;
 }
+
