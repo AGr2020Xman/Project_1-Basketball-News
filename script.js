@@ -1,8 +1,11 @@
+/* BASKET NEWS WEB APP */
+/* SEARCH THE NBA FOR PAST AND PRESENT PLAYERS TO SEE NEWS SINCE 1979 POWERED BY NYT DEV ARTICLE SEARCH API AND BALLDONTLIE.IO API */
+/* FUTURE FUNCTIONALITY FOR PAST SEASONS STATISTICS TO BE ADDED */
+
 $(function () {
   $("#player-search").autocomplete({
     source: async function (request, response) {
       playerOptions = await ballDontLieApiCall(request.term);
-      console.log(playerOptions);
       let playerSuggestion = $.map(playerOptions, function (element) {
         return {
           label: element.fullName + " - " + element.playerTeamAbbr,
@@ -12,18 +15,15 @@ $(function () {
       response(playerSuggestion);
     },
     minLength: 3,
-    select: function (event, ui) {
-      console.log("Selected: " + ui.item.value + " aka " + ui.item.label);
-    },
+    select: function (event, ui) {},
     _renderItem: function (ul, item) {
-      console.log("item", item);
       return $("<li>")
         .attr({ "data-value": item.value, class: "list-group-item" })
         .append(item.label)
         .appendTo(ul);
     },
   });
-  // need default to be BLANK
+
   let year = 2021;
   let till = 1979;
   let options = "<option value=''>any year</option>";
@@ -34,49 +34,29 @@ $(function () {
   document.getElementById("yearEnd").innerHTML = options;
 
   const buildNytQueryURL = (fullName) => {
-    // url - filters - params
-    // search term (playerString), startYear & endYear (Optional or separate form?)
-    // sports desk - limit search to sporting data
-    // return ining a URL with queryParameters included
-    // if modeled on week 6 day 3 NYT - will need to consider an extra form with
-    // user options - years of interest / playerName is SET by original search
-    // api-key - included from beginning
-    // need to figure out >>>> Pagination <<<<
-
     let queryNameUrl =
       "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
 
-    // will need a check box system, drop down system - i think a year Scroll
-    //
     let queryParams = { "api-key": "PtvZGjOgu0wSTCEKz5XJcfMV0XhmAVP7" };
 
     queryParams.q = fullName;
 
     let startYear = $("#yearStart").val();
-    // let startYear = 2019;
 
     if (typeof startYear === "number") {
       queryParams.begin_date = startYear + "0101";
     }
-    //  TODO: startYear =  the option that a user selects from the drop down list
 
     let endYear = $("#yearEnd").val();
-    // let endYear = 2020;
 
     if (typeof endYear === "number") {
       queryParams.enddate = endYear + "0101";
     }
-    // TODO: as above - from dropdown list -OR default to current year
 
-    // field/desk of news to search always
     const filterQuery = "Sports";
     queryParams.fq = filterQuery;
 
-    console.log(queryParams);
-    console.log("NYT url", queryNameUrl + $.param(queryParams));
-
     return queryNameUrl + $.param(queryParams);
-    // return the constructed URL - when input into API call - will have our URL
   };
 
   // if
@@ -116,52 +96,25 @@ $(function () {
     let queryParamPlayer = {};
     const perPageVal = "10";
 
-    // let queryplayerURL =
-    // "https://balldontlie.io/api/v1/players?search=" + playerName;
-    // No api key needed - fill object with key:val of player params
-    // this is the spicy bit -
-    // the player name will get passed into here - whether the FULL name, or PART OF. Min 3 chars.
-    // how do i do this.explanation
-    console.log("playerName", playerName);
-
     queryParamPlayer.search = playerName;
     queryParamPlayer.per_page = perPageVal;
 
-    // if (playerName.length >= 3) {
-    //   queryParamPlayer.search = playerName;
-    // }
-    console.log(queryParamPlayer);
-    console.log("log me1", "\nURL: " + queryplayerURL + "\n");
-    console.log("log me3", $.param(queryParamPlayer));
-    console.log("log me2", queryplayerURL + $.param(queryParamPlayer));
     return queryplayerURL + $.param(queryParamPlayer);
-    // const suggestionDisplay = () => {
-    //   setTimeout(() => {
-
-    //   }, 2500);
-    // }
-    // if ($("#player-search").val().trim().length >= 3)
   };
 
-  const errorFeedback = () => {
+  const errorFeedback = (error) => {
     let errorDetected = $("#searchErrorNotice");
 
     if (error) {
-      errorDetected.show().fadeOut(2500);
+      errorDetected.show().fadeOut(3500);
     }
   };
 
-  // takes JSON obj to turn into page elements
-  // @param {object} playerData + topArticles containing API data
-
-  // THIS FUNCTION IS PART OF THE TYPEAHEAD (AUTOCOMPLETER) + DEBOUNCING of API
   const updatePlayerProfile = async (seasonStats, fullName, id) => {
-    // if a row already exists for "thisPlayer", exit/end
     let tbody = $("#renderPlayers");
     if (tbody.find(`tr[data-player-id=${id}]`).length > 0) {
       return;
     }
-
     if ($("#renderPlayers").find("tr").length >= 5) {
       $("#renderPlayers").find("tr").last().remove();
     }
@@ -191,7 +144,6 @@ $(function () {
 
     td1.html(fullName);
     td2.html(seasonAccess.points);
-    console.log("season pts", seasonAccess.points);
     td3.html(seasonAccess.fieldGoalMade);
     td4.html(seasonAccess.fieldGoal3Made);
     td5.html(seasonAccess.freeThrowMade);
@@ -216,8 +168,6 @@ $(function () {
     let numberOfArticles;
 
     numberOfArticles = $("#article-count").val();
-    console.log(numberOfArticles);
-    // debugger;
     let i;
     for (i = 0; i < numberOfArticles; i++) {
       let article = topArticles.response.docs[i];
@@ -270,16 +220,6 @@ $(function () {
     $("#article-section").empty();
   };
 
-  // typeahead + debounce
-  // add event listener to the keyup/or down on the search box
-  // call the debounce function
-  // debounce function calls the API passing the search value through
-  // return list of top 10 players
-  // render players in dropdown list
-  // add a "listener" to those options to import there .textContent
-  // into the search box
-  // when below 3 characters, .clear() dropdown List
-
   const ballDontLieApiCall = (playerName) =>
     new Promise((resolve, reject) => {
       let playerData = [];
@@ -290,10 +230,6 @@ $(function () {
       }).then(function (response) {
         const players = response.data.slice(0, 10);
 
-        // collection of objects
-
-        // conveniently cuts if there are less than 10 protecting the for loop
-        // eachplayer replaces response.data[i] in the for loop
         players.forEach(function (eachPlayer) {
           const currentPlayer = {};
 
@@ -322,10 +258,9 @@ $(function () {
 
     querySeasonParams["player_ids[]"] = playerID;
 
-    console.log(seasonAverageURL + $.param(querySeasonParams));
-
     return seasonAverageURL + $.param(querySeasonParams);
   };
+
   const ballDontLieSeasonAverageCall = (id) =>
     new Promise((resolve, reject) => {
       $.ajax({
@@ -348,7 +283,6 @@ $(function () {
           let freeThrowAttempt = seasonAverages.data[0].fta;
           let offensiveRebound = seasonAverages.data[0].oreb;
           let defensiveRebound = seasonAverages.data[0].dreb;
-          // let rebounds = seasonAverages.data[0].reb;
           let assists = seasonAverages.data[0].ast;
           let steals = seasonAverages.data[0].stl;
           let blocks = seasonAverages.data[0].blk;
@@ -387,7 +321,6 @@ $(function () {
           seasonStats.fieldGoal3Pct = fieldGoal3Pct;
           seasonStats.freeThrowPct = freeThrowPct;
 
-          console.log("season stats before resolve ----", seasonStats);
           resolve({ seasonStats });
         }
       });
@@ -401,7 +334,6 @@ $(function () {
       }).then(updatePlayerNews);
     });
 
-  // is meant to trigger on "SEARCH"
   const searchPlayerOfInterest = async (playerName) => {
     playerName = playerName.toLowerCase();
     $("#player-search").val("");
@@ -420,14 +352,12 @@ $(function () {
       }
       const topArticles = await nytPlayerApiCall(playerData[0].fullName);
     } catch (error) {
-      $("#searchErrorNotice").show().fadeOut(3500);
+      errorFeedback(error);
     }
   };
 
-  // called when search button is clicked
   const searchPlayer = (event) => {
     event.preventDefault();
-    // check if |OR| works in jQuery select
     let playerName = $("#player-search").val().trim();
     searchPlayerOfInterest(playerName);
   };
@@ -439,9 +369,6 @@ $(function () {
     errorDetected.hide();
     let previousPlayers = getSavedPlayersFromLocalStorage();
     createLastPlayerSearchEl(previousPlayers);
-    // updatePlayerProfile(previousPlayers);
-
-    // news persistence of last searched
     let lastSearchedPlayer = Object.keys(previousPlayers).pop();
     if (typeof lastSearchedPlayer !== "undefined") {
       nytPlayerApiCall(lastSearchedPlayer);
@@ -454,7 +381,6 @@ $(function () {
     if (previousPlayers == null) {
       return {};
     }
-
     return previousPlayers;
   };
 
@@ -477,7 +403,6 @@ $(function () {
 
     let playerKeys = Object.keys(previousPlayers);
 
-    // refactor to forEach
     for (i = 0; i < playerKeys.length; i++) {
       let playerEntries = $("<button>");
       playerEntries.addClass(
@@ -510,7 +435,6 @@ $(function () {
 
   const clearCurrentPlayerProfileAndNews = (event) => {
     event.preventDefault();
-
     $("#playerSaved").empty();
     $("#article-section").empty();
   };
@@ -518,13 +442,4 @@ $(function () {
   $("#clear-data").click(clearCurrentPlayerProfileAndNews);
   $("#clear-all-button").click(clearPreviousSearchHistory);
   $("#submit-button").click(searchPlayer);
-
-  // $("#player-search").on("keyup", function (event) {
-  //   event.preventDefault();
-  //   if (event.code == "13") {
-  //     $("#submit-button").click(searchPlayer);
-  //   }
-  // });
-
-  //end of $ ready function
 });
