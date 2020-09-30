@@ -71,6 +71,9 @@ img {
 img:hover {
   opacity: 0.5;
 }
+.display-4 {
+  text-align: center;
+}
 #submit-button {
   width: 4rem;
 }
@@ -102,10 +105,4 @@ nav {
 }
 #articlesBody {
   background-color: rgb(243, 212, 176);
-}
-@media (min-width: 992px) {
-  #articlesBody {
-    background-color: rebeccapurple;
-    max-width: 100%;
-  }
 }
