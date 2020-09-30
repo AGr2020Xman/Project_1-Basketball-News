@@ -22,64 +22,68 @@
             <link rel="stylesheet" href="Css/lightstyle.css" />
             <link rel="stylesheet" href="style.css" />
       </head>
-    <body>
-    <!-- Start Nav -->
-    <header>
-      
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-          <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo03"
-          aria-controls="navbarTogglerDemo03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Basketball & News Api</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-              >Scores<span class="sr-only">(current)</span></a
-              >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                      </li>
-                    </ul>
-                  </form>
-                </div>
-              </nav>
-            </header>
-        <!-- End Nav -->   
-
+        <body>
+            <!-- Start Nav -->
+            <header>
+              <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                  <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarTogglerDemo03"
+                  aria-controls="navbarTogglerDemo03"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">Basketball & News Api</a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#"
+                      >Scores<span class="sr-only">(current)</span></a
+                      >
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                              </li>
+                            </ul>
+                          </form>
+                        </div>
+                      </nav>
+                    </header>
+                <!-- End Nav -->   
           <!-- Main Section -->
               <section class="flex-shrink-0">
                 <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">Main display</h1>
                   <div class="container">
                     <div class="clearfix">
-                      <img src="img/basketball.jpg" alt="Example testing img" class="float-right" id="ball-img">
+                      <img src="img/basketball-removebg-preview.png" alt="Basketball image" class="float-right" id="ball-img">
                         <p class="mainP"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
                       </p>
               </section>
                       <!-- Search form body -->
                           <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan  active-cyan-2 mt-2">
                               <i class="fas fa-search" aria-hidden="true"></i>
-                                <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search Player"
+                                <input id="player-search" class="form-control form-control-sm ml-3 w-50" type="text"  placeholder="Search Player"
                                 aria-label="Search"/>
                                 <button
-
                                 class="btn btn-primary btn-sm"
-
                                 type="button"
                                 id="submit-button"
                                 >
                                 Submit
                                 </button>
+                                <button
+                                class="btn btn-danger btn-sm"
+                                type="button"
+                                id="clear-button"
+                                >
+                                Clear
+                                </button>
+                                
                               <!--ALERT-->  <!-- <div id="searchErrorNotice" class="alert alert-warning"></div> -->
                                   <br />
                                   <ul class="nav flex-column" id="search-history">
@@ -95,7 +99,6 @@
                                           <li>
                                           <div>
                                             <h2>Player Searched</h2>
-                                            <!-- <img src="#" alt="#"> -->
                                             <div id="playerSaved"></div>
                                             
                                           </div>
@@ -108,13 +111,12 @@
                                   <div class="col-sm-12" id="searchArticles">
                                     <br>
                                     <!-- First card is for handling the search parameters -->
-                                    <div class="card">
+                                    <div class="card" id="searchParameters">
                                       <div class="card-header">
                                         <strong>
-                                          <i class="fa fa-search"></i>Search Articles</strong>
+                                          <i class="fa fa-search"></i> Search Articles</strong>
                                       </div>
                                       <div class="card-body">
-
                                         <!-- HTML Form for handling the inputs-->
                                       
                                           <!-- Here we capture the number of records that the user wants to retrieve  -->
@@ -123,8 +125,8 @@
                                             <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
                                               <option id="dropdownMenuButton" selected value="1">1</option>
                                               <!-- Setting the option for 3 as default -->
-                                              <option value="3" selected>3</option>
-                                              <option value="5">5</option>
+                                              <option value="3">3</option>
+                                              <option value="5" selected>5</option>
                                             </select>
                                           </div>
                                           <!-- Start Year Parameter-->
@@ -151,7 +153,6 @@
                             <div class="row">
                               <div class="table-responsive">
                                 <table class="table">
-
                                   <caption></caption>
                                   <thead>
                                     <tr>
@@ -169,77 +170,35 @@
                                   <tbody id="renderPlayers">
                                                         
                                   </tbody>
-                                  
                                 </table>
                               </div>
-
-                            
-                              <!-- <ul class="col-md-3 profile-ul-1">
-                                  <li>
-                                      <p class="profile-p">
-                                        There are many variations of passages of Lorem Ipsum available, 
-                                      </p>
-                                      <img src="#" alt="#">
-                                      <div class="ProfileInsert"></div>
-                                  </li>
-                              </ul>
-                                  <ul class="col-md-3 profile-ul-2">
-                                    <li>
-                                        <p class="profile-p">
-                                          There are many variations of passages of Lorem Ipsum available, 
-                                        </p>
-                                        <img src="#" alt="#">
-                                        <div class="ProfileInsert"></div>
-                                    </li>
-                                </ul>
-                                <ul class="col-md-3 profile-ul-3">
-                                  <li>
-                                      <p class="profile-p">
-                                        There are many variations of passages of Lorem Ipsum available, 
-                                      </p>
-                                      <img src="#" alt="#">
-                                      <div class="ProfileInsert"></div>
-                                  </li>
-                              </ul>
-                              <ul class="col-md-3 profile-ul-3">
-                                <li>
-                                    <p class="profile-p">
-                                      There are many variations of passages of Lorem Ipsum available, 
-                                    <img src="#" alt="#">
-                                    <div class="ProfileInsert"></div>
-                                </li>
-                            </ul> -->
-
                             </div>
                           </div>
                         </div>
                     <!-- News Section Start -->
                     <div class="news-container">
-                      <h2 class="news-h1">
+                      <h4 class="news-h1">
                         News section
-                      </h2>
+                      </h4>
                       <!-- This row will handle all of the retrieved articles -->
                       <div class="row">
                         <div class="col-sm-12" style="bottom: 20px;">
                           <br>
-
+                          
                           <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
-                          <div class="card">
-
-                            <!-- card Heading for the retrieved articles box -->
+                          <div class="card" id="newCard">
+                            <!-- Card Heading for the retrieved articles box -->
                             <div class="card-header">
                               <strong>
                                 <i class="fa fa-table"></i> Top Articles</strong>
                             </div>
-
                             <!-- This main card will hold each of the resulting articles -->
                             <div class="card-body" id="article-section">
                             </div>
                           </div>
                         </div>
                       </div>
-                    <!-- <img src="#" alt="#"> -->
-            </div>
+                    </div>
           <!-- Footer Start -->
           <!-- Link to Github/Profile -->
           <footer id="sticky-footer" class="py-4 bg-secondary text-white">

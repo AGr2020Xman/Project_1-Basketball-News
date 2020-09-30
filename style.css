@@ -8,8 +8,9 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-  background: url("");
-  overflow-x: hidden;
+  background: url(../imgs/slime.png) fixed no-repeat;
+  background-color: rgb(252, 157, 15);
+  
 }
 
 .mainP {
@@ -35,7 +36,7 @@ body {
 }
 
 .player-container {
-  background-color: rgba(117, 117, 117, 0.308);
+  background-color:rgb(249, 160, 27);
   text-align: center;
   margin: 10px;
 }
@@ -50,10 +51,11 @@ body {
 
 .news-container p {
   text-align: left;
+  background-color: blue;
 }
 .news-h1 {
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .mainDisplay {
@@ -68,18 +70,26 @@ body {
 }
 
 nav {
-  background-color: #1A237E;
-  
+  background-color:rgb(249, 160, 27);
 }
-navbar-brand
-
-#sticky-footer {
+navbar-brand #sticky-footer {
   text-align: center;
   opacity: 0.6;
   position: relative;
   margin: 10px;
 }
+#newCard {
+  background-color:#ffdcb5;
+}
 
-#searchArticles{
-margin-bottom: 20px;
+#searchArticles {
+  margin-bottom: 20px;
+  
+}
+
+#searchParameters {
+  background-color:#ffdcb5;
+}
+#clear-button {
+  margin: 0.2rem;
 }
