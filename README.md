@@ -1,5 +1,4 @@
-
-# Project-1 basketball & News API
+# Project-1 Basketball & News API
 
 
 <h1>
@@ -34,9 +33,10 @@ Displayed the PLayer conditions:
 
 </p>
 
-## Sketch of design
+## Sketch of the design
 
 ![image](https://user-images.githubusercontent.com/69458896/94652259-10856c80-033d-11eb-9906-803b2e0f821d.png)
+![image](https://user-images.githubusercontent.com/69458896/94656063-e46cea00-0342-11eb-82cd-e3ff69a96352.png)
 
 ## Built With
 
@@ -126,4 +126,8 @@ https://github.com/____/____/blob/master/LICENSE
   - [Email] - (__)
   - [Email] - (__)
   - [Email] - (michaelmw17@outlook.com)
+  
+## Acknowledgments
+
+Klaus Paiva, Sandes and Ali
 
