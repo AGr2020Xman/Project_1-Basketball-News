@@ -500,18 +500,23 @@ $(function () {
     }
   };
 
-  const getLastPlayersFromLocalStorage = () => {};
+  const clearPreviousSearchHistory = (event) => {
+    event.preventDefault();
 
-  const renderLast3SearchEl = () => {};
+    $("#renderPlayers").empty();
+    $("#playerSaved").empty();
+    $("#article-section").empty();
+  };
 
-  const saveSelectedProfileNewsState = () => {};
+  const clearCurrentPlayerProfileAndNews = (event) => {
+    event.preventDefault();
 
-  const getSelectedProfileNewsState = () => {};
+    $("#playerSaved").empty();
+    $("#article-section").empty();
+  };
 
-  const clearCurrentPlayerProfileAndNews = () => {};
-
-  const clearPreviousSearchHistory = () => {};
-
+  $("#clear-data").click(clearCurrentPlayerProfileAndNews);
+  $("#clear-all-button").click(clearPreviousSearchHistory);
   $("#submit-button").click(searchPlayer);
 
   // $("#player-search").on("keyup", function (event) {
