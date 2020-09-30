@@ -8,7 +8,9 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
+
   background: url("");
+  overflow-x: hidden;
 }
 
 #top-left-title {
@@ -61,6 +63,7 @@ body {
   font-size: 60px;
 }
 
+
 img {
   opacity: 1;
 }
@@ -73,8 +76,15 @@ img:hover {
   width: 4rem;
 }
 
+
+
+
+
+
 nav {
-  background-color: #1A237E;
+  background-color: #C9082A;
+
+
 }
 
 #sticky-footer {
@@ -82,4 +92,13 @@ nav {
   opacity: 0.6;
   position: relative;
   margin: 10px;
+
 }
+
+
+
+#searchArticles{
+margin-bottom: 20px;
+}
+
+
