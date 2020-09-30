@@ -1,15 +1,19 @@
+
 # Project-1 Basketball & News
 
 ## Project Description
 
 This application will display statistics and information from the NBA by using the NYT Article Search API and the BallDontLie API.
 
+
 ## Contents
 
 <p>
 The app is composed of __ pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
 This application uses the AJAX with ________ API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
+
 Displayed the Player conditions:
+
 - 
 - 
 - 
@@ -22,7 +26,9 @@ Displayed the Player conditions:
 
 <p>
     As a type of user, Basketball API and Intergrating news API on the search click, data stored with local storage.
+
     Includes a history with a goal that user can get to their past searched terms by tapping on the player name, it will play out another request that displays current and future conditions for player searched.
+
 
     - jQuery - Utilized for members of parent and child components just as to store and review those in nearby capacity to be shown progressively in HTML on the pages.
     - Bootstrap - Used to pull existing html and CSS for creating responsive organizational structure and styling for the site.
@@ -31,6 +37,7 @@ Displayed the Player conditions:
     - GitHub - Hosts repository that can be deployed to GitHub Pages
 
 </p>
+
 
 ## Sketch of the design
 
@@ -60,9 +67,11 @@ Displayed the Player conditions:
 NYT Article Search - News API
 BallDontLie - Statistics API
 
+
 https://github.com/____/____/blob/master/LICENSE
 
 ### Link to the App
+
 
 <a href="https://Michaelmw17.github.io/Project-1-Basketball-News/">Link to the Basketball News application</a>
 
@@ -98,11 +107,13 @@ https://github.com/____/____/blob/master/LICENSE
   - https://api.jquery.com/hide/
   - https://api.jquery.com/deferred.done/
  
+
 - Resources
 
   - https://getbootstrap.com/docs/4.0/getting-started/introduction/
   - https://www.bootstrapcdn.com/
   - http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/jquerymobile/event_pageload.asp.html
+
   - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
 
 ## Authors
@@ -127,4 +138,5 @@ https://github.com/____/____/blob/master/LICENSE
 ## Acknowledgments
 
 Klaus Paiva, Sandes and Ali
+
 

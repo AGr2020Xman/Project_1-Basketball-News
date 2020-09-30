@@ -416,11 +416,11 @@ $(function () {
           playerData[0].id
         );
       } else if (!seasonStats) {
-        $("#noCurrentSeasonStats").show().fadeOut(3000);
+        $("#noCurrentSeasonStats").show().fadeOut(3500);
       }
       const topArticles = await nytPlayerApiCall(playerData[0].fullName);
     } catch (error) {
-      $("#searchErrorNotice").show().fadeOut(2500);
+      $("#searchErrorNotice").show().fadeOut(3500);
     }
   };
 
@@ -500,18 +500,23 @@ $(function () {
     }
   };
 
-  const getLastPlayersFromLocalStorage = () => {};
+  const clearPreviousSearchHistory = (event) => {
+    event.preventDefault();
+    localStorage.clear();
+    $("#renderPlayers").empty();
+    $("#playerSaved").empty();
+    $("#article-section").empty();
+  };
 
-  const renderLast3SearchEl = () => {};
+  const clearCurrentPlayerProfileAndNews = (event) => {
+    event.preventDefault();
 
-  const saveSelectedProfileNewsState = () => {};
+    $("#playerSaved").empty();
+    $("#article-section").empty();
+  };
 
-  const getSelectedProfileNewsState = () => {};
-
-  const clearCurrentPlayerProfileAndNews = () => {};
-
-  const clearPreviousSearchHistory = () => {};
-
+  $("#clear-data").click(clearCurrentPlayerProfileAndNews);
+  $("#clear-all-button").click(clearPreviousSearchHistory);
   $("#submit-button").click(searchPlayer);
 
   // $("#player-search").on("keyup", function (event) {
