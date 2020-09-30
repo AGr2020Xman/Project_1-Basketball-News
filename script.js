@@ -416,11 +416,11 @@ $(function () {
           playerData[0].id
         );
       } else if (!seasonStats) {
-        $("#noCurrentSeasonStats").show().fadeOut(3000);
+        $("#noCurrentSeasonStats").show().fadeOut(3500);
       }
       const topArticles = await nytPlayerApiCall(playerData[0].fullName);
     } catch (error) {
-      $("#searchErrorNotice").show().fadeOut(2500);
+      $("#searchErrorNotice").show().fadeOut(3500);
     }
   };
 
@@ -502,7 +502,7 @@ $(function () {
 
   const clearPreviousSearchHistory = (event) => {
     event.preventDefault();
-
+    localStorage.clear();
     $("#renderPlayers").empty();
     $("#playerSaved").empty();
     $("#article-section").empty();
