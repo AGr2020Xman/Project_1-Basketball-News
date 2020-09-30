@@ -107,25 +107,11 @@ https://github.com/____/____/blob/master/LICENSE
 
 ## Authors
 
-- **FIRST LAST** -
   Michael Watt
-
-  - [Link to Github](https://github.com/___)
-  - [Link to Github](https://github.com/___)
-  - [Link to Github](https://github.com/Michaelmw17)
-  
-
-  - [LinkedIn](https://www.linkedin.com/in/)
-  - [LinkedIn](https://www.linkedin.com/in/)
-  - [LinkedIn](https://www.linkedin.com/in/michael-watt-6a76961b3/)
-
-  - [Portfolio](http://.github.io/)
-  - [Portfolio](http://.github.io/)
-  - [Portfolio](http://michaelmw17.github.io/)
-
-  - [Email] - (__)
-  - [Email] - (__)
-  - [Email] - (michaelmw17@outlook.com)
+- [Link to Github](https://github.com/Michaelmw17)
+- [LinkedIn](https://www.linkedin.com/in/michael-watt-6a76961b3/)
+- [Portfolio](http://michaelmw17.github.io/)
+- [Email] - (michaelmw17@outlook.com)
   
 ## Acknowledgments
 
