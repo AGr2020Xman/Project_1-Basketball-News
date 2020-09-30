@@ -108,11 +108,22 @@ https://github.com/____/____/blob/master/LICENSE
 ## Authors
 
   Michael Watt
-- [Link to Github](https://github.com/Michaelmw17)
-- [LinkedIn](https://www.linkedin.com/in/michael-watt-6a76961b3/)
-- [Portfolio](http://michaelmw17.github.io/)
+- [Link to Github] - (https://github.com/Michaelmw17)
+- [LinkedIn] - (https://www.linkedin.com/in/michael-watt-6a76961b3/)
+- [Portfolio] - (http://michaelmw17.github.io/)
 - [Email] - (michaelmw17@outlook.com)
   
+  Andre Grech
+- [Link to Github] - (https://github.com/AGr2020Xman)
+- [LinkedIn] - (https://www.linkedin.com/in/----/)
+- [Portfolio] - (http://AGr2020Xman.github.io/)
+- [Email] - (----)
+
+  Rachelle
+- [Link to Github] - (https://github.com/rachellebarredo)
+- [Portfolio] - (http://rachellebarredo.github.io/)
+- [Email] - (rachellebarredo94@gmail.com)
+
 ## Acknowledgments
 
 Klaus Paiva, Sandes and Ali
