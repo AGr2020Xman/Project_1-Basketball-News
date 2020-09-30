@@ -35,7 +35,7 @@ Displayed the PLayer conditions:
 </p>
 ## Sketch of design
 ![image](https://user-images.githubusercontent.com/69458896/94652259-10856c80-033d-11eb-9906-803b2e0f821d.png)
-</p>
+
 ## Built With
 
 - [VScode](https://code.visualstudio.com/) - The editor of choice.
