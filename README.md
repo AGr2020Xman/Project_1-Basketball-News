@@ -95,14 +95,12 @@ https://github.com/____/____/blob/master/LICENSE
   - https://api.jquery.com/hide/
   - https://api.jquery.com/deferred.done/
  
-
 - Resources
 
   - https://getbootstrap.com/docs/4.0/getting-started/introduction/
   - https://www.bootstrapcdn.com/
   - http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/jquerymobile/event_pageload.asp.html
-  - ttps://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
-  - 
+  - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
 
 ## Authors
 
