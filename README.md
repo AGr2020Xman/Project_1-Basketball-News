@@ -5,12 +5,16 @@
 Basketball & News API
 </h1>
 
+## Project Description
+
+This application will display statistics and information from the NBA by using the NYT Article Search API and the BallDontLie API.
+
 ## Contents
 
 <p>
 The app is composed of __ pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
 This application uses the AJAX with ________ API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
-Displayed the PLayer conditions:
+Displayed the Player conditions:
 - 
 - 
 - 
