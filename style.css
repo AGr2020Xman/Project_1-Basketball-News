@@ -74,6 +74,22 @@ img:hover {
 .display-4 {
   text-align: center;
 }
+
+#clear-data:hover {
+  cursor: pointer;
+  color: rgb(251, 255, 40);
+  background-color: teal;
+}
+#clear-all-button:hover {
+  cursor: pointer;
+  color: rgb(251, 255, 40);
+  background-color: teal;
+}
+#submit-button:hover {
+  cursor: pointer;
+  color: red;
+  background-color: wheat;
+}
 #submit-button {
   width: 4rem;
 }
