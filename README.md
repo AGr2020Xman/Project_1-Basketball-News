@@ -1,10 +1,5 @@
 # Project-1 Basketball & News API
 
-
-<h1>
-Basketball & News API
-</h1>
-
 ## Project Description
 
 This application will display statistics and information from the NBA by using the NYT Article Search API and the BallDontLie API.
