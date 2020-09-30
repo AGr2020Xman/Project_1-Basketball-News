@@ -3,11 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
+
   background: url("");
+  overflow-x: hidden;
 }
 .mainP {
   padding: 3rem;
@@ -41,20 +44,19 @@ body {
 .mainDisplay {
   font-size: 60px;
 }
-img {
+.img {
+
   opacity: 1;
 }
-img:hover {
+.img:hover {
   opacity: 0.5;
 }
-
 #clear-button {
   width: 3rem;
 }
 
 nav {
-  background-color: #1A237E;
-
+  background-color: #C9082A;
 
 }
 #sticky-footer {
@@ -63,3 +65,8 @@ nav {
   position: relative;
   margin: 10px;
 }
+
+#searchArticles{
+margin-bottom: 20px;
+}
+
