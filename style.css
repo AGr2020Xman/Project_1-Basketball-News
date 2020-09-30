@@ -8,18 +8,30 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-
-  background: url("");
+  background-color: rgb(252, 157, 15);
+  color: rgb(114, 70, 3);
+  font-weight: bolder;
   overflow-x: hidden;
+}
+h1 {
+  color: black;
+  font-weight: bolder;
+  font-size: 50px;
+}
+h2 {
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
 }
 
 #top-left-title {
-  color: white;
   font-weight: bold;
 }
 
 .mainP {
   padding: 3rem;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.76);
 }
 
 #player-search {
@@ -38,15 +50,20 @@ body {
 .profile-container {
   background-color: rgba(117, 117, 117, 0.308);
   text-align: center;
+  color: white;
 }
 
 .player-container {
-  background-color: rgba(117, 117, 117, 0.308);
+  /* background-color: rgba(117, 117, 117, 0.308); */
   text-align: center;
   margin: 10px;
 }
 
-.player-ul, .news-ul, .profile-ul-1, .profile-ul-2, .profile-ul-3 {
+.player-ul,
+.news-ul,
+.profile-ul-1,
+.profile-ul-2,
+.profile-ul-3 {
   list-style-type: none;
 }
 
@@ -63,7 +80,6 @@ body {
   font-size: 60px;
 }
 
-
 img {
   opacity: 1;
 }
@@ -76,29 +92,35 @@ img:hover {
   width: 4rem;
 }
 
-
-
-
-
-
 nav {
-  background-color: #C9082A;
-
-
+  background-color: rgb(249, 160, 27);
 }
-
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
   position: relative;
   margin: 10px;
-
+}
+#newCard {
+  background-color: rgb(243, 212, 176);
 }
 
-
-
-#searchArticles{
-margin-bottom: 20px;
+#searchArticles {
+  margin-bottom: 20px;
+}
+#searchParameters {
+  background-color: rgb(243, 212, 176);
+}
+#clear-data {
+  margin: 0.2rem;
+}
+#articlesBody {
+  background-color: rgb(243, 212, 176);
 }
 
-
+@media (min-width: 992px) {
+  #articlesBody {
+    background-color: rebeccapurple;
+    max-width: 100%;
+  }
+}
