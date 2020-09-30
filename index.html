@@ -69,16 +69,23 @@
       
           <!-- Main Section -->
               <section class="flex-shrink-0">
+                <div class="jumbotron jumbotron-fluid">
+                  <div class="container"><img src="img/basketball-removebg-preview.png" alt="Example testing img" class="float-right" id="ball-img">
+                    <h1 class="display-4">News Basket</h1>
 
-                <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">News Basket</h1>
+                    <i><p class="lead">Welcome to the News Basket app! Are you a fan of the NBA and want to keep up to date on this seasons player statistics? Or do you just want to easily pull up some news archives about your favourite player? News basket brings all this useful information into one place. Don't believe us? Just try it out and you'll never need to search anywhere else for your NBA stats or news!</p></i>
+                  </div>
+                </div>
+                <!-- <h1 class="mainDisplay h1-responsive font-weight-bold text-center my-4">News Basket</h1>
 
                   <div class="container">
                     <div class="clearfix">
                       <img src="img/basketball-removebg-preview.png" alt="Example testing img" class="float-right" id="ball-img">                      
                       <i><p class="mainP"> Welcome to the News Basket app! Are you a fan of the NBA and want to keep up to date on this seasons player statistics? Or do you just want to easily pull up some news archives about your favourite player? News basket brings all this useful information into one place. Don't believe us? Just try it out and you'll never need to search anywhere else for your NBA stats or news!
                       </p></i>
-              </section>
+              </section> -->
                       <!-- Search form body -->
+                      <div class="container">
                           <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan  active-cyan-2 mt-2">
                               <i class="fas fa-search" aria-hidden="true"></i>
                                 <input id="player-search" class="form-control form-control-sm ml-3 w-75" type="text"  placeholder="Search for a player; e.g: 'LeBron James'"
@@ -98,7 +105,7 @@
                                 >
                                 Clear
                                 </button>
-                                
+                              </div>
                                 <div id="noCurrentSeasonStats" class="alert alert-warning text-center">Sorry, this player isn't actively playing this season. Scroll down and you can still check the news!</div>
                                 <!-- <div id="searchErrorNotice" class="alert alert-warning text-center">Something went wrong! Please try again.</div> -->
                                   <br />
@@ -157,7 +164,6 @@
                                             <div class="form-group-ex1 mt-3">
                                               <label for="end-year"> End Year (Optional):</label>
                                               <select id="yearEnd" class="custom-select" aria-labelledby="dropdownMenuButton"></select>
-
                                             </div>
                                           </div>   
                                         </div>
