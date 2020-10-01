@@ -9,8 +9,8 @@ This application will display statistics and information from the NBA by using t
 ## Contents
 
 <p>
-The app is composed of __ pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
-This application uses the AJAX with ________ API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
+The app is composed of three pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
+This application uses the AJAX with 'www.balldontlie.io' API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
 
 Displayed the Player conditions:
 
