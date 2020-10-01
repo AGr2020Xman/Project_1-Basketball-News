@@ -4,6 +4,21 @@
 
 This application will display statistics and information from the NBA by using the NYT Article Search API and the BallDontLie API.
 
+## Contents
+
+<p>
+The app is composed of three pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
+This application uses the AJAX with 'www.balldontlie.io' API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
+
+Displayed the Player conditions:
+
+- 
+- 
+-
+
+</p>
+
+
 ## User Story
 
 <p>
@@ -20,20 +35,6 @@ This application will display statistics and information from the NBA by using t
 
 </p>
 
-## Contents
-
-<p>
-The app is composed of three pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
-This application uses the AJAX with 'www.balldontlie.io' API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
-
-Displayed the Player conditions:
-
--
--
--
--
--
-- </p>
 
 ## Sketch of the design
 
@@ -50,13 +51,9 @@ Displayed the Player conditions:
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Bootstrap](https://getbootstrap.com/)
 
-#### Initial interface
-
-<hr>
-
-<img src="./img/.png">
-
 #### Final Interface
+
+![image](https://user-images.githubusercontent.com/69458896/94807145-90d9c980-0432-11eb-856f-0cc8f7b57595.png)
 
 ## APIs
 
