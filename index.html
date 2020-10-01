@@ -75,21 +75,26 @@
     <!-- End Nav -->
 
     <!-- Main Section -->
+
     <main role="main" class="flex-shrink-0">
       <section class="flex-shrink-0">
         <div class="container">
           <div class="jumbotron jumbo-position">
-            <h1 class="display-4">Basket News</h1>
-            <img
-              src="img/basketball-removebg-preview.png"
-              alt="Example testing img"
-              class="ball-position"
-              id="ball-img"
-            />
+            <h1 class="display-4">
+              <i class="fas fa-basketball-ball"></i> Basket News
+              <i class="fas fa-basketball-ball"></i>
+            </h1>
             <div>
               <p class="lead">
                 For all your current season stats and sporting news!
               </p>
+              <a class="nav-link active" href="#player-search"
+                ><img
+                  src="img/basketball-removebg-preview.png"
+                  alt="Example testing img"
+                  class="ball-position"
+                  id="ball-img"
+              /></a>
             </div>
             <hr class="my-3" />
             <p>
@@ -122,10 +127,10 @@
               type="submit"
               id="submit-button"
             >
-              Submit
+              <i class="far fa-check-circle"></i>
             </button>
             <button class="btn btn-danger btn-sm" type="button" id="clear-data">
-              Clear
+              <i class="fas fa-trash-alt"></i>
             </button>
             <div
               id="noCurrentSeasonStats"
@@ -251,6 +256,7 @@
                   type="button"
                   id="clear-all-button"
                 >
+                  <i class="fas fa-trash-alt"></i>
                   Clear all page results
                 </button>
               </div>
@@ -264,9 +270,31 @@
     </main>
     <!-- Footer Start -->
     <!-- Link to Github/Profile -->
-    <footer class="footer mt-auto py-3 bg-secondary text-white">
+    <footer
+      class="footer mt-auto py-3 bg-secondary text-white"
+      id="sticky-footer"
+    >
       <div class="container text-center">
         <small>Copyright &copy; Alpha's Website</small>
+        <!-- <div class="col-md">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a href="#"
+                            ><i class="fab fa-github"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fab fa-github"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fab fa-github"></i
+                          ></a>
+                        </li>
+                      </ul>
+                  </div> -->
       </div>
     </footer>
 
