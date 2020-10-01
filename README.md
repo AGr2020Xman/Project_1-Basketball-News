@@ -52,6 +52,8 @@ Displayed the Player conditions:
 
 #### Final Interface
 
+![image](https://user-images.githubusercontent.com/69458896/94807145-90d9c980-0432-11eb-856f-0cc8f7b57595.png)
+
 ## APIs
 
 NYT Article Search - News API
