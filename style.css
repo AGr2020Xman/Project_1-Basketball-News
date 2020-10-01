@@ -2,15 +2,38 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-  color: black;
   overflow-x: hidden;
   background-color: #FFF3E0;
+}
+.jumbotron {
+  background-color: white;
+}
+
+.lead {
+  font-size: 27px;
+}
+
+p {
+  font-weight: bolder;
+  font-size: 27px;
+}
+
+h1 {
+  color: black;
+  font-weight: bolder;
+  font-size: 50px;
+}
+h2 {
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
 }
 
 h1 {
@@ -28,17 +51,47 @@ h2 {
 #top-left-title {
   font-weight: bold;
 }
+.jumbotron {
+  background-color: white;
+}
+
 
 .jumbotron {
   margin-top: 40px;
   background-color: #FF9800;
   color: #FFF3E0;
+.lead {
+  font-size: 27px;
+}
+
+p {
+  font-weight: bolder;
+  font-size: 27px;
+}
+
+h1 {
+  color: black;
+  font-weight: bolder;
+  font-size: 50px;
+}
+h2 {
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+#top-left-title {
+  font-weight: bold;
+}
+.mainP {
+  padding: 3rem;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.76);
 }
 
 #player-search {
   margin: 5px;
 }
-
 #results-div {
   position: relative;
   width: 100%;
@@ -47,43 +100,56 @@ h2 {
   padding: 20px;
   text-align: center;
 }
-
 .profile-container {
   background-color: rgba(117, 117, 117, 0.308);
   text-align: center;
   color: white;
 }
-
 .player-container {
-  /* background-color: rgba(117, 117, 117, 0.308); */
+  background-color: rgb(255, 151, 139);
   text-align: center;
 }
 
-.player-ul, .news-ul, .profile-ul-1, .profile-ul-2, .profile-ul-3 {
+.player-ul,
+.news-ul,
+.profile-ul-1,
+.profile-ul-2,
+.profile-ul-3 {
   list-style-type: none;
 }
-
 .news-container p {
   text-align: left;
 }
-
 .news-h1 {
   text-align: center;
   font-size: 50px;
 }
 
-.mainDisplay {
-  font-size: 60px;
-}
-
 img {
   opacity: 1;
 }
-
 img:hover {
   opacity: 0.5;
 }
+.display-4 {
+  text-align: center;
+}
 
+#clear-data:hover {
+  cursor: pointer;
+  color: rgb(251, 255, 40);
+  background-color: teal;
+}
+#clear-all-button:hover {
+  cursor: pointer;
+  color: rgb(251, 255, 40);
+  background-color: teal;
+}
+#submit-button:hover {
+  cursor: pointer;
+  color: red;
+  background-color: wheat;
+}
 #submit-button {
   width: 4rem;
 }
@@ -92,7 +158,6 @@ nav {
   background-color: rgb(249, 160, 27);
   opacity: 90%;
 }
-
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
@@ -136,4 +201,40 @@ nav {
     max-width: 100%;
     color: white;
   }
+}
+=======
+#newCard {
+  background-color: rgb(255, 151, 139);
+}
+#searchArticles {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#search-player-card {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#searchParameters {
+  background-color: rgb(243, 212, 176);
+}
+#clear-data {
+  margin: 0.2rem;
+}
+#articlesBody {
+  background-color: rgba(0, 217, 255, 0.548);
+}
+
+@media (min-width: 768px) {
+
+  body {
+    font-size: 20px;
+  }
+  .lead {
+    font-size: 40px;
+  }
+  .ball-position{
+    float: right;
+    
+  }
+
 }
