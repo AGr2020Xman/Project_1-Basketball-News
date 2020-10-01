@@ -10,6 +10,7 @@ body {
   margin: 20px;
   font-family: "Work Sans", sans-serif;
   overflow-x: hidden;
+  background-color: #FFF3E0;
 }
 .jumbotron {
   background-color: white;
