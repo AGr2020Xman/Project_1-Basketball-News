@@ -9,9 +9,7 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-  color: rgb(114, 70, 3);
   overflow-x: hidden;
-  
 }
 .jumbotron {
   background-color: white;
@@ -37,6 +35,18 @@ h2 {
   font-size: 40px;
 }
 
+h1 {
+  color: black;
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+h2 {
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
 #top-left-title {
   font-weight: bold;
 }
@@ -44,6 +54,11 @@ h2 {
   background-color: white;
 }
 
+
+.jumbotron {
+  margin-top: 40px;
+  background-color: #FF9800;
+  color: #FFF3E0;
 .lead {
   font-size: 27px;
 }
@@ -137,6 +152,7 @@ img:hover {
 #submit-button {
   width: 4rem;
 }
+
 nav {
   background-color: rgb(249, 160, 27);
   opacity: 90%;
@@ -147,6 +163,45 @@ nav {
   position: relative;
   margin: 10px;
 }
+
+#newCard {
+  background-color: rgb(243, 212, 176);
+}
+
+#searchArticles {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#search-player-card {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#searchParameters {
+  background-color: rgb(243, 212, 176);
+}
+
+#clear-data {
+  margin: 0.2rem;
+}
+
+#articlesBody {
+  background-color: rgb(243, 212, 176);
+}
+
+.lead {
+  font-size: 27px;
+}
+
+@media (min-width: 992px) {
+  #articlesBody {
+    background-color: rebeccapurple;
+    max-width: 100%;
+    color: white;
+  }
+}
+=======
 #newCard {
   background-color: rgb(255, 151, 139);
 }
