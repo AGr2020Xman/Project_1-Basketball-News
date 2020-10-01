@@ -108,27 +108,29 @@ https://github.com/____/____/blob/master/LICENSE
   - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
 
 ## Authors
-
+<p>
 Michael Watt
 
 - [Link to Github] - (https://github.com/Michaelmw17)
 - [LinkedIn] - (https://www.linkedin.com/in/michael-watt-6a76961b3/)
 - [Portfolio] - (http://michaelmw17.github.io/)
 - [Email] - (michaelmw17@outlook.com)
-
+</p>
+<p>
   Andre Grech
 
 - [Link to Github] - (https://github.com/AGr2020Xman)
 - [LinkedIn] - (https://www.linkedin.com/in/andregrech95/)
 - [Portfolio] - (http://AGr2020Xman.github.io/)
 - [Email] - (silver.grech@gmail.com)
-
+</p>
+<p>
   Rachelle
 
 - [Link to Github] - (https://github.com/rachellebarredo)
 - [Portfolio] - (http://rachellebarredo.github.io/)
 - [Email] - (rachellebarredo94@gmail.com)
-
+</p>
 ## Acknowledgments
 
 Klaus Paiva, Sandes and Ali
