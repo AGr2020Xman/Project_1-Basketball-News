@@ -118,9 +118,9 @@ Michael Watt
   Andre Grech
 
 - [Link to Github] - (https://github.com/AGr2020Xman)
-- [LinkedIn] - (https://www.linkedin.com/in/----/)
+- [LinkedIn] - (https://www.linkedin.com/in/andregrech95/)
 - [Portfolio] - (http://AGr2020Xman.github.io/)
-- [Email] - (----)
+- [Email] - (silver.grech@gmail.com)
 
   Rachelle
 
