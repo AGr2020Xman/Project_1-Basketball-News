@@ -51,7 +51,8 @@ Displayed the Player conditions:
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Bootstrap](https://getbootstrap.com/)
 
-#### Final Interface
+
+## Final Interface
 
 ![image](https://user-images.githubusercontent.com/69458896/94807145-90d9c980-0432-11eb-856f-0cc8f7b57595.png)
 
