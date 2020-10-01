@@ -416,12 +416,7 @@ $(function () {
   // const clearArticles = () => {
   //   $("#article-section").empty();
   // };
-  // $(".nav-link").on("click", function () {
-  //   $(".navbar-toggler").addClass("collapsed");
-  // });
-  // $(".navbar-toggler").on("click", function () {
-  //   $(".navbar-toggler").removeClass("collapsed");
-  // });
+
   $("#clear-data").click(clearCurrentPlayerProfileAndNews);
   $("#clear-all-button").click(clearPreviousSearchHistory);
   $("#submit-button").click(searchPlayer);
