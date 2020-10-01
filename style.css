@@ -8,14 +8,16 @@ body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
-  color: rgb(114, 70, 3);
+  color: black;
   overflow-x: hidden;
 }
+
 h1 {
   color: black;
   font-weight: bolder;
   font-size: 50px;
 }
+
 h2 {
   color: black;
   font-weight: bolder;
@@ -27,13 +29,9 @@ h2 {
 }
 
 .jumbotron {
-  margin-top: 20px;
-}
-
-.mainP {
-  padding: 3rem;
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.76);
+  margin-top: 40px;
+  background-color: #FF9800;
+  color: #FFF3E0;
 }
 
 #player-search {
@@ -60,11 +58,7 @@ h2 {
   text-align: center;
 }
 
-.player-ul,
-.news-ul,
-.profile-ul-1,
-.profile-ul-2,
-.profile-ul-3 {
+.player-ul, .news-ul, .profile-ul-1, .profile-ul-2, .profile-ul-3 {
   list-style-type: none;
 }
 
@@ -96,12 +90,14 @@ img:hover {
 nav {
   background-color: rgb(249, 160, 27);
 }
+
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
   position: relative;
   margin: 10px;
 }
+
 #newCard {
   background-color: rgb(243, 212, 176);
 }
@@ -119,16 +115,23 @@ nav {
 #searchParameters {
   background-color: rgb(243, 212, 176);
 }
+
 #clear-data {
   margin: 0.2rem;
 }
+
 #articlesBody {
   background-color: rgb(243, 212, 176);
+}
+
+.lead {
+  font-size: 27px;
 }
 
 @media (min-width: 992px) {
   #articlesBody {
     background-color: rebeccapurple;
     max-width: 100%;
+    color: white;
   }
 }
