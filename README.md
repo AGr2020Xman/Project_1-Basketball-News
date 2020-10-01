@@ -5,7 +5,6 @@
 
 This application will display statistics and information from the NBA by using the NYT Article Search API and the BallDontLie API.
 
-
 ## Contents
 
 <p>
@@ -38,7 +37,6 @@ Displayed the Player conditions:
 
 </p>
 
-
 ## Sketch of the design
 
 ![image](https://user-images.githubusercontent.com/69458896/94652259-10856c80-033d-11eb-9906-803b2e0f821d.png)
@@ -67,11 +65,9 @@ Displayed the Player conditions:
 NYT Article Search - News API
 BallDontLie - Statistics API
 
-
 https://github.com/____/____/blob/master/LICENSE
 
 ### Link to the App
-
 
 <a href="https://Michaelmw17.github.io/Project-1-Basketball-News/">Link to the Basketball News application</a>
 
@@ -138,5 +134,3 @@ https://github.com/____/____/blob/master/LICENSE
 ## Acknowledgments
 
 Klaus Paiva, Sandes and Ali
-
-
