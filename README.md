@@ -52,12 +52,6 @@ Displayed the Player conditions:
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Boostrap](https://getbootstrap.com/)
 
-#### Initial interface
-
-<hr>
-
-<img src="./img/.png">
-
 #### Final Interface
 
 ## APIs
