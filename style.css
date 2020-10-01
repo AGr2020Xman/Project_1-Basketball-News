@@ -40,6 +40,33 @@ h2 {
 #top-left-title {
   font-weight: bold;
 }
+.jumbotron {
+  background-color: white;
+}
+
+.lead {
+  font-size: 27px;
+}
+
+p {
+  font-weight: bolder;
+  font-size: 27px;
+}
+
+h1 {
+  color: black;
+  font-weight: bolder;
+  font-size: 50px;
+}
+h2 {
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+#top-left-title {
+  font-weight: bold;
+}
 .mainP {
   padding: 3rem;
   font-size: 20px;
@@ -142,4 +169,16 @@ nav {
 }
 
 @media (min-width: 768px) {
+
+  body {
+    font-size: 20px;
+  }
+  .lead {
+    font-size: 40px;
+  }
+  .ball-position{
+    float: right;
+    
+  }
+
 }
