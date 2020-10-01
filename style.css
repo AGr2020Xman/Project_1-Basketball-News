@@ -2,24 +2,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
 body {
   padding: 20px;
   margin: 20px;
   font-family: "Work Sans", sans-serif;
   color: rgb(114, 70, 3);
   overflow-x: hidden;
+  
 }
 .jumbotron {
   background-color: white;
 }
+
 .lead {
   font-size: 27px;
 }
+
 p {
   font-weight: bolder;
   font-size: 27px;
 }
+
 h1 {
   color: black;
   font-weight: bolder;
@@ -30,6 +36,7 @@ h2 {
   font-weight: bolder;
   font-size: 40px;
 }
+
 #top-left-title {
   font-weight: bold;
 }
@@ -38,6 +45,7 @@ h2 {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.76);
 }
+
 #player-search {
   margin: 5px;
 }
@@ -55,10 +63,10 @@ h2 {
   color: white;
 }
 .player-container {
-  background-color:rgb(255, 151, 139);
+  background-color: rgb(255, 151, 139);
   text-align: center;
-  
 }
+
 .player-ul,
 .news-ul,
 .profile-ul-1,
@@ -131,4 +139,7 @@ nav {
 }
 #articlesBody {
   background-color: rgba(0, 217, 255, 0.548);
+}
+
+@media (min-width: 768px) {
 }
