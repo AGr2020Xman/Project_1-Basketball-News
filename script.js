@@ -403,6 +403,10 @@ $(function () {
     $("#article-section").empty();
   };
 
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
   // const clearArticles = () => {
   //   $("#article-section").empty();
   // };
