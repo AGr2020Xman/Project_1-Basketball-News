@@ -15,10 +15,8 @@ Displayed the Player conditions:
 
 - 
 - 
-- 
-- 
-- 
-- 
+-
+
 </p>
 
 ## User Story
