@@ -322,6 +322,7 @@ $(function () {
 
   const searchPlayer = (event) => {
     event.preventDefault();
+    $("#submit-button").tooltip("hide");
     let playerName = $("#player-search").val().trim();
     searchPlayerOfInterest(playerName);
   };
@@ -392,6 +393,7 @@ $(function () {
   const clearPreviousSearchHistory = (event) => {
     event.preventDefault();
     localStorage.clear();
+    $("#clear-all-button").tooltip("hide");
     $("#renderPlayers").empty();
     $("#playerSaved").empty();
     $("#article-section").empty();
@@ -399,6 +401,7 @@ $(function () {
 
   const clearCurrentPlayerProfileAndNews = (event) => {
     event.preventDefault();
+    $("#clear-data").tooltip("hide");
     $("#playerSaved").empty();
     $("#article-section").empty();
   };
