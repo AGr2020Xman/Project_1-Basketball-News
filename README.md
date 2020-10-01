@@ -1,17 +1,19 @@
 
-# Project-1 basketball & News API
+# Project-1 Basketball & News
 
+## Project Description
 
-<h1>
-Basketball & News API
-</h1>
+This application will display statistics and information from the NBA by using the NYT Article Search API and the BallDontLie API.
+
 
 ## Contents
 
 <p>
-The app is composed of __ pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
-This application uses the AJAX with ________ API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
-Displayed the PLayer conditions:
+The app is composed of three pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
+This application uses the AJAX with 'www.balldontlie.io' API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
+
+Displayed the Player conditions:
+
 - 
 - 
 - 
@@ -24,7 +26,9 @@ Displayed the PLayer conditions:
 
 <p>
     As a type of user, Basketball API and Intergrating news API on the search click, data stored with local storage.
+
     Includes a history with a goal that user can get to their past searched terms by tapping on the player name, it will play out another request that displays current and future conditions for player searched.
+
 
     - jQuery - Utilized for members of parent and child components just as to store and review those in nearby capacity to be shown progressively in HTML on the pages.
     - Bootstrap - Used to pull existing html and CSS for creating responsive organizational structure and styling for the site.
@@ -33,6 +37,12 @@ Displayed the PLayer conditions:
     - GitHub - Hosts repository that can be deployed to GitHub Pages
 
 </p>
+
+
+## Sketch of the design
+
+![image](https://user-images.githubusercontent.com/69458896/94652259-10856c80-033d-11eb-9906-803b2e0f821d.png)
+![image](https://user-images.githubusercontent.com/69458896/94656063-e46cea00-0342-11eb-82cd-e3ff69a96352.png)
 
 ## Built With
 
@@ -52,13 +62,18 @@ Displayed the PLayer conditions:
 
 #### Final Interface
 
-### Licence
+## APIs
+
+NYT Article Search - News API
+BallDontLie - Statistics API
+
 
 https://github.com/____/____/blob/master/LICENSE
 
 ### Link to the App
 
-<a href=".">https://____.github.io/___/</a>
+
+<a href="https://Michaelmw17.github.io/Project-1-Basketball-News/">Link to the Basketball News application</a>
 
 <hr>
 
@@ -98,28 +113,30 @@ https://github.com/____/____/blob/master/LICENSE
   - https://getbootstrap.com/docs/4.0/getting-started/introduction/
   - https://www.bootstrapcdn.com/
   - http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/jquerymobile/event_pageload.asp.html
-  - ttps://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
-  - 
+
+  - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute
 
 ## Authors
 
-- **FIRST LAST** -
   Michael Watt
-
-  - [Link to Github](https://github.com/___)
-  - [Link to Github](https://github.com/___)
-  - [Link to Github](https://github.com/Michaelmw17)
+- [Link to Github] - (https://github.com/Michaelmw17)
+- [LinkedIn] - (https://www.linkedin.com/in/michael-watt-6a76961b3/)
+- [Portfolio] - (http://michaelmw17.github.io/)
+- [Email] - (michaelmw17@outlook.com)
   
+  Andre Grech
+- [Link to Github] - (https://github.com/AGr2020Xman)
+- [LinkedIn] - (https://www.linkedin.com/in/----/)
+- [Portfolio] - (http://AGr2020Xman.github.io/)
+- [Email] - (----)
 
-  - [LinkedIn](https://www.linkedin.com/in/)
-  - [LinkedIn](https://www.linkedin.com/in/)
-  - [LinkedIn](https://www.linkedin.com/in/michael-watt-6a76961b3/)
+  Rachelle
+- [Link to Github] - (https://github.com/rachellebarredo)
+- [Portfolio] - (http://rachellebarredo.github.io/)
+- [Email] - (rachellebarredo94@gmail.com)
 
-  - [Portfolio](http://.github.io/)
-  - [Portfolio](http://.github.io/)
-  - [Portfolio](http://michaelmw17.github.io/)
+## Acknowledgments
 
-  - [Email] - (__)
-  - [Email] - (__)
-  - [Email] - (michaelmw17@outlook.com)
+Klaus Paiva, Sandes and Ali
+
 
