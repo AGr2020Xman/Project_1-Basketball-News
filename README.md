@@ -1,4 +1,3 @@
-
 # Project-1 Basketball & News
 
 ## Project Description
@@ -19,6 +18,7 @@ Displayed the Player conditions:
 
 </p>
 
+
 ## User Story
 
 <p>
@@ -35,6 +35,7 @@ Displayed the Player conditions:
 
 </p>
 
+
 ## Sketch of the design
 
 ![image](https://user-images.githubusercontent.com/69458896/94652259-10856c80-033d-11eb-9906-803b2e0f821d.png)
@@ -48,7 +49,7 @@ Displayed the Player conditions:
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [API](https://openweathermap.org/api)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Boostrap](https://getbootstrap.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 #### Final Interface
 
@@ -96,7 +97,6 @@ https://github.com/____/____/blob/master/LICENSE
   - https://api.jquery.com/show/
   - https://api.jquery.com/hide/
   - https://api.jquery.com/deferred.done/
- 
 
 - Resources
 
@@ -108,19 +108,22 @@ https://github.com/____/____/blob/master/LICENSE
 
 ## Authors
 
-  Michael Watt
+Michael Watt
+
 - [Link to Github] - (https://github.com/Michaelmw17)
 - [LinkedIn] - (https://www.linkedin.com/in/michael-watt-6a76961b3/)
 - [Portfolio] - (http://michaelmw17.github.io/)
 - [Email] - (michaelmw17@outlook.com)
-  
+
   Andre Grech
+
 - [Link to Github] - (https://github.com/AGr2020Xman)
 - [LinkedIn] - (https://www.linkedin.com/in/----/)
 - [Portfolio] - (http://AGr2020Xman.github.io/)
 - [Email] - (----)
 
   Rachelle
+
 - [Link to Github] - (https://github.com/rachellebarredo)
 - [Portfolio] - (http://rachellebarredo.github.io/)
 - [Email] - (rachellebarredo94@gmail.com)

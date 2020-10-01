@@ -30,7 +30,7 @@
   </head>
   <body class="d-flex flex-column h-100">
     <!-- Start Nav -->
-    <header>
+    <header role="navigation" class="flex-shrink-0 mb-5">
       <nav class="navbar navbar-expand-md fixed-top">
         <a class="navbar-brand brand-text" href="#" id="top-left-title">
           <img
@@ -42,20 +42,21 @@
           />
           Basket News
         </a>
-
         <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarTogglerDemo03"
-          aria-controls="navbarTogglerDemo03"
+          data-target="#navbarTogglerHambarger"
+          aria-controls="navbarTogglerHambarger"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+          <span class="navbar-toggler-icon"
+            ><i class="fas fa-bars fa-lg"></i
+          ></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <div class="collapse navbar-collapse" id="navbarTogglerHambarger">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
               <a class="nav-link active" href="#player-search">Search</a>
@@ -114,7 +115,7 @@
       <div class="container">
         <div class="col-md-12">
           <form
-            class="form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan-2 mt-2"
+            class="search-form form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan-2 mt-2"
           >
             <i class="fas fa-search" aria-hidden="true"> </i>
             <input
@@ -229,9 +230,9 @@
         <div id="profile" class="profile-container">
           <div class="col-md-12">
             <div class="row">
-              <div class="table-responsive">
+              <div class="table-responsive card">
                 <table class="table">
-                  <caption></caption>
+                  <caption aria-label="current-season-table"></caption>
                   <thead>
                     <tr>
                       <th scope="col" class="table-headings" id="name">
@@ -269,7 +270,7 @@
       </div>
       <!-- News Section Start -->
       <div class="container news-container">
-        <h2 class="news-h1">News section</h2>
+        <h2 class="news-h1 card mt-3">News section</h2>
 
         <!-- This row will handle all of the retrieved articles -->
         <div class="row">
@@ -303,10 +304,31 @@
     </main>
     <!-- Footer Start -->
     <!-- Link to Github/Profile -->
-    <footer class="py-3 bg-secondary text-white" id="sticky-footer">
-      <div class="container text-center">
+
+    <!-- <footer class="footer py-3 bg-secondary text-white mt-auto container-fluid">
+      <div class="row text-center">
         <small>Copyright &copy; Alpha's Website</small>
         <div class="col-md">
+          <ul class="list-unstyled mb-0">
+            <a class="github-link" href="https://github.com/Michaelmw17"
+              ><i class="fab fa-github"></i>Michael</a
+            >
+            <a class="github-link" href="https://github.com/AGr2020Xman"
+              ><i class="fab fa-github"></i>Andr&eacute;</a
+            >
+            <a class="github-link" href="https://github.com/rachellebarredo"
+              ><i class="fab fa-github"></i>Rachelle</a
+            >
+          </ul>
+        </div>
+      </div>
+    </footer> -->
+    <footer
+      class="footer mt-4 py-3 container-fluid text-white bg-secondary text-center"
+    >
+      <div class="row">
+        <div class="col-md">
+          <small>Copyright &copy; Alpha's Website 2020</small>
           <ul class="list-unstyled mb-0">
             <a class="github-link" href="https://github.com/Michaelmw17"
               ><i class="fab fa-github"></i>Michael</a

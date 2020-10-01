@@ -24,6 +24,7 @@ $(function () {
     },
   });
 
+  // sets options for article filter
   let year = 2021;
   let till = 1979;
   let options = "<option value=''> Any year</option>";
@@ -32,6 +33,7 @@ $(function () {
   }
   document.getElementById("yearStart").innerHTML = options;
   document.getElementById("yearEnd").innerHTML = options;
+  // end article filter
 
   const buildNytQueryURL = (fullName) => {
     let queryNameUrl =
@@ -394,15 +396,17 @@ $(function () {
     event.preventDefault();
     localStorage.clear();
     $("#clear-all-button").tooltip("hide");
-    $("#renderPlayers").empty();
     $("#playerSaved").empty();
+    $("#renderPlayers").empty();
+    $("#article-section").empty();
   };
 
   const clearCurrentPlayerProfileAndNews = (event) => {
     event.preventDefault();
+    localStorage.clear();
     $("#clear-data").tooltip("hide");
     $("#playerSaved").empty();
-    $("#article-section").empty();
+    $("#renderPlayers").empty();
   };
 
   $(function () {
