@@ -103,7 +103,7 @@ img:hover {
 }
 #submit-button:hover {
   cursor: pointer;
-  color: red;
+  color: blue;
   background-color: wheat;
 }
 #submit-button {
