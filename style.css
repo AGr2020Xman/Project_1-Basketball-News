@@ -89,6 +89,7 @@ img:hover {
 
 nav {
   background-color: rgb(249, 160, 27);
+  opacity: 90%;
 }
 
 #sticky-footer {
