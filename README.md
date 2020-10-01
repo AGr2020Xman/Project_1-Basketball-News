@@ -56,9 +56,9 @@ Deployed on Github pages: https://agr2020xman.github.io/Project_1-Basketball-New
 
 #### APIs + Tools
 
-- ![NYT Article Search](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
-- ![ballDontLie.io](https://www.balldontlie.io/#introduction)
-- ![jQueryUI](https://jqueryui.com/autocomplete/)
+- [NYT Article Search!](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
+- [ballDontLie.io!](https://www.balldontlie.io/#introduction)
+- [jQueryUI!](https://jqueryui.com/autocomplete/)
 
 #### Built with
 
@@ -72,22 +72,22 @@ Deployed on Github pages: https://agr2020xman.github.io/Project_1-Basketball-New
 
 _Michael Watt_
 
-- ![Github](https://github.com/Michaelmw17)
-- ![LinkedIn](https://www.linkedin.com/in/michael-watt-6a76961b3/)
-- ![Portfolio](http://michaelmw17.github.io/)
+- [Github!](https://github.com/Michaelmw17)
+- [LinkedIn!](https://www.linkedin.com/in/michael-watt-6a76961b3/)
+- [Portfolio!](http://michaelmw17.github.io/)
 - Email:(michaelmw17@outlook.com)
 
 _Andr&eacute; Grech_
 
-- ![Github](https://github.com/AGr2020Xman)
-- ![LinkedIn](https://www.linkedin.com/in/andregrech95/)
-- ![Portfolio](https://agr2020xman.github.io/Homework_Week_2/)
+- [Github!](https://github.com/AGr2020Xman)
+- [LinkedIn!](https://www.linkedin.com/in/andregrech95/)
+- [Portfolio!](https://agr2020xman.github.io/Homework_Week_2/)
 - Email:(silver.grech@gmail.com)
 
 _Rachelle_
 
-- ![Github](https://github.com/rachellebarredo)
-- ![Portfolio](http://rachellebarredo.github.io/)
+- [Github!](https://github.com/rachellebarredo)
+- [Portfolio!](http://rachellebarredo.github.io/)
 - Email:(rachellebarredo94@gmail.com)
 
 ##### Acknowledgments
