@@ -1,3 +1,8 @@
+.navbar-toggler-icon:hover {
+  opacity: 50%;
+  color: grey;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +11,6 @@
 }
 
 body {
-  padding: 20px;
-  margin: 20px;
   font-family: "Work Sans", sans-serif;
   overflow-x: hidden;
   background-color: #FFF3E0;
@@ -50,9 +53,18 @@ h2 {
   font-weight: bold;
 }
 
+.search-form {
+  border-radius: 10px;
+  background-color: #FFCC80;
+}
+
+#playerContainer {
+  color: white;
+}
+
 .jumbotron {
   margin-top: 40px;
-  background-color: #FF9800;
+  background-color: #FFA726;
   color: #FFF3E0;
 }
 
@@ -67,6 +79,7 @@ h2 {
 .table-responsive {
   background-color: #FF9800;
   color: #F5F5F5;
+  border-radius: 10px;
 }
 
 .table-headings {
@@ -120,7 +133,6 @@ h2 {
 }
 
 .profile-container {
-  background-color: rgba(117, 117, 117, 0.308);
   text-align: center;
   color: white;
 }
@@ -141,6 +153,7 @@ h2 {
 .news-h1 {
   text-align: center;
   font-size: 50px;
+  background-color: #FF9100;
 }
 
 .brand-text {
@@ -234,16 +247,17 @@ nav {
   background-color: rgb(243, 212, 176);
 }
 
-.lead {
-  font-size: 27px;
+.articleHeadline {
+  border-radius: 5px;
+  background-color: rgb(243, 212, 176);
 }
 
-@media (min-width: 992px) {
-  #articlesBody {
-    background-color: rebeccapurple;
-    max-width: 100%;
-    color: white;
-  }
+.savedButtons:hover {
+  background-color: rgb(243, 212, 176);
+}
+
+.lead {
+  font-size: 27px;
 }
 
 #newCard {
@@ -269,7 +283,9 @@ nav {
 }
 
 #articlesBody {
-  background-color: rgba(0, 217, 255, 0.548);
+  background-color: rgb(255, 151, 139);
+  color: whitesmoke;
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {

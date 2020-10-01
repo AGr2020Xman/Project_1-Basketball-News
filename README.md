@@ -1,26 +1,8 @@
-
 # Project-1 Basketball & News
 
 ## Project Description
 
 This application will display statistics and information from the NBA by using the NYT Article Search API and the BallDontLie API.
-
-
-## Contents
-
-<p>
-The app is composed of three pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
-This application uses the AJAX with 'www.balldontlie.io' API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
-
-Displayed the Player conditions:
-
-- 
-- 
-- 
-- 
-- 
-- 
-</p>
 
 ## User Story
 
@@ -38,6 +20,20 @@ Displayed the Player conditions:
 
 </p>
 
+## Contents
+
+<p>
+The app is composed of three pages, index.html, javascript.js and style.css. Also has a README, License and images in the img Folder assets folder.
+This application uses the AJAX with 'www.balldontlie.io' API to recover information in the JSON. HTML and CSS driven by jQuery we can show the user the following data:
+
+Displayed the Player conditions:
+
+-
+-
+-
+-
+-
+- </p>
 
 ## Sketch of the design
 
@@ -52,7 +48,7 @@ Displayed the Player conditions:
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [API](https://openweathermap.org/api)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Boostrap](https://getbootstrap.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 #### Initial interface
 
@@ -67,11 +63,9 @@ Displayed the Player conditions:
 NYT Article Search - News API
 BallDontLie - Statistics API
 
-
 https://github.com/____/____/blob/master/LICENSE
 
 ### Link to the App
-
 
 <a href="https://Michaelmw17.github.io/Project-1-Basketball-News/">Link to the Basketball News application</a>
 
@@ -106,7 +100,6 @@ https://github.com/____/____/blob/master/LICENSE
   - https://api.jquery.com/show/
   - https://api.jquery.com/hide/
   - https://api.jquery.com/deferred.done/
- 
 
 - Resources
 
@@ -118,19 +111,22 @@ https://github.com/____/____/blob/master/LICENSE
 
 ## Authors
 
-  Michael Watt
+Michael Watt
+
 - [Link to Github] - (https://github.com/Michaelmw17)
 - [LinkedIn] - (https://www.linkedin.com/in/michael-watt-6a76961b3/)
 - [Portfolio] - (http://michaelmw17.github.io/)
 - [Email] - (michaelmw17@outlook.com)
-  
+
   Andre Grech
+
 - [Link to Github] - (https://github.com/AGr2020Xman)
 - [LinkedIn] - (https://www.linkedin.com/in/----/)
 - [Portfolio] - (http://AGr2020Xman.github.io/)
 - [Email] - (----)
 
   Rachelle
+
 - [Link to Github] - (https://github.com/rachellebarredo)
 - [Portfolio] - (http://rachellebarredo.github.io/)
 - [Email] - (rachellebarredo94@gmail.com)
@@ -138,5 +134,3 @@ https://github.com/____/____/blob/master/LICENSE
 ## Acknowledgments
 
 Klaus Paiva, Sandes and Ali
-
-
