@@ -52,7 +52,7 @@ _Clear button to empty local storage and remove data_
 
 ### Demonstration
 
-Deployed on Github pages: ![BasketNews](https://agr2020xman.github.io/Project_1-Basketball-News/)
+Deployed on Github pages: https://agr2020xman.github.io/Project_1-Basketball-News/
 
 #### APIs + Tools
 
