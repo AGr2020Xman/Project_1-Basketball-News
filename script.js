@@ -396,7 +396,6 @@ $(function () {
     $("#clear-all-button").tooltip("hide");
     $("#renderPlayers").empty();
     $("#playerSaved").empty();
-    $("#article-section").empty();
   };
 
   const clearCurrentPlayerProfileAndNews = (event) => {
