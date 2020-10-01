@@ -28,15 +28,15 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     <!-- Start Nav -->
     <header>
-      <nav class="navbar navbar-expand-md navbar-light fixed-top">
-        <a class="navbar-brand" href="#" id="top-left-title">
+      <nav class="navbar navbar-expand-md fixed-top">
+        <a class="navbar-brand brand-text" href="#" id="top-left-title">
           <img
-            src="/Project_1/img/TopLeftico.ico"
-            width="30"
-            height="30"
+            src="./img/TopLeftico.ico"
+            width="40"
+            height="40"
             alt="basketballNewsIcon"
             loading="lazy"
           />
@@ -81,9 +81,10 @@
       <section class="flex-shrink-0">
         <div class="container">
           <div class="jumbotron jumbo-position">
-            <h1 class="display-4">
-              <i class="fas fa-basketball-ball"></i> Basket News
-              <i class="fas fa-basketball-ball"></i>
+            <h1 class="display-3 jumbo-head">
+              <i class="fa fa-basketball-ball" aria-hidden="true"></i> Basket
+              News
+              <i class="fa fa-newspaper" aria-hidden="true"></i>
             </h1>
             <div>
               <p class="lead">
@@ -98,7 +99,7 @@
               /></a>
             </div>
             <hr class="my-3" />
-            <p>
+            <p class="contrast-jumbo-text">
               Welcome to the Basket News web app! Are you a fan of the NBA and
               want to keep up to date on this seasons player statistics? Do you
               just want to easily pull up some news archives about your
@@ -181,7 +182,7 @@
               <div class="card-header">
                 <strong>
                   <i class="fa fa-search"></i>
-                  Search Articles
+                  Search Articles filter
                 </strong>
               </div>
 
@@ -195,9 +196,10 @@
                     class="custom-select"
                     aria-labelledby="dropdownMenuButton"
                   >
-                    <option id="dropdownMenuButton" value="1">1</option>
+                    <option value="1">1</option>
                     <option value="3">3</option>
                     <option value="5" selected>5</option>
+                    <option value="10">10</option>
                   </select>
                 </div>
                 <div class="form-group-ex1">
@@ -232,14 +234,30 @@
                   <caption></caption>
                   <thead>
                     <tr>
-                      <th scope="col" id="name">Player</th>
-                      <th scope="col" id="points">Points</th>
-                      <th scope="col" id="twoPointers">2PT Goals</th>
-                      <th scope="col" id="threePointers">3PT Goals</th>
-                      <th scope="col" id="freeThrows">Free Throws</th>
-                      <th scope="col" id="twoPointPCT">2PT %</th>
-                      <th scope="col" id="threePointPCT">3PT %</th>
-                      <th scope="col" id="freeThrowPCT">FT %</th>
+                      <th scope="col" class="table-headings" id="name">
+                        Player
+                      </th>
+                      <th scope="col" class="table-headings" id="points">
+                        Points
+                      </th>
+                      <th scope="col" class="table-headings" id="twoPointers">
+                        2PT Goals
+                      </th>
+                      <th scope="col" class="table-headings" id="threePointers">
+                        3PT Goals
+                      </th>
+                      <th scope="col" class="table-headings" id="freeThrows">
+                        Free Throws
+                      </th>
+                      <th scope="col" class="table-headings" id="twoPointPCT">
+                        2PT %
+                      </th>
+                      <th scope="col" class="table-headings" id="threePointPCT">
+                        3PT %
+                      </th>
+                      <th scope="col" class="table-headings" id="freeThrowPCT">
+                        FT %
+                      </th>
                     </tr>
                   </thead>
                   <tbody id="renderPlayers"></tbody>
@@ -285,13 +303,22 @@
     </main>
     <!-- Footer Start -->
     <!-- Link to Github/Profile -->
-    <footer
-      class="footer mt-auto py-3 bg-secondary text-white"
-      id="sticky-footer"
-    >
+    <footer class="py-3 bg-secondary text-white" id="sticky-footer">
       <div class="container text-center">
         <small>Copyright &copy; Alpha's Website</small>
-
+        <div class="col-md">
+          <ul class="list-unstyled mb-0">
+            <a class="github-link" href="https://github.com/Michaelmw17"
+              ><i class="fab fa-github"></i>Michael</a
+            >
+            <a class="github-link" href="https://github.com/AGr2020Xman"
+              ><i class="fab fa-github"></i>Andr&eacute;</a
+            >
+            <a class="github-link" href="https://github.com/rachellebarredo"
+              ><i class="fab fa-github"></i>Rachelle</a
+            >
+          </ul>
+        </div>
       </div>
     </footer>
 

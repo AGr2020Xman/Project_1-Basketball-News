@@ -13,10 +13,6 @@ body {
   background-color: #FFF3E0;
 }
 
-.jumbotron {
-  background-color: white;
-}
-
 .lead {
   font-size: 27px;
 }
@@ -55,17 +51,32 @@ h2 {
 }
 
 .jumbotron {
-  background-color: white;
-}
-
-.jumbotron {
   margin-top: 40px;
   background-color: #FF9800;
   color: #FFF3E0;
 }
 
+.jumbo-head {
+  font-weight: bold;
+}
+
+.contrast-jumbo-text {
+  color: #424242;
+}
+
+.table-responsive {
+  background-color: #FF9800;
+  color: #F5F5F5;
+}
+
+.table-headings {
+  background-color: #FFCC80;
+  border-radius: 10px;
+  color: #212121;
+}
+
 .lead {
-  font-size: 27px;
+  font-size: 10px;
 }
 
 p {
@@ -132,12 +143,18 @@ h2 {
   font-size: 50px;
 }
 
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #212121;
+}
+
 img {
   opacity: 1;
 }
 
 img:hover {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .display-4 {
@@ -147,19 +164,19 @@ img:hover {
 #clear-data:hover {
   cursor: pointer;
   color: rgb(251, 255, 40);
-  background-color: teal;
+  background-color: darkred;
 }
 
 #clear-all-button:hover {
   cursor: pointer;
   color: rgb(251, 255, 40);
-  background-color: teal;
+  background-color: darkred;
 }
 
 #submit-button:hover {
   cursor: pointer;
   color: red;
-  background-color: wheat;
+  background-color: darkblue;
 }
 
 #submit-button {
@@ -171,11 +188,24 @@ nav {
   opacity: 90%;
 }
 
+.nav-link {
+  color: darkred;
+  font-weight: 900;
+}
+
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
   position: relative;
-  margin: 10px;
+  margin: 40px;
+}
+
+.github-link {
+  color: black;
+}
+
+.github-link:hover {
+  color: #FF9100;
 }
 
 #newCard {
