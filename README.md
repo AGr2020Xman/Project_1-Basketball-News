@@ -131,6 +131,7 @@ Michael Watt
 - [Portfolio] - (http://rachellebarredo.github.io/)
 - [Email] - (rachellebarredo94@gmail.com)
 </p>
+
 ## Acknowledgments
 
 Klaus Paiva, Sandes and Ali
