@@ -24,6 +24,7 @@ $(function () {
     },
   });
 
+  // sets options for article filter
   let year = 2021;
   let till = 1979;
   let options = "<option value=''> Any year</option>";
@@ -32,6 +33,7 @@ $(function () {
   }
   document.getElementById("yearStart").innerHTML = options;
   document.getElementById("yearEnd").innerHTML = options;
+  // end article filter
 
   const buildNytQueryURL = (fullName) => {
     let queryNameUrl =
@@ -58,38 +60,6 @@ $(function () {
 
     return queryNameUrl + $.param(queryParams);
   };
-
-  // if
-  // const buildNytQueryURL2 = () => {
-  //   let queryNameUrl =
-  //     "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-
-  //   // will need a check box system, drop down system - i think a year Scroll
-  //   //
-  //   let queryParams = { "api-key": "PtvZGjOgu0wSTCEKz5XJcfMV0XhmAVP7" };
-
-  //   queryParams.q = playerName;
-
-  //   let startYear = $("#start-year").val().trim();
-  //   if (parseInt(startYear)) {
-  //     queryParams.begin_date = startYear + "0101";
-  //   }
-  //   //  TODO: startYear =  the option that a user selects from the drop down list
-
-  //   let endYear;
-  //   if (parseInt(endYear)) {
-  //     queryParams.begin_date = endYear + "0101";
-  //   }
-  //   // TODO: as above - from dropdown list -OR default to current year
-
-  //   // field/desk of news to search always
-  //   const filterQuery = "=Sports";
-  //   queryParams.fq = filterQuery;
-
-  //   return queryNameUrl + $.param(queryParams);
-  // }
-
-  // node query string (google)
 
   const buildBallQueryURL = (playerName) => {
     let queryplayerURL = "https://www.balldontlie.io/api/v1/players?";
@@ -214,10 +184,6 @@ $(function () {
 
       $articleSection.append($articleSectionItems);
     }
-  };
-
-  const clearArticles = () => {
-    $("#article-section").empty();
   };
 
   const ballDontLieApiCall = (playerName) =>
@@ -358,6 +324,7 @@ $(function () {
 
   const searchPlayer = (event) => {
     event.preventDefault();
+    $("#submit-button").tooltip("hide");
     let playerName = $("#player-search").val().trim();
     searchPlayerOfInterest(playerName);
   };
@@ -428,16 +395,27 @@ $(function () {
   const clearPreviousSearchHistory = (event) => {
     event.preventDefault();
     localStorage.clear();
-    $("#renderPlayers").empty();
+    $("#clear-all-button").tooltip("hide");
     $("#playerSaved").empty();
+    $("#renderPlayers").empty();
     $("#article-section").empty();
   };
 
   const clearCurrentPlayerProfileAndNews = (event) => {
     event.preventDefault();
+    localStorage.clear();
+    $("#clear-data").tooltip("hide");
     $("#playerSaved").empty();
-    $("#article-section").empty();
+    $("#renderPlayers").empty();
   };
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  // const clearArticles = () => {
+  //   $("#article-section").empty();
+  // };
 
   $("#clear-data").click(clearCurrentPlayerProfileAndNews);
   $("#clear-all-button").click(clearPreviousSearchHistory);

@@ -1,3 +1,8 @@
+.navbar-toggler-icon:hover {
+  opacity: 50%;
+  color: grey;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,15 +11,9 @@
 }
 
 body {
-  padding: 20px;
-  margin: 20px;
   font-family: "Work Sans", sans-serif;
-  color: rgb(114, 70, 3);
   overflow-x: hidden;
-  
-}
-.jumbotron {
-  background-color: white;
+  background-color: #FFF3E0;
 }
 
 .lead {
@@ -31,6 +30,19 @@ h1 {
   font-weight: bolder;
   font-size: 50px;
 }
+
+h2 {
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+h1 {
+  color: black;
+  font-weight: bolder;
+  font-size: 50px;
+}
+
 h2 {
   color: black;
   font-weight: bolder;
@@ -40,12 +52,44 @@ h2 {
 #top-left-title {
   font-weight: bold;
 }
+
+.search-form {
+  border-radius: 10px;
+  background-color: #FFCC80;
+}
+
+#playerContainer {
+  color: white;
+}
+
 .jumbotron {
-  background-color: white;
+  margin-top: 40px;
+  background-color: #FFA726;
+  color: #FFF3E0;
+}
+
+.jumbo-head {
+  font-weight: bold;
+}
+
+.contrast-jumbo-text {
+  color: #424242;
+}
+
+.table-responsive {
+  background-color: #FF9800;
+  color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.table-headings {
+  background-color: #FFCC80;
+  border-radius: 10px;
+  color: #212121;
 }
 
 .lead {
-  font-size: 27px;
+  font-size: 10px;
 }
 
 p {
@@ -58,6 +102,7 @@ h1 {
   font-weight: bolder;
   font-size: 50px;
 }
+
 h2 {
   color: black;
   font-weight: bolder;
@@ -67,6 +112,7 @@ h2 {
 #top-left-title {
   font-weight: bold;
 }
+
 .mainP {
   padding: 3rem;
   font-size: 20px;
@@ -76,6 +122,7 @@ h2 {
 #player-search {
   margin: 5px;
 }
+
 #results-div {
   position: relative;
   width: 100%;
@@ -84,101 +131,171 @@ h2 {
   padding: 20px;
   text-align: center;
 }
+
 .profile-container {
-  background-color: rgba(117, 117, 117, 0.308);
   text-align: center;
   color: white;
 }
+
 .player-container {
   background-color: rgb(255, 151, 139);
   text-align: center;
 }
 
-.player-ul,
-.news-ul,
-.profile-ul-1,
-.profile-ul-2,
-.profile-ul-3 {
+.player-ul, .news-ul, .profile-ul-1, .profile-ul-2, .profile-ul-3 {
   list-style-type: none;
 }
+
 .news-container p {
   text-align: left;
 }
+
 .news-h1 {
   text-align: center;
   font-size: 50px;
+  background-color: #FF9100;
+}
+
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #212121;
 }
 
 img {
   opacity: 1;
 }
+
 img:hover {
-  opacity: 0.5;
+  opacity: 0.8;
 }
-.display-4 {
+
+.display-3 {
   text-align: center;
 }
 
 #clear-data:hover {
   cursor: pointer;
   color: rgb(251, 255, 40);
-  background-color: teal;
+  background-color: darkred;
 }
+
 #clear-all-button:hover {
   cursor: pointer;
   color: rgb(251, 255, 40);
-  background-color: teal;
+  background-color: darkred;
 }
+
 #submit-button:hover {
   cursor: pointer;
-  color: blue;
-  background-color: wheat;
+  color: red;
+  background-color: darkblue;
 }
+
 #submit-button {
   width: 4rem;
 }
+
 nav {
   background-color: rgb(249, 160, 27);
   opacity: 90%;
 }
+
+.nav-link {
+  color: darkred;
+  font-weight: 900;
+}
+
 #sticky-footer {
   text-align: center;
   opacity: 0.6;
   position: relative;
-  margin: 10px;
+  margin: 40px;
 }
+
+.github-link {
+  color: black;
+}
+
+.github-link:hover {
+  color: #FF9100;
+}
+
 #newCard {
-  background-color: rgb(250, 177, 169);
+  background-color: rgb(243, 212, 176);
 }
+
 #searchArticles {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
 #search-player-card {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
 #searchParameters {
   background-color: rgb(243, 212, 176);
 }
+
 #clear-data {
   margin: 0.2rem;
 }
+
 #articlesBody {
-  background-color: rgba(0, 217, 255, 0.548);
+  background-color: rgb(243, 212, 176);
+}
+
+.articleHeadline {
+  border-radius: 5px;
+  background-color: rgb(243, 212, 176);
+}
+
+.savedButtons:hover {
+  background-color: rgb(243, 212, 176);
+}
+
+.lead {
+  font-size: 27px;
+}
+
+#newCard {
+  background-color: rgb(255, 151, 139);
+}
+
+#searchArticles {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#search-player-card {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#searchParameters {
+  background-color: rgb(243, 212, 176);
+}
+
+#clear-data {
+  margin: 0.2rem;
+}
+
+#articlesBody {
+  background-color: rgb(255, 151, 139);
+  color: whitesmoke;
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
-
   body {
     font-size: 20px;
   }
   .lead {
     font-size: 40px;
   }
-  .ball-position{
+  .ball-position {
     float: right;
-    
   }
-
 }
