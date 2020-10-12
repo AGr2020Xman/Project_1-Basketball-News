@@ -59,11 +59,7 @@ Deployed on Github pages: https://agr2020xman.github.io/Project_1-Basketball-New
 - [NYT Article Search!](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 - [ballDontLie.io!](https://www.balldontlie.io/#introduction)
 - [jQueryUI!](https://jqueryui.com/autocomplete/)
-
-#### Built with
-
 - [VScode](https://code.visualstudio.com/) - The editor of choice.
-- [Terminal](https:///) - What would we do without our bash.
 - [jQuery](https://api.jquery.com/)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [Bootstrap](https://getbootstrap.com/)
@@ -90,6 +86,10 @@ _Rachelle_
 - [Portfolio!](http://rachellebarredo.github.io/)
 - Email:(rachellebarredo94@gmail.com)
 
+##### License 
+
+- [MIT License](https://opensource.org/licenses/MIT)
+
 ##### Acknowledgments
 
-- Klaus Paiva, Sandes and Ali
+- 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
