@@ -2,6 +2,9 @@
 /* SEARCH THE NBA FOR PAST AND PRESENT PLAYERS TO SEE NEWS SINCE 1979 POWERED BY NYT DEV ARTICLE SEARCH API AND BALLDONTLIE.IO API */
 /* FUTURE FUNCTIONALITY FOR PAST SEASONS STATISTICS TO BE ADDED */
 
+// This function targets the player search field. Using the existing autocomplete functionality in jQuery, it will run an API call to
+// the ballDontLie API at a minimum of 3 characters entered - and return a specific format. Then _renderItem appends this data to an unordered
+// list with certain attributes (for styling etc.)
 $(function () {
   $("#player-search").autocomplete({
     source: async function (request, response) {
@@ -25,6 +28,7 @@ $(function () {
   });
 
   // sets options for article filter
+  // can be optimised to always work from the current year with Date() functionality.
   let year = 2021;
   let till = 1979;
   let options = "<option value=''> Any year</option>";
@@ -35,6 +39,7 @@ $(function () {
   document.getElementById("yearEnd").innerHTML = options;
   // end article filter
 
+  // New York Times query builder - given player name
   const buildNytQueryURL = (fullName) => {
     let queryNameUrl =
       "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
@@ -43,24 +48,29 @@ $(function () {
 
     queryParams.q = fullName;
 
+    // taken from article filter option
     let startYear = $("#yearStart").val();
 
+    // if startYear is a number (not empty field), correct formatting to NYT specs
     if (typeof startYear === "number") {
       queryParams.begin_date = startYear + "0101";
     }
 
+    // repeated process as with start year
     let endYear = $("#yearEnd").val();
 
     if (typeof endYear === "number") {
       queryParams.enddate = endYear + "0101";
     }
 
+    // specific filter applied to narrow results to articles with Sports tag
     const filterQuery = "Sports";
     queryParams.fq = filterQuery;
 
     return queryNameUrl + $.param(queryParams);
   };
 
+  // BallDon'tLie api query builder
   const buildBallQueryURL = (playerName) => {
     let queryplayerURL = "https://www.balldontlie.io/api/v1/players?";
     let queryParamPlayer = {};
@@ -72,6 +82,7 @@ $(function () {
     return queryplayerURL + $.param(queryParamPlayer);
   };
 
+  // error notice function - see HTML for target
   const errorFeedback = (error) => {
     let errorDetected = $("#searchErrorNotice");
 
@@ -80,6 +91,7 @@ $(function () {
     }
   };
 
+  // Player profile table creation - can probably be refined
   const updatePlayerProfile = async (seasonStats, fullName, id) => {
     let tbody = $("#renderPlayers");
     if (tbody.find(`tr[data-player-id=${id}]`).length > 0) {
