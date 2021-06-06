@@ -30,25 +30,25 @@ This application uses the AJAX with 'www.balldontlie.io' API to recover informat
 
 ### Design Phase
 
-_Basic scaffold of API integration. Primary focus was BallDontLie.io_
+_Basic scaffold of API integration. Primary focus was BallDontLie.io fetch and data integration_
 ![image](https://user-images.githubusercontent.com/69458896/94652259-10856c80-033d-11eb-9906-803b2e0f821d.png)
 
 ### Final Interface
 
 _Initial landing page with fixed navbar_
-![](img/landing_page.jpg)
+![](img/landing_page.JPG)
 
 _Search bar, article filter, season stats tables and news section_
-![](img/functional_area.jpg)
+![](img/functional_area.JPG)
 
 _Autocomplete typeahead connected to ballDontLie API_
-![](img/typeahead_active.jpg)
+![](img/typeahead_active.JPG)
 
 _Rendered data from searches_
-![](img/search_data.jpg)
+![](img/search_data.JPG)
 
 _Clear button to empty local storage and remove data_
-![](img/tooltipinfo_to_clear.jpg)
+![](img/tooltipinfo_to_clear.JPG)
 
 ### Demonstration
 
